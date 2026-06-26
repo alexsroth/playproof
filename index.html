@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download Playproof</title>
+<style>
+  :root{
+    --base:#03202b; --base2:#06222c; --panel:#0a2c38; --border:#1c3e4a;
+    --teal:#2fd8c0; --aqua:#5fe6d2; --coral:#ff8a7a; --coral2:#d85a4a;
+    --text:#e6f6fa; --muted:#8fb6c0;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+    color:var(--text); background:
+      radial-gradient(60% 50% at 30% 25%, rgba(31,168,144,.30), transparent 70%),
+      radial-gradient(55% 50% at 80% 75%, rgba(216,90,74,.22), transparent 70%),
+      linear-gradient(180deg, var(--base) 0%, var(--base2) 60%, #08303c 100%);
+    min-height:100%; display:flex; align-items:center; justify-content:center; padding:40px 20px;
+  }
+  .card{width:100%; max-width:560px; text-align:center}
+  .mark{width:84px;height:84px;margin:0 auto 18px;display:block;border-radius:20px;
+    box-shadow:0 10px 40px rgba(0,0,0,.45)}
+  h1{font-size:40px;margin:0 0 6px;letter-spacing:.3px}
+  .tag{color:var(--muted);font-size:17px;margin:0 0 30px}
+  .btn{display:inline-flex;align-items:center;gap:10px;justify-content:center;
+    background:linear-gradient(180deg,var(--teal),#1fb6a6);color:#03202b;
+    font-weight:700;font-size:17px;text-decoration:none;border:0;border-radius:13px;
+    padding:15px 26px;cursor:pointer;box-shadow:0 6px 22px rgba(47,216,192,.30);transition:transform .08s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn small{display:block;font-weight:500;font-size:12px;opacity:.8}
+  .alts{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .alt{color:var(--aqua);text-decoration:none;font-size:14px;border:1px solid var(--border);
+    border-radius:10px;padding:9px 14px;background:rgba(255,255,255,.02)}
+  .alt:hover{border-color:var(--teal)}
+  .alt[data-rec="1"]{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal) inset}
+  .help{color:var(--muted);font-size:13px;margin-top:22px;line-height:1.6}
+  .panel{margin-top:28px;text-align:left;background:rgba(10,44,56,.6);border:1px solid var(--border);
+    border-radius:14px;padding:18px 20px}
+  .panel h2{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 10px}
+  ol{margin:0;padding-left:20px;line-height:1.8;font-size:14px}
+  .note{color:var(--coral);font-size:13px;margin-top:12px}
+  .ver{color:#5f8893;font-size:12px;margin-top:26px}
+  .hide{display:none!important}
+</style>
+</head>
+<body>
+  <main class="card">
+    <!-- ============================================================
+         FILL THESE IN once the DMGs are uploaded to a PUBLIC host
+         (public releases repo or Cloudflare R2). The repo itself can
+         stay private — these two files must be publicly downloadable.
+    ============================================================= -->
+    <script>
+      const DOWNLOADS = {
+        arm64: "https://github.com/alexsroth/playproof/releases/latest/download/Playproof-AppleSilicon.dmg",
+        x64:   "https://github.com/alexsroth/playproof/releases/latest/download/Playproof-Intel.dmg",
+        version: "v0.6.0"
+      };
+    </script>
+
+    <svg class="mark" viewBox="0 0 84 84" aria-hidden="true">
+      <rect width="84" height="84" rx="20" fill="#7c6bb0"/>
+      <g transform="rotate(-8 42 44)">
+        <rect x="18" y="26" width="30" height="40" rx="5" fill="#9ad6c8" stroke="#5b8f86" stroke-width="2"/>
+        <rect x="26" y="20" width="30" height="42" rx="5" fill="#f4c9a0" stroke="#c98a52" stroke-width="2"/>
+        <rect x="34" y="16" width="30" height="44" rx="5" fill="#f6a8b0" stroke="#c46a86" stroke-width="2"/>
+      </g>
+    </svg>
+
+    <h1>Playproof</h1>
+    <p class="tag">Design, prototype, and print tabletop card games.</p>
+
+    <a id="primary" class="btn" href="#">Download for Mac<small id="primarySub">choosing your chip…</small></a>
+
+    <div class="alts">
+      <a class="alt" id="altArm" href="#">Apple Silicon (M1–M4)</a>
+      <a class="alt" id="altX64" href="#">Intel</a>
+    </div>
+
+    <p class="help" id="whichMac">
+      Not sure? Apple menu → <strong>About This Mac</strong>. A chip that says
+      <strong>“Apple M…”</strong> is Apple Silicon; <strong>“Intel”</strong> is Intel.
+    </p>
+
+    <p class="help hide" id="notMac">Playproof is a macOS app (for now). Open this page on your Mac to download.</p>
+
+    <div class="panel">
+      <h2>Installing</h2>
+      <ol>
+        <li>Open the downloaded <strong>.dmg</strong>.</li>
+        <li>Drag <strong>Playproof</strong> onto the <strong>Applications</strong> folder.</li>
+        <li>First launch: <strong>right-click Playproof → Open → Open</strong>.</li>
+      </ol>
+      <p class="note">This beta isn’t notarized yet, so the first open needs the right-click → Open step. A normal double-click would show “unidentified developer.”</p>
+    </div>
+
+    <p class="ver" id="ver"></p>
+  </main>
+
+<script>
+(function(){
+  const primary=document.getElementById('primary'), psub=document.getElementById('primarySub');
+  const altArm=document.getElementById('altArm'), altX64=document.getElementById('altX64');
+  altArm.href=DOWNLOADS.arm64; altX64.href=DOWNLOADS.x64;
+  document.getElementById('ver').textContent='Playproof '+DOWNLOADS.version+' · macOS 11+';
+
+  const isMac=/Mac/i.test(navigator.platform)||/Mac OS X/i.test(navigator.userAgent);
+  if(!isMac){
+    document.getElementById('primary').classList.add('hide');
+    document.querySelector('.alts').classList.remove('hide');
+    document.getElementById('whichMac').classList.add('hide');
+    document.getElementById('notMac').classList.remove('hide');
+    return;
+  }
+  async function detectArch(){
+    try{
+      if(navigator.userAgentData?.getHighEntropyValues){
+        const d=await navigator.userAgentData.getHighEntropyValues(['architecture']);
+        if(d.architecture==='arm') return 'arm64';
+        if(d.architecture==='x86') return 'x64';
+      }
+    }catch(e){}
+    try{
+      const c=document.createElement('canvas');
+      const gl=c.getContext('webgl')||c.getContext('experimental-webgl');
+      const ext=gl.getExtension('WEBGL_debug_renderer_info');
+      const r=(gl.getParameter(ext.UNMASKED_RENDERER_WEBGL)||'').toString();
+      if(/apple/i.test(r)) return 'arm64';
+      if(/intel|amd|radeon/i.test(r)) return 'x64';
+    }catch(e){}
+    return null;
+  }
+  detectArch().then(arch=>{
+    if(arch==='arm64'){ primary.href=DOWNLOADS.arm64; psub.textContent='Apple Silicon (M1–M4)'; altArm.dataset.rec='1'; }
+    else if(arch==='x64'){ primary.href=DOWNLOADS.x64; psub.textContent='Intel'; altX64.dataset.rec='1'; }
+    else { primary.href=DOWNLOADS.arm64; psub.textContent='Apple Silicon — or pick Intel below'; }
+  });
+})();
+</script>
+</body>
+</html>
