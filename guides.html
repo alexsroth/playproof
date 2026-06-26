@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guides — get started in Playproof</title>
+<meta name="description" content="Inspiring, section-by-section walkthroughs for Playproof: Card Data, Layout Designer, and Games. Pick the door that matches how you think, and find the moment it clicks.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">Playproof</a>
+  <div class="links">
+    <a href="tour.html">Tour</a>
+    <a href="guides.html" aria-current="page">Guides</a>
+    <a href="features.html">Features</a>
+    <a href="support.html">Support</a>
+    <a class="navcta" href="download.html">Download</a>
+  </div>
+</nav>
+
+<section class="wrap" style="padding-top:64px;padding-bottom:6px">
+  <div class="eyebrow">getting started</div>
+  <h1>Find your <span class="hl">aha.</span></h1>
+  <p class="lede">There's no single right way in. Pick the door that matches how the game lives in your head — each one ends at the moment Playproof clicks.</p>
+</section>
+
+<section class="wrap" style="padding-top:22px">
+  <div class="personas">
+    <a class="pcard" href="#layout" style="text-decoration:none">
+      <div class="tag">you can see the card</div>
+      <h3>Look first</h3>
+      <p>You know what it should look like. Start in the Layout Designer; wire the data in once the look feels right.</p>
+      <span class="go">Layout walkthrough →</span>
+    </a>
+    <a class="pcard" href="#card-data" style="text-decoration:none">
+      <div class="tag">you've got a system</div>
+      <h3>Mechanics first</h3>
+      <p>The math is in your head. Define the fields in Card Data first, then dress them up.</p>
+      <span class="go">Card Data walkthrough →</span>
+    </a>
+    <a class="pcard" href="#games" style="text-decoration:none">
+      <div class="tag">a game, not cards yet</div>
+      <h3>Concept first</h3>
+      <p>You're thinking in rules and feel. Start a game, list components, figure out cards as you go.</p>
+      <span class="go">Games walkthrough →</span>
+    </a>
+  </div>
+</section>
+
+<section class="wrap" id="card-data" style="padding-bottom:30px">
+  <div class="block">
+    <div class="blocktext">
+      <span class="eyebrow">Card Data Library</span>
+      <h3>Define a card once. Get a whole deck.</h3>
+      <ol class="walk">
+        <li>Open <b>Card Data</b> and start a template — say, <b>Creature</b>.</li>
+        <li>Add fields, each with a type: <b>name</b> (text), <b>cost</b> (number), <b>rules</b> (area text), <b>faction</b> (category), <b>art</b> (image), <b>icon</b>.</li>
+        <li>Switch to the cards table and add a few rows — or paste a CSV you've been balancing in a spreadsheet.</li>
+        <li>Hit <b>⌘S</b>. The template's shared, so any game can reuse it.</li>
+      </ol>
+      <div class="aha"><span class="lbl">the aha</span><p>Paste 120 rows and you've got 120 cards — each already knowing its shape. Tweak the template later and every card updates with it.</p></div>
+    </div>
+    <div class="ph">[ fields → cards table ]</div>
+  </div>
+</section>
+
+<section class="wrap" id="layout" style="padding-top:0;padding-bottom:30px">
+  <div class="block">
+    <div class="blocktext">
+      <span class="eyebrow">Layout Designer</span>
+      <h3>Place it once. The data fills the rest.</h3>
+      <ol class="walk">
+        <li>Open the <b>Layout Designer</b> on a blank canvas.</li>
+        <li>Add elements — a title, an art frame, a cost badge, a rules box. Stack and tidy them in the <b>Layers</b> panel.</li>
+        <li>In <b>X-Ray</b>, point each element at a field — this text shows <code>{name}</code>, this slot shows <code>{art}</code>.</li>
+        <li>Flip to <b>Style</b> for real fonts and colors, then <b>Preview</b> for the clean, print-ready card.</li>
+      </ol>
+      <div class="aha"><span class="lbl">the aha</span><p>Bind one text box to the Name field — and every card in the deck has its own name. You didn't place 120 text boxes. You placed one, and the data did the rest.</p></div>
+    </div>
+    <div class="ph">[ X-Ray → Style → Preview ]</div>
+  </div>
+</section>
+
+<section class="wrap" id="games" style="padding-top:0">
+  <div class="block">
+    <div class="blocktext">
+      <span class="eyebrow">Games</span>
+      <h3>One project. Always a version that worked.</h3>
+      <ol class="walk">
+        <li>Create a <b>game</b> and write the overview and rules while they're fresh.</li>
+        <li>Give it a Card Data Template (its fields) and a layout (its look).</li>
+        <li>List components, build the deck, and log what happens in <b>Playtests</b>.</li>
+        <li><b>Snapshot</b> the game before a session.</li>
+      </ol>
+      <div class="aha"><span class="lbl">the aha</span><p>Snapshot, then wreck the balance on purpose. If the new idea flops, roll back to the version that worked — your good build is never more than a click away.</p></div>
+    </div>
+    <div class="ph">[ game → snapshot timeline ]</div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div class="eyebrow" style="text-align:center">grab it</div>
+    <h2>Best guide is the real thing.</h2>
+    <p class="sub">Free while it's in beta. First printable deck in under 30 minutes.</p>
+    <div class="ctarow"><a class="btn" href="download.html">Download for Mac</a><a class="btn ghost" href="tour.html">Tour the app</a></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <span class="brand">Playproof</span>
+  <div>Made by a 90s kid who still plays at the table. · 2026<a href="tour.html">Tour</a><a href="features.html">Features</a><a href="support.html">Support</a></div>
+</div></footer>
+</body>
+</html>

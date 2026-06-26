@@ -4,121 +4,60 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Playproof — design, prototype & print tabletop card games</title>
-<meta name="description" content="Playproof keeps your card data separate from how cards look — one dataset drives every layout. Define fields, design a layout, bind them, print a real deck. First prototype in under 30 minutes.">
+<meta name="description" content="Playproof keeps card data separate from card design — one dataset drives every layout. First printable prototype in under 30 minutes. macOS.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <nav>
   <a class="brand" href="index.html">Playproof</a>
   <div class="links">
-    <a href="how-it-works.html">How it works</a>
+    <a href="tour.html">Tour</a>
+    <a href="guides.html">Guides</a>
     <a href="features.html">Features</a>
-    <a href="start.html">Get started</a>
+    <a href="support.html">Support</a>
     <a class="navcta" href="download.html">Download</a>
   </div>
 </nav>
 
-<section class="wrap" style="padding-top:70px">
+<section class="wrap" style="padding-top:78px;padding-bottom:56px">
   <h1>Design the deck. Print it. <span class="hl">Break it at the table.</span></h1>
-  <p class="lede">Playproof keeps your card <b>data</b> separate from how cards <b>look</b> — so one dataset drives every layout, and one layout works across games. Define fields, design a layout, wire them together, print a real deck.</p>
+  <p class="lede">Card <b>data</b> and card <b>design</b>, kept apart — so one dataset drives every layout. Define fields, design a layout, wire them up, print a real deck.</p>
   <div class="promise">First printable prototype in under 30 minutes. Then go break it.</div>
   <div class="ctarow">
     <a class="btn" href="download.html">Download for Mac</a>
-    <a class="btn ghost" href="how-it-works.html">See how it works</a>
-  </div>
-  <div class="shot">[ screenshot — Layout Designer with a live card preview ]</div>
-</section>
-
-<section class="wrap">
-  <div class="eyebrow">the whole idea</div>
-  <h2>Your data and your design, finally living apart.</h2>
-  <p class="sub">Most tools glue what a card <i>is</i> to what it <i>looks like</i>. Playproof splits them. Change the math without touching the art. Restyle every card without re-typing a thing.</p>
-  <div class="split">
-    <div class="scard">
-      <h4>Card Data — the fields</h4>
-      <div class="row"><span>name</span><span>Tidewarden</span></div>
-      <div class="row"><span>cost</span><span>3</span></div>
-      <div class="row"><span>power</span><span>5</span></div>
-      <div class="row"><span>type</span><span>Reef / Unit</span></div>
-      <div class="row"><span>rules</span><span>Soak 2.</span></div>
-    </div>
-    <div class="arrow">→</div>
-    <div class="cardface">
-      <span class="pill">bound, live</span>
-      <b style="font-size:18px">Tidewarden</b>
-      <div style="color:var(--muted);font-size:13px">Reef / Unit · cost 3</div>
-      <div style="flex:1;border:1px dashed var(--border);border-radius:8px;margin:6px 0;display:flex;align-items:center;justify-content:center;color:#6b5f7a;font-size:11px">art</div>
-      <div style="font-size:12px;color:var(--muted)">Soak 2. · ⚡5</div>
-    </div>
+    <a class="btn ghost" href="tour.html">Take the tour</a>
   </div>
 </section>
 
-<section class="wrap">
-  <div class="eyebrow">where do you start?</div>
-  <h2>Depends on your brain.</h2>
-  <p class="sub">There's no right door. Walk in however the game lives in your head — Playproof meets you there and wires up the rest.</p>
-  <div class="personas">
-    <div class="pcard">
-      <div class="tag">you can see the card</div>
-      <h3>Look first</h3>
-      <p>You know what it should look like — you just haven't pinned down what each part means yet. Push pixels in the Layout Designer, wire the data in once the look feels right.</p>
-      <a class="go" href="start.html#look">How that goes →</a>
-    </div>
-    <div class="pcard">
-      <div class="tag">you've got a system</div>
-      <h3>Mechanics first</h3>
-      <p>The math is in your head — costs, stats, types, what each card tracks. Define those fields in Card Data first, then dress them up however you want.</p>
-      <a class="go" href="start.html#mechanics">How that goes →</a>
-    </div>
-    <div class="pcard">
-      <div class="tag">a game, not cards yet</div>
-      <h3>Concept first</h3>
-      <p>You're thinking in rules and feel — what the game <i>is</i> before what's on a card. Sketch it in the Games workspace, list components, figure out the cards as you go.</p>
-      <a class="go" href="start.html#concept">How that goes →</a>
-    </div>
-  </div>
-</section>
-
-<section class="wrap">
-  <div class="eyebrow">what's in the box</div>
-  <h2>The tools, no fluff.</h2>
+<section class="wrap" style="padding-top:0">
   <div class="feat">
-    <div class="fcard"><div class="ic">⁝⁝</div><h4>Two templates, one truth</h4><p>A Card Data Template holds the fields. A Layout Template holds the look. Change one without breaking the other.</p></div>
-    <div class="fcard"><div class="ic">⌁</div><h4>Bind and watch it render</h4><p>Drop a data column onto a slot. The card updates live — real type, real numbers, real art.</p></div>
-    <div class="fcard"><div class="ic">⎙</div><h4>Print-first, always</h4><p>Export print-ready PDFs with real card sizing and bleed. Pages you can actually cut, not screenshots.</p></div>
-    <div class="fcard"><div class="ic">▦</div><h4>Decks assemble themselves</h4><p>One dataset becomes a full deck of rendered cards. Edit a row, the card follows.</p></div>
-    <div class="fcard"><div class="ic">⟲</div><h4>Snapshot before you break it</h4><p>Version a game before a playtest. Goes sideways? Restore and try the next idea.</p></div>
-    <div class="fcard"><div class="ic">✦</div><h4>~1,700 icons + your art</h4><p>A searchable icon library plus image art with focal-point crop, so cards look like cards.</p></div>
-  </div>
-  <div class="ctarow"><a class="btn ghost" href="features.html">All the features →</a></div>
-</section>
-
-<section class="wrap">
-  <div class="eyebrow">the golden path</div>
-  <h2>Idea to printed deck.</h2>
-  <p class="sub">Six steps. Skip around — but this is the through-line.</p>
-  <div class="steps">
-    <div class="step"><b>Define fields</b><p>What every card tracks.</p></div>
-    <div class="step"><b>Enter cards</b><p>Type them, or paste a CSV.</p></div>
-    <div class="step"><b>Design a layout</b><p>Arrange the look on a canvas.</p></div>
-    <div class="step"><b>Bind slots</b><p>Wire layout to your fields.</p></div>
-    <div class="step"><b>Preview a card</b><p>See a real one render.</p></div>
-    <div class="step"><b>Print the deck</b><p>Export, cut, sleeve, play.</p></div>
+    <a class="fcard" href="tour.html" style="text-decoration:none;color:inherit">
+      <div class="ic">▦</div><h4>Tour the app →</h4>
+      <p>Five sections, what each one's for, and where to dive in first.</p>
+    </a>
+    <a class="fcard" href="guides.html" style="text-decoration:none;color:inherit">
+      <div class="ic">◷</div><h4>Get started →</h4>
+      <p>Short, inspiring walkthroughs for each section. Find your aha.</p>
+    </a>
+    <a class="fcard" href="features.html" style="text-decoration:none;color:inherit">
+      <div class="ic">⁝⁝</div><h4>Why it works →</h4>
+      <p>The data/design split, live binding, print-first export, snapshots.</p>
+    </a>
   </div>
 </section>
 
 <section class="final" id="download">
   <div class="wrap">
     <div class="eyebrow" style="text-align:center">grab it</div>
-    <h2>Ready? Download for Mac.</h2>
-    <p class="sub">Free while it's in beta. macOS 11+, Apple Silicon or Intel — the download page picks the right one.</p>
+    <h2>Build your first deck today.</h2>
+    <p class="sub">Free while it's in beta. macOS 11+, Apple Silicon or Intel — the page picks the right one.</p>
     <div class="ctarow"><a class="btn" href="download.html">Download for Mac</a></div>
   </div>
 </section>
 
 <footer><div class="wrap">
   <span class="brand">Playproof</span>
-  <div>Made by a 90s kid who still plays at the table. · 2026<a href="features.html">Features</a><a href="start.html">Get started</a><a href="download.html">Download</a></div>
+  <div>Made by a 90s kid who still plays at the table. · 2026<a href="tour.html">Tour</a><a href="guides.html">Guides</a><a href="support.html">Support</a></div>
 </div></footer>
 </body>
 </html>
