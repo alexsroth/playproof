@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download — Playproof</title>
+<meta name="description" content="Download Playproof for macOS. The page detects Apple Silicon vs Intel and serves the right build.">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .dl{max-width:640px;margin:0 auto;text-align:center}
+  .alts{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .alt{color:var(--accent);text-decoration:none;font-size:14px;border:1px solid var(--border);border-radius:10px;
+    padding:9px 14px;background:rgba(255,255,255,.02)}
+  .alt:hover{border-color:var(--accent)}
+  .alt[data-rec="1"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+  .panel{margin-top:30px;text-align:left;background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px 22px}
+  .panel h2{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:10px}
+  .panel ol{margin:0;padding-left:20px;line-height:1.9;font-size:14px}
+  .gk{color:var(--pop);font-size:13px;margin-top:12px}
+  .hide{display:none!important}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">Playproof</a>
+  <div class="links">
+    <a href="how-it-works.html">How it works</a>
+    <a href="features.html">Features</a>
+    <a href="start.html">Get started</a>
+    <a class="navcta" href="download.html" aria-current="page">Download</a>
+  </div>
+</nav>
+
+<script>
+  // DMG assets live in the PUBLIC playproof repo's Releases. releases/latest keeps
+  // these stable across versions — no per-release edits needed.
+  const DOWNLOADS = {
+    arm64: "https://github.com/alexsroth/playproof/releases/latest/download/Playproof-AppleSilicon.dmg",
+    x64:   "https://github.com/alexsroth/playproof/releases/latest/download/Playproof-Intel.dmg",
+    version: "v0.6.0"
+  };
+</script>
+
+<section class="wrap" style="padding-top:70px">
+  <div class="dl">
+    <div class="eyebrow" style="text-align:center">grab it</div>
+    <h1 style="margin:0 auto;font-size:42px">Download Playproof</h1>
+    <p class="sub" style="margin:14px auto 0">Free while it's in beta. We'll grab the right build for your Mac.</p>
+
+    <div class="ctarow" style="justify-content:center;margin-top:26px">
+      <a id="primary" class="btn" href="#">Download for Mac<br><small id="primarySub" style="font-weight:500;opacity:.85">choosing your chip…</small></a>
+    </div>
+
+    <div class="alts">
+      <a class="alt" id="altArm" href="#">Apple Silicon (M1–M4)</a>
+      <a class="alt" id="altX64" href="#">Intel</a>
+    </div>
+
+    <p class="sub" id="whichMac" style="margin:22px auto 0;font-size:14px">
+      Not sure? Apple menu → <b>About This Mac</b>. A chip that says <b>“Apple M…”</b> is Apple Silicon; <b>“Intel”</b> is Intel.
+    </p>
+    <p class="sub hide" id="notMac" style="margin:22px auto 0;font-size:14px">Playproof is a macOS app (for now). Open this page on your Mac to download.</p>
+
+    <div class="panel">
+      <h2>Installing</h2>
+      <ol>
+        <li>Open the downloaded <b>.dmg</b>.</li>
+        <li>Drag <b>Playproof</b> onto the <b>Applications</b> folder.</li>
+        <li>First launch: <b>right-click Playproof → Open → Open</b>.</li>
+      </ol>
+      <p class="gk">Beta builds aren't notarized yet, so the first open needs the right-click → Open step. A normal double-click would just say “unidentified developer.”</p>
+    </div>
+    <p class="sub" id="ver" style="margin:18px auto 0;font-size:12px;color:#6b5f7a"></p>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <span class="brand">Playproof</span>
+  <div>Made by a 90s kid who still plays at the table. · 2026<a href="features.html">Features</a><a href="start.html">Get started</a><a href="how-it-works.html">How it works</a></div>
+</div></footer>
+
+<script>
+(function(){
+  const primary=document.getElementById('primary'), psub=document.getElementById('primarySub');
+  const altArm=document.getElementById('altArm'), altX64=document.getElementById('altX64');
+  altArm.href=DOWNLOADS.arm64; altX64.href=DOWNLOADS.x64;
+  document.getElementById('ver').textContent='Playproof '+DOWNLOADS.version+' · macOS 11+';
+  const isMac=/Mac/i.test(navigator.platform)||/Mac OS X/i.test(navigator.userAgent);
+  if(!isMac){
+    primary.classList.add('hide'); document.getElementById('whichMac').classList.add('hide');
+    document.getElementById('notMac').classList.remove('hide'); return;
+  }
+  async function detectArch(){
+    try{ if(navigator.userAgentData?.getHighEntropyValues){
+      const d=await navigator.userAgentData.getHighEntropyValues(['architecture']);
+      if(d.architecture==='arm') return 'arm64'; if(d.architecture==='x86') return 'x64';
+    }}catch(e){}
+    try{
+      const c=document.createElement('canvas'); const gl=c.getContext('webgl')||c.getContext('experimental-webgl');
+      const ext=gl.getExtension('WEBGL_debug_renderer_info');
+      const r=(gl.getParameter(ext.UNMASKED_RENDERER_WEBGL)||'').toString();
+      if(/apple/i.test(r)) return 'arm64'; if(/intel|amd|radeon/i.test(r)) return 'x64';
+    }catch(e){}
+    return null;
+  }
+  detectArch().then(arch=>{
+    if(arch==='arm64'){ primary.href=DOWNLOADS.arm64; psub.textContent='Apple Silicon (M1–M4)'; altArm.dataset.rec='1'; }
+    else if(arch==='x64'){ primary.href=DOWNLOADS.x64; psub.textContent='Intel'; altX64.dataset.rec='1'; }
+    else { primary.href=DOWNLOADS.arm64; psub.textContent='Apple Silicon — or pick Intel below'; }
+  });
+})();
+</script>
+</body>
+</html>

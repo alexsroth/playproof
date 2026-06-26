@@ -3,142 +3,122 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Download Playproof</title>
-<style>
-  :root{
-    --base:#03202b; --base2:#06222c; --panel:#0a2c38; --border:#1c3e4a;
-    --teal:#2fd8c0; --aqua:#5fe6d2; --coral:#ff8a7a; --coral2:#d85a4a;
-    --text:#e6f6fa; --muted:#8fb6c0;
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;height:100%}
-  body{
-    font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-    color:var(--text); background:
-      radial-gradient(60% 50% at 30% 25%, rgba(31,168,144,.30), transparent 70%),
-      radial-gradient(55% 50% at 80% 75%, rgba(216,90,74,.22), transparent 70%),
-      linear-gradient(180deg, var(--base) 0%, var(--base2) 60%, #08303c 100%);
-    min-height:100%; display:flex; align-items:center; justify-content:center; padding:40px 20px;
-  }
-  .card{width:100%; max-width:560px; text-align:center}
-  .mark{width:84px;height:84px;margin:0 auto 18px;display:block;border-radius:20px;
-    box-shadow:0 10px 40px rgba(0,0,0,.45)}
-  h1{font-size:40px;margin:0 0 6px;letter-spacing:.3px}
-  .tag{color:var(--muted);font-size:17px;margin:0 0 30px}
-  .btn{display:inline-flex;align-items:center;gap:10px;justify-content:center;
-    background:linear-gradient(180deg,var(--teal),#1fb6a6);color:#03202b;
-    font-weight:700;font-size:17px;text-decoration:none;border:0;border-radius:13px;
-    padding:15px 26px;cursor:pointer;box-shadow:0 6px 22px rgba(47,216,192,.30);transition:transform .08s}
-  .btn:hover{transform:translateY(-1px)}
-  .btn small{display:block;font-weight:500;font-size:12px;opacity:.8}
-  .alts{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  .alt{color:var(--aqua);text-decoration:none;font-size:14px;border:1px solid var(--border);
-    border-radius:10px;padding:9px 14px;background:rgba(255,255,255,.02)}
-  .alt:hover{border-color:var(--teal)}
-  .alt[data-rec="1"]{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal) inset}
-  .help{color:var(--muted);font-size:13px;margin-top:22px;line-height:1.6}
-  .panel{margin-top:28px;text-align:left;background:rgba(10,44,56,.6);border:1px solid var(--border);
-    border-radius:14px;padding:18px 20px}
-  .panel h2{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 10px}
-  ol{margin:0;padding-left:20px;line-height:1.8;font-size:14px}
-  .note{color:var(--coral);font-size:13px;margin-top:12px}
-  .ver{color:#5f8893;font-size:12px;margin-top:26px}
-  .hide{display:none!important}
-</style>
+<title>Playproof — design, prototype & print tabletop card games</title>
+<meta name="description" content="Playproof keeps your card data separate from how cards look — one dataset drives every layout. Define fields, design a layout, bind them, print a real deck. First prototype in under 30 minutes.">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="card">
-    <!-- ============================================================
-         FILL THESE IN once the DMGs are uploaded to a PUBLIC host
-         (public releases repo or Cloudflare R2). The repo itself can
-         stay private — these two files must be publicly downloadable.
-    ============================================================= -->
-    <script>
-      const DOWNLOADS = {
-        arm64: "https://github.com/alexsroth/playproof/releases/latest/download/Playproof-AppleSilicon.dmg",
-        x64:   "https://github.com/alexsroth/playproof/releases/latest/download/Playproof-Intel.dmg",
-        version: "v0.6.0"
-      };
-    </script>
+<nav>
+  <a class="brand" href="index.html">Playproof</a>
+  <div class="links">
+    <a href="how-it-works.html">How it works</a>
+    <a href="features.html">Features</a>
+    <a href="start.html">Get started</a>
+    <a class="navcta" href="download.html">Download</a>
+  </div>
+</nav>
 
-    <svg class="mark" viewBox="0 0 84 84" aria-hidden="true">
-      <rect width="84" height="84" rx="20" fill="#7c6bb0"/>
-      <g transform="rotate(-8 42 44)">
-        <rect x="18" y="26" width="30" height="40" rx="5" fill="#9ad6c8" stroke="#5b8f86" stroke-width="2"/>
-        <rect x="26" y="20" width="30" height="42" rx="5" fill="#f4c9a0" stroke="#c98a52" stroke-width="2"/>
-        <rect x="34" y="16" width="30" height="44" rx="5" fill="#f6a8b0" stroke="#c46a86" stroke-width="2"/>
-      </g>
-    </svg>
+<section class="wrap" style="padding-top:70px">
+  <h1>Design the deck. Print it. <span class="hl">Break it at the table.</span></h1>
+  <p class="lede">Playproof keeps your card <b>data</b> separate from how cards <b>look</b> — so one dataset drives every layout, and one layout works across games. Define fields, design a layout, wire them together, print a real deck.</p>
+  <div class="promise">First printable prototype in under 30 minutes. Then go break it.</div>
+  <div class="ctarow">
+    <a class="btn" href="download.html">Download for Mac</a>
+    <a class="btn ghost" href="how-it-works.html">See how it works</a>
+  </div>
+  <div class="shot">[ screenshot — Layout Designer with a live card preview ]</div>
+</section>
 
-    <h1>Playproof</h1>
-    <p class="tag">Design, prototype, and print tabletop card games.</p>
-
-    <a id="primary" class="btn" href="#">Download for Mac<small id="primarySub">choosing your chip…</small></a>
-
-    <div class="alts">
-      <a class="alt" id="altArm" href="#">Apple Silicon (M1–M4)</a>
-      <a class="alt" id="altX64" href="#">Intel</a>
+<section class="wrap">
+  <div class="eyebrow">the whole idea</div>
+  <h2>Your data and your design, finally living apart.</h2>
+  <p class="sub">Most tools glue what a card <i>is</i> to what it <i>looks like</i>. Playproof splits them. Change the math without touching the art. Restyle every card without re-typing a thing.</p>
+  <div class="split">
+    <div class="scard">
+      <h4>Card Data — the fields</h4>
+      <div class="row"><span>name</span><span>Tidewarden</span></div>
+      <div class="row"><span>cost</span><span>3</span></div>
+      <div class="row"><span>power</span><span>5</span></div>
+      <div class="row"><span>type</span><span>Reef / Unit</span></div>
+      <div class="row"><span>rules</span><span>Soak 2.</span></div>
     </div>
-
-    <p class="help" id="whichMac">
-      Not sure? Apple menu → <strong>About This Mac</strong>. A chip that says
-      <strong>“Apple M…”</strong> is Apple Silicon; <strong>“Intel”</strong> is Intel.
-    </p>
-
-    <p class="help hide" id="notMac">Playproof is a macOS app (for now). Open this page on your Mac to download.</p>
-
-    <div class="panel">
-      <h2>Installing</h2>
-      <ol>
-        <li>Open the downloaded <strong>.dmg</strong>.</li>
-        <li>Drag <strong>Playproof</strong> onto the <strong>Applications</strong> folder.</li>
-        <li>First launch: <strong>right-click Playproof → Open → Open</strong>.</li>
-      </ol>
-      <p class="note">This beta isn’t notarized yet, so the first open needs the right-click → Open step. A normal double-click would show “unidentified developer.”</p>
+    <div class="arrow">→</div>
+    <div class="cardface">
+      <span class="pill">bound, live</span>
+      <b style="font-size:18px">Tidewarden</b>
+      <div style="color:var(--muted);font-size:13px">Reef / Unit · cost 3</div>
+      <div style="flex:1;border:1px dashed var(--border);border-radius:8px;margin:6px 0;display:flex;align-items:center;justify-content:center;color:#6b5f7a;font-size:11px">art</div>
+      <div style="font-size:12px;color:var(--muted)">Soak 2. · ⚡5</div>
     </div>
+  </div>
+</section>
 
-    <p class="ver" id="ver"></p>
-  </main>
+<section class="wrap">
+  <div class="eyebrow">where do you start?</div>
+  <h2>Depends on your brain.</h2>
+  <p class="sub">There's no right door. Walk in however the game lives in your head — Playproof meets you there and wires up the rest.</p>
+  <div class="personas">
+    <div class="pcard">
+      <div class="tag">you can see the card</div>
+      <h3>Look first</h3>
+      <p>You know what it should look like — you just haven't pinned down what each part means yet. Push pixels in the Layout Designer, wire the data in once the look feels right.</p>
+      <a class="go" href="start.html#look">How that goes →</a>
+    </div>
+    <div class="pcard">
+      <div class="tag">you've got a system</div>
+      <h3>Mechanics first</h3>
+      <p>The math is in your head — costs, stats, types, what each card tracks. Define those fields in Card Data first, then dress them up however you want.</p>
+      <a class="go" href="start.html#mechanics">How that goes →</a>
+    </div>
+    <div class="pcard">
+      <div class="tag">a game, not cards yet</div>
+      <h3>Concept first</h3>
+      <p>You're thinking in rules and feel — what the game <i>is</i> before what's on a card. Sketch it in the Games workspace, list components, figure out the cards as you go.</p>
+      <a class="go" href="start.html#concept">How that goes →</a>
+    </div>
+  </div>
+</section>
 
-<script>
-(function(){
-  const primary=document.getElementById('primary'), psub=document.getElementById('primarySub');
-  const altArm=document.getElementById('altArm'), altX64=document.getElementById('altX64');
-  altArm.href=DOWNLOADS.arm64; altX64.href=DOWNLOADS.x64;
-  document.getElementById('ver').textContent='Playproof '+DOWNLOADS.version+' · macOS 11+';
+<section class="wrap">
+  <div class="eyebrow">what's in the box</div>
+  <h2>The tools, no fluff.</h2>
+  <div class="feat">
+    <div class="fcard"><div class="ic">⁝⁝</div><h4>Two templates, one truth</h4><p>A Card Data Template holds the fields. A Layout Template holds the look. Change one without breaking the other.</p></div>
+    <div class="fcard"><div class="ic">⌁</div><h4>Bind and watch it render</h4><p>Drop a data column onto a slot. The card updates live — real type, real numbers, real art.</p></div>
+    <div class="fcard"><div class="ic">⎙</div><h4>Print-first, always</h4><p>Export print-ready PDFs with real card sizing and bleed. Pages you can actually cut, not screenshots.</p></div>
+    <div class="fcard"><div class="ic">▦</div><h4>Decks assemble themselves</h4><p>One dataset becomes a full deck of rendered cards. Edit a row, the card follows.</p></div>
+    <div class="fcard"><div class="ic">⟲</div><h4>Snapshot before you break it</h4><p>Version a game before a playtest. Goes sideways? Restore and try the next idea.</p></div>
+    <div class="fcard"><div class="ic">✦</div><h4>~1,700 icons + your art</h4><p>A searchable icon library plus image art with focal-point crop, so cards look like cards.</p></div>
+  </div>
+  <div class="ctarow"><a class="btn ghost" href="features.html">All the features →</a></div>
+</section>
 
-  const isMac=/Mac/i.test(navigator.platform)||/Mac OS X/i.test(navigator.userAgent);
-  if(!isMac){
-    document.getElementById('primary').classList.add('hide');
-    document.querySelector('.alts').classList.remove('hide');
-    document.getElementById('whichMac').classList.add('hide');
-    document.getElementById('notMac').classList.remove('hide');
-    return;
-  }
-  async function detectArch(){
-    try{
-      if(navigator.userAgentData?.getHighEntropyValues){
-        const d=await navigator.userAgentData.getHighEntropyValues(['architecture']);
-        if(d.architecture==='arm') return 'arm64';
-        if(d.architecture==='x86') return 'x64';
-      }
-    }catch(e){}
-    try{
-      const c=document.createElement('canvas');
-      const gl=c.getContext('webgl')||c.getContext('experimental-webgl');
-      const ext=gl.getExtension('WEBGL_debug_renderer_info');
-      const r=(gl.getParameter(ext.UNMASKED_RENDERER_WEBGL)||'').toString();
-      if(/apple/i.test(r)) return 'arm64';
-      if(/intel|amd|radeon/i.test(r)) return 'x64';
-    }catch(e){}
-    return null;
-  }
-  detectArch().then(arch=>{
-    if(arch==='arm64'){ primary.href=DOWNLOADS.arm64; psub.textContent='Apple Silicon (M1–M4)'; altArm.dataset.rec='1'; }
-    else if(arch==='x64'){ primary.href=DOWNLOADS.x64; psub.textContent='Intel'; altX64.dataset.rec='1'; }
-    else { primary.href=DOWNLOADS.arm64; psub.textContent='Apple Silicon — or pick Intel below'; }
-  });
-})();
-</script>
+<section class="wrap">
+  <div class="eyebrow">the golden path</div>
+  <h2>Idea to printed deck.</h2>
+  <p class="sub">Six steps. Skip around — but this is the through-line.</p>
+  <div class="steps">
+    <div class="step"><b>Define fields</b><p>What every card tracks.</p></div>
+    <div class="step"><b>Enter cards</b><p>Type them, or paste a CSV.</p></div>
+    <div class="step"><b>Design a layout</b><p>Arrange the look on a canvas.</p></div>
+    <div class="step"><b>Bind slots</b><p>Wire layout to your fields.</p></div>
+    <div class="step"><b>Preview a card</b><p>See a real one render.</p></div>
+    <div class="step"><b>Print the deck</b><p>Export, cut, sleeve, play.</p></div>
+  </div>
+</section>
+
+<section class="final" id="download">
+  <div class="wrap">
+    <div class="eyebrow" style="text-align:center">grab it</div>
+    <h2>Ready? Download for Mac.</h2>
+    <p class="sub">Free while it's in beta. macOS 11+, Apple Silicon or Intel — the download page picks the right one.</p>
+    <div class="ctarow"><a class="btn" href="download.html">Download for Mac</a></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <span class="brand">Playproof</span>
+  <div>Made by a 90s kid who still plays at the table. · 2026<a href="features.html">Features</a><a href="start.html">Get started</a><a href="download.html">Download</a></div>
+</div></footer>
 </body>
 </html>
