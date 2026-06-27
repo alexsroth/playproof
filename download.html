@@ -65,11 +65,12 @@
     <div class="panel">
       <h2>Installing</h2>
       <ol>
-        <li>Open the downloaded <b>.dmg</b>.</li>
-        <li>Drag <b>Playproof</b> onto the <b>Applications</b> folder.</li>
-        <li>First launch: <b>right-click Playproof → Open → Open</b>.</li>
+        <li>Open the downloaded <b>.dmg</b> and drag <b>Playproof</b> onto <b>Applications</b>.</li>
+        <li>macOS may say Playproof is <b>“damaged.”</b> It's not — beta builds just aren't notarized yet, so Gatekeeper blocks them. Clear it with one line in <b>Terminal</b>:</li>
       </ol>
-      <p class="gk">Beta builds aren't notarized yet, so the first open needs the right-click → Open step. A normal double-click would just say “unidentified developer.”</p>
+      <pre style="background:#0f0c1c;border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:13px;color:var(--accent-2);overflow:auto;margin:12px 0">xattr -dr com.apple.quarantine /Applications/Playproof.app</pre>
+      <ol start="3"><li>Open Playproof normally. You only do this once.</li></ol>
+      <p class="gk">Annoying, I know. A properly notarized build will kill this step for good — it's on the list.</p>
     </div>
     <p class="sub" id="ver" style="margin:18px auto 0;font-size:12px;color:#6b5f7a"></p>
   </div>
@@ -111,5 +112,6 @@
   });
 })();
 </script>
+<script defer src="app.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 /* Playproof site — Desert (night) mood. Shared across all pages.
    Palette from theme/palettes.ts → desert.dark + ambient drift. */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* Fonts: Atkinson Hyperlegible (default) is injected by app.js — no CSS @import.
+   OpenDyslexic is self-hosted below and toggled via the footer switch. */
 
 :root{
   --base:#141021; --base-2:#1A1530; --panel:#1A1530; --panel-2:#221A3A; --border:#322A48;
@@ -13,7 +14,7 @@
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Inter',system-ui,-apple-system,sans-serif; color:var(--text); line-height:1.55;
+  font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif; color:var(--text); line-height:1.55;
   background:
     radial-gradient(70% 55% at 20% 4%, rgba(30,35,72,.55), transparent 60%),
     radial-gradient(60% 50% at 88% 16%, rgba(232,162,78,.16), transparent 62%),
@@ -23,8 +24,8 @@ body{
 }
 a{color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
-.brand{font-family:'Inter',system-ui,sans-serif;font-weight:800;letter-spacing:-.02em}
-.eyebrow{font-family:'Inter',system-ui,sans-serif;color:var(--accent);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+.brand{font-family:'Atkinson Hyperlegible',system-ui,sans-serif;font-weight:800;letter-spacing:-.02em}
+.eyebrow{font-family:'Atkinson Hyperlegible',system-ui,sans-serif;color:var(--accent);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
 /* nav */
@@ -75,7 +76,7 @@ h2{font-size:34px;font-weight:800;letter-spacing:-.01em}
 .pcard{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--border);
   border-radius:18px;padding:24px;transition:transform .12s,border-color .12s}
 .pcard:hover{transform:translateY(-4px);border-color:var(--accent)}
-.pcard .tag{font-family:'Inter',system-ui,sans-serif;color:var(--pop);font-size:14px}
+.pcard .tag{font-family:'Atkinson Hyperlegible',system-ui,sans-serif;color:var(--pop);font-size:14px}
 .pcard h3{font-size:21px;font-weight:700;margin:8px 0 10px}
 .pcard p{color:var(--muted);font-size:14.5px}
 .pcard .go{display:inline-block;margin-top:16px;color:var(--accent);font-weight:600;font-size:14px;text-decoration:none}
@@ -91,7 +92,7 @@ h2{font-size:34px;font-weight:800;letter-spacing:-.01em}
 /* steps */
 .steps{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;counter-reset:s}
 .step{flex:1 1 150px;background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:18px}
-.step::before{counter-increment:s;content:counter(s);font-family:'Inter',system-ui,sans-serif;color:var(--pop);
+.step::before{counter-increment:s;content:counter(s);font-family:'Atkinson Hyperlegible',system-ui,sans-serif;color:var(--pop);
   font-size:24px;font-weight:700;display:block;margin-bottom:8px}
 .step b{font-size:15px}.step p{color:var(--muted);font-size:13px;margin-top:4px}
 
@@ -116,7 +117,7 @@ footer a{color:var(--muted);text-decoration:none;margin-left:18px}
 /* section list (tour) */
 .seclist{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
 .seccard{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;flex-direction:column}
-.seccard .kicker{font-family:'Inter',system-ui,sans-serif;color:var(--accent);font-size:13px}
+.seccard .kicker{font-family:'Atkinson Hyperlegible',system-ui,sans-serif;color:var(--accent);font-size:13px}
 .seccard h3{font-size:21px;font-weight:700;margin:6px 0 8px}
 .seccard p{color:var(--muted);font-size:14.5px}
 .seccard .bits{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px}
@@ -127,12 +128,12 @@ footer a{color:var(--muted);text-decoration:none;margin-left:18px}
 .walk{counter-reset:w;list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:14px}
 .walk li{position:relative;padding-left:44px;color:var(--muted);font-size:15px}
 .walk li::before{counter-increment:w;content:counter(w);position:absolute;left:0;top:-2px;width:30px;height:30px;
-  border-radius:8px;background:rgba(232,162,78,.14);color:var(--accent);font-family:'Inter',system-ui,sans-serif;
+  border-radius:8px;background:rgba(232,162,78,.14);color:var(--accent);font-family:'Atkinson Hyperlegible',system-ui,sans-serif;
   font-weight:700;display:flex;align-items:center;justify-content:center}
 .walk li b{color:var(--text)}
 .aha{margin-top:18px;border-left:3px solid var(--accent);background:rgba(232,162,78,.07);border-radius:0 12px 12px 0;
   padding:14px 18px}
-.aha .lbl{font-family:'Inter',system-ui,sans-serif;color:var(--accent);font-size:13px;display:block;margin-bottom:4px}
+.aha .lbl{font-family:'Atkinson Hyperlegible',system-ui,sans-serif;color:var(--accent);font-size:13px;display:block;margin-bottom:4px}
 .aha p{color:var(--text);font-size:15.5px;margin:0}
 
 /* callout (support) */
@@ -148,3 +149,14 @@ footer a{color:var(--muted);text-decoration:none;margin-left:18px}
   h1{font-size:38px}h2{font-size:27px}
   nav .links a:not(.navcta){display:none}
 }
+
+/* ---- OpenDyslexic (self-hosted) + accessibility toggle ---- */
+@font-face{font-family:'OpenDyslexic';src:url('fonts/OpenDyslexic-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'OpenDyslexic';src:url('fonts/OpenDyslexic-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'OpenDyslexic';src:url('fonts/OpenDyslexic-Italic.otf') format('opentype');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'OpenDyslexic';src:url('fonts/OpenDyslexic-BoldItalic.otf') format('opentype');font-weight:700;font-style:italic;font-display:swap}
+html.dys body, html.dys body *{font-family:'OpenDyslexic','Comic Sans MS',sans-serif !important;letter-spacing:0 !important}
+.fonttoggle{background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:999px;
+  padding:6px 13px;font-size:12px;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px}
+.fonttoggle:hover{border-color:var(--accent);color:var(--text)}
+.fonttoggle b{color:var(--accent);font-weight:700}
