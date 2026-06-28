@@ -43,7 +43,7 @@
       return c;
     });
 
-    var W = 0, H = 0;
+    var W = 0, H = 0, resizeTimer;
     var attractors = palette.map(function () {
       return {
         bx: 0.2 + Math.random() * 0.6, by: 0.2 + Math.random() * 0.6,
@@ -81,7 +81,11 @@
     function resize() {
       var host = canvas.parentElement || canvas;
       var r = host.getBoundingClientRect();
-      W = r.width || window.innerWidth; H = r.height || window.innerHeight;
+      var newW = r.width || window.innerWidth, newH = r.height || window.innerHeight;
+      // Skip the canvas-clear if nothing meaningful changed (prevents flicker when
+      // the mobile URL bar hides/shows and briefly changes the reported height).
+      if (newW === W && newH === H) return;
+      W = newW; H = newH;
       canvas.width = Math.max(1, Math.round(W * DPR));
       canvas.height = Math.max(1, Math.round(H * DPR));
       ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
@@ -90,7 +94,12 @@
       }
     }
     resize();
-    var ro = new ResizeObserver(resize);
+    // Debounce so rapid mobile scroll events (URL-bar show/hide triggers ResizeObserver
+    // every few ms) don't cause repeated canvas.width resets that blank the frame.
+    var ro = new ResizeObserver(function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 200);
+    });
     ro.observe(canvas.parentElement || canvas);
 
     function flow(x, y, t) {
