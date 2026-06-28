@@ -1,79 +1,101 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Support & beta — Playproof</title>
-<meta name="description" content="Playproof is in beta. Log bugs, confusion, and wishes straight from the app's feedback button — it comes directly to Alex, the maker.">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="styles.css">
+<script src="./support.js"></script>
 </head>
 <body>
-<nav>
-  <a class="brand" href="index.html">Playproof</a>
-  <div class="links">
-    <a href="tour.html">Tour</a>
-    <a href="guides.html">Guides</a>
-    <a href="features.html">Features</a>
-    <a href="support.html" aria-current="page">Support</a>
-    <a class="navcta" href="download.html">Download</a>
-  </div>
-</nav>
+<x-dc>
+<helmet>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="playproof-appicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#13112A;color:#F1ECE2;font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .disp{font-family:'Instrument Serif',Georgia,serif;font-weight:400 !important}
+</style>
+</helmet>
 
-<section class="wrap" style="padding-top:64px;padding-bottom:6px">
-  <div class="eyebrow">beta &amp; support</div>
-  <h1>Break it. <span class="hl">Then tell me.</span></h1>
-  <p class="lede">Playproof is a beta built by one person — Alex. That means rough edges, and it means your feedback actually lands on the desk of the guy who can fix it. No support queue, no ticket purgatory.</p>
-</section>
+<x-import component-from-global-scope="ambient-field" from="./ambient-field.js" base="#13112A" drift="#1E2348,#E8A24E,#A9763C,#8A4A2A,#7E4A48" hint-size="100%,100%" style="position:fixed;inset:0;z-index:0"></x-import>
 
-<section class="wrap" style="padding-top:24px">
-  <div class="callout">
-    <h3>The fastest way: the feedback button, right in the app</h3>
-    <p>Bottom corner of every screen. One click and you can:</p>
-    <ol class="walk" style="margin-top:14px">
-      <li>It grabs a <b>screenshot</b> of exactly what you're looking at.</li>
-      <li><b>Mark it up</b> — circle the weird thing, draw an arrow, or record a short <b>GIF</b> of the bug happening.</li>
-      <li>Say <b>what you were going for</b> and <b>how bad it is</b>. Two boxes, no essay required.</li>
-      <li>Send. It goes <b>straight to Alex</b> — no account, no form maze.</li>
-    </ol>
-    <div class="aha"><span class="lbl">where it goes</span><p>Your report lands in Alex's channel and opens a tracked issue automatically — screenshot, GIF, and your notes attached. He reads every one.</p></div>
-  </div>
-</section>
+<div style="position:relative;z-index:1;min-height:100vh">
+  <dc-import name="SiteNav" current="support" hint-size="100%,64px"></dc-import>
 
-<section class="wrap" style="padding-top:10px">
-  <div class="eyebrow">what's worth sending</div>
-  <h2>All of it, honestly.</h2>
-  <div class="feat">
-    <div class="fcard"><div class="ic">⚠</div><h4>Bugs</h4><p>Something broke, froze, or rendered wrong. Even if you're not sure it's a bug — send it.</p></div>
-    <div class="fcard"><div class="ic">?</div><h4>Confusion</h4><p>"I expected X and got Y." Where you got stuck is the most useful thing you can tell me.</p></div>
-    <div class="fcard"><div class="ic">✦</div><h4>Wishes</h4><p>"I wish it could…" Feature ideas from real decks beat any roadmap guess.</p></div>
-  </div>
-</section>
+  <main>
+    <section style="max-width:1080px;margin:0 auto;padding:clamp(40px,6vw,76px) clamp(16px,4vw,28px) clamp(8px,2vw,16px)">
+      <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">beta &amp; support</div>
+      <h1 class="disp" style="font-size:clamp(34px,5.5vw,56px);line-height:1.02;font-weight:800;letter-spacing:-0.025em;margin:16px 0 0">Break it. <span style="color:#FF9E80">Then tell me.</span></h1>
+      <p style="font-size:clamp(16px,1.6vw,19px);color:#C9B59D;max-width:58ch;margin:18px 0 0">Playproof is a beta built by one person — Alex. That means rough edges, and it means your feedback actually lands on the desk of the guy who can fix it. No support queue, no ticket purgatory.</p>
+    </section>
 
-<section class="wrap" style="padding-top:10px">
-  <div class="callout">
-    <h3>What to expect back</h3>
-    <p>It's one human, so it's not instant — but it's real. Fixes and changes show up in <b>What's New</b> inside the app, so you can see your report turn into a build. Want to hang out with other testers and swap broken-economy stories? There's a Discord — the link's on the feedback success screen.</p>
-  </div>
-  <p class="sub" style="margin-top:18px">Everything stays on your Mac unless you hit send. Playproof runs fully offline; feedback is the one thing that leaves, and only because you chose to share it.</p>
-</section>
+    <section style="max-width:1080px;margin:0 auto;padding:clamp(20px,3vw,30px) clamp(16px,4vw,28px) clamp(14px,2vw,20px)">
+      <div style="background:linear-gradient(180deg,rgba(34,26,58,0.7),rgba(26,21,48,0.55));-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.12),0 12px 28px rgba(0,0,0,0.2);padding:clamp(24px,3.5vw,38px)">
+        <h3 class="disp" style="font-size:clamp(21px,2.6vw,26px);font-weight:800;margin:0 0 6px">The fastest way: the feedback button, right in the app</h3>
+        <p style="color:#B79E86;font-size:15.5px;margin:0 0 18px">Bottom corner of every screen. One click and you can:</p>
+        <div style="display:flex;flex-direction:column;gap:13px">
+          <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">1</span><p style="color:#B79E86;font-size:15.5px;margin:0">It grabs a <b style="color:#F1ECE2">screenshot</b> of exactly what you're looking at.</p></div>
+          <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">2</span><p style="color:#B79E86;font-size:15.5px;margin:0"><b style="color:#F1ECE2">Mark it up</b> — circle the weird thing, draw an arrow, or record a short <b style="color:#F1ECE2">GIF</b> of the bug happening.</p></div>
+          <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">3</span><p style="color:#B79E86;font-size:15.5px;margin:0">Say <b style="color:#F1ECE2">what you were going for</b> and <b style="color:#F1ECE2">how bad it is</b>. Two boxes, no essay required.</p></div>
+          <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">4</span><p style="color:#B79E86;font-size:15.5px;margin:0">Send. It goes <b style="color:#F1ECE2">straight to Alex</b> — no account, no form maze.</p></div>
+        </div>
+        <div style="margin-top:20px;border-left:3px solid #E8A24E;background:rgba(232,162,78,0.08);border-radius:0 12px 12px 0;padding:16px 18px">
+          <span class="disp" style="color:#E8A24E;font-size:13px;font-weight:700;display:block;margin-bottom:4px">where it goes</span>
+          <p style="color:#F1ECE2;font-size:15.5px;margin:0">Your report lands in Alex's channel and opens a tracked issue automatically — screenshot, GIF and your notes attached. He reads every one.</p>
+        </div>
+      </div>
+    </section>
 
-<section class="final">
-  <div class="wrap">
-    <div class="eyebrow" style="text-align:center">join the beta</div>
-    <h2>Get it, break it, tell me.</h2>
-    <p class="sub">Free while it's in beta. macOS 11+, Apple Silicon or Intel.</p>
-    <div class="ctarow"><a class="btn" href="download.html">Download for Mac</a></div>
-  </div>
-</section>
+    <section style="max-width:1080px;margin:0 auto;padding:clamp(20px,3vw,30px) clamp(16px,4vw,28px) clamp(12px,2vw,18px)">
+      <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">what's worth sending</div>
+      <h2 class="disp" style="font-size:clamp(24px,3.2vw,34px);font-weight:800;letter-spacing:-0.02em;margin:10px 0 22px">All of it, honestly.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+        <div style="background:color-mix(in srgb,#1A1530 52%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:22px">
+          <div style="width:38px;height:38px;border-radius:10px;background:rgba(232,162,78,0.16);display:flex;align-items:center;justify-content:center;color:#E8A24E;font-size:19px;font-weight:800;margin-bottom:12px">⚠</div>
+          <h4 style="font-size:16px;margin:0 0 6px">Bugs</h4>
+          <p style="color:#B79E86;font-size:14px;margin:0">Something broke, froze, or rendered wrong. Even if you're not sure it's a bug — send it.</p>
+        </div>
+        <div style="background:color-mix(in srgb,#1A1530 52%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:22px">
+          <div style="width:38px;height:38px;border-radius:10px;background:rgba(232,162,78,0.16);display:flex;align-items:center;justify-content:center;color:#E8A24E;font-size:19px;font-weight:800;margin-bottom:12px">?</div>
+          <h4 style="font-size:16px;margin:0 0 6px">Confusion</h4>
+          <p style="color:#B79E86;font-size:14px;margin:0">"I expected X and got Y." Where you got stuck is the most useful thing you can tell me.</p>
+        </div>
+        <div style="background:color-mix(in srgb,#1A1530 52%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:22px">
+          <div style="width:38px;height:38px;border-radius:10px;background:rgba(232,162,78,0.16);display:flex;align-items:center;justify-content:center;color:#E8A24E;font-size:19px;font-weight:800;margin-bottom:12px">✦</div>
+          <h4 style="font-size:16px;margin:0 0 6px">Wishes</h4>
+          <p style="color:#B79E86;font-size:14px;margin:0">"I wish it could…" Feature ideas from real decks beat any roadmap guess.</p>
+        </div>
+      </div>
+    </section>
 
-<footer><div class="wrap">
-  <span class="brand">Playproof</span>
-  <div>Made by a 90s kid who still plays at the table. · 2026<a href="tour.html">Tour</a><a href="guides.html">Guides</a><a href="features.html">Features</a></div>
-</div></footer>
-<script defer src="app.js"></script>
+    <section style="max-width:1080px;margin:0 auto;padding:clamp(18px,3vw,28px) clamp(16px,4vw,28px) clamp(36px,5vw,56px)">
+      <div style="background:linear-gradient(180deg,rgba(34,26,58,0.7),rgba(26,21,48,0.55));-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.12),0 12px 28px rgba(0,0,0,0.2);padding:clamp(24px,3.5vw,34px)">
+        <h3 class="disp" style="font-size:clamp(20px,2.4vw,24px);font-weight:800;margin:0 0 8px">What to expect back</h3>
+        <p style="color:#B79E86;font-size:15.5px;margin:0">It's one human, so it's not instant — but it's real. Fixes and changes show up in <b style="color:#F1ECE2">What's New</b> inside the app, so you can watch your report turn into a build. Want to swap broken-economy stories with other testers? There's a Discord — the link's on the feedback success screen.</p>
+      </div>
+      <p style="color:#7d6e57;font-size:14px;margin:18px 0 0">Everything stays on your Mac unless you hit send. Playproof runs fully offline; feedback is the one thing that leaves, and only because you chose to share it.</p>
+    </section>
+
+    <section style="border-top:1px solid #322A48;background:linear-gradient(180deg,rgba(232,162,78,0.07),transparent)">
+      <div style="max-width:1140px;margin:0 auto;padding:clamp(44px,6vw,76px) clamp(16px,4vw,28px);text-align:center">
+        <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">join the beta</div>
+        <h2 class="disp" style="font-size:clamp(26px,3.6vw,40px);font-weight:800;letter-spacing:-0.02em;margin:12px 0 0">Get it, break it, tell me.</h2>
+        <p style="color:#B79E86;font-size:17px;margin:12px auto 0;max-width:52ch">Free while it's in beta. macOS 11+, Apple Silicon or Intel.</p>
+        <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px">
+          <a href="download.html" style="background:linear-gradient(180deg,#E8A24E,#cf8838);color:#1b1430;font-weight:800;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px;box-shadow:0 8px 26px rgba(232,162,78,0.28);transition:transform .12s" style-hover="transform:translateY(-2px)">Download for Mac</a>
+          <a href="how-it-works.html" style="background:rgba(255,255,255,0.03);color:#F1ECE2;border:1px solid #322A48;font-weight:700;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px" style-hover="border-color:#E8A24E">See how it works →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="SiteFooter" hint-size="100%,140px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:900}}"></script>
 </body>
 </html>
