@@ -118,7 +118,10 @@ class Component extends DCLogic {
   state = { status: 'checking', copied: false };
 
   componentDidMount() {
-    const isMac = /Mac/i.test(navigator.platform || '') || /Mac OS X/i.test(navigator.userAgent || '');
+    // iOS includes "Mac OS X" in its UA string, so check for iPhone/iPad first.
+    const ua = navigator.userAgent || '';
+    const isIOS = /iPhone|iPad|iPod/i.test(ua);
+    const isMac = !isIOS && (/Mac/i.test(navigator.platform || '') || /Mac OS X/i.test(ua));
     if (!isMac) { this.timer = setTimeout(() => this.setState({ status: 'notmac' }), 500); return; }
     // Give the status chip a beat so the resolution reads as a real check.
     this.detectArch().then(arch => {
@@ -142,8 +145,11 @@ class Component extends DCLogic {
       const gl = c.getContext('webgl') || c.getContext('experimental-webgl');
       const ext = gl.getExtension('WEBGL_debug_renderer_info');
       const r = ((ext && gl.getParameter(ext.UNMASKED_RENDERER_WEBGL)) || '').toString();
-      if (/apple/i.test(r)) return 'arm';
+      // Check Intel/AMD/Radeon FIRST — Intel Macs using Chrome's Metal backend produce strings like
+      // "ANGLE (Apple, ANGLE Metal Renderer: Intel Iris Plus Graphics, ...)" which contain "Apple"
+      // before "Intel". Checking the specific GPU vendor first avoids the false-positive arm match.
       if (/intel|amd|radeon/i.test(r)) return 'x64';
+      if (/apple/i.test(r)) return 'arm';
     } catch (e) {}
     return null; // genuinely couldn't tell
   }
