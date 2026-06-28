@@ -1,121 +1,173 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guides — get started in Playproof</title>
-<meta name="description" content="Inspiring, section-by-section walkthroughs for Playproof: Card Data, Layout Designer, and Games. Pick the door that matches how you think, and find the moment it clicks.">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="styles.css">
+<script src="./support.js"></script>
 </head>
 <body>
-<nav>
-  <a class="brand" href="index.html">Playproof</a>
-  <div class="links">
-    <a href="tour.html">Tour</a>
-    <a href="guides.html" aria-current="page">Guides</a>
-    <a href="features.html">Features</a>
-    <a href="support.html">Support</a>
-    <a class="navcta" href="download.html">Download</a>
-  </div>
-</nav>
+<x-dc>
+<helmet>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="playproof-appicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#13112A;color:#F1ECE2;font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .disp{font-family:'Instrument Serif',Georgia,serif;font-weight:400 !important}
+  code{font-family:ui-monospace,Menlo,monospace;font-size:0.86em;background:rgba(255,255,255,0.06);border:1px solid #322A48;border-radius:5px;padding:1px 6px;color:#F4C77A}
+  @keyframes pp-fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</helmet>
 
-<section class="wrap" style="padding-top:64px;padding-bottom:6px">
-  <div class="eyebrow">getting started</div>
-  <h1>Find your <span class="hl">aha.</span></h1>
-  <p class="lede">There's no single right way in. Pick the door that matches how the game lives in your head — each one ends at the moment Playproof clicks.</p>
-</section>
+<x-import component-from-global-scope="ambient-field" from="./ambient-field.js" base="#13112A" drift="#1E2348,#E8A24E,#A9763C,#8A4A2A,#7E4A48" hint-size="100%,100%" style="position:fixed;inset:0;z-index:0"></x-import>
 
-<section class="wrap" style="padding-top:22px">
-  <div class="personas">
-    <a class="pcard" href="#layout" style="text-decoration:none">
-      <div class="tag">you can see the card</div>
-      <h3>Look first</h3>
-      <p>You know what it should look like. Start in the Layout Designer; wire the data in once the look feels right.</p>
-      <span class="go">Layout walkthrough →</span>
-    </a>
-    <a class="pcard" href="#card-data" style="text-decoration:none">
-      <div class="tag">you've got a system</div>
-      <h3>Mechanics first</h3>
-      <p>The math is in your head. Define the fields in Card Data first, then dress them up.</p>
-      <span class="go">Card Data walkthrough →</span>
-    </a>
-    <a class="pcard" href="#games" style="text-decoration:none">
-      <div class="tag">a game, not cards yet</div>
-      <h3>Concept first</h3>
-      <p>You're thinking in rules and feel. Start a game, list components, figure out cards as you go.</p>
-      <span class="go">Games walkthrough →</span>
-    </a>
-  </div>
-</section>
+<div style="position:relative;z-index:1;min-height:100vh">
+  <dc-import name="SiteNav" current="guides" hint-size="100%,64px"></dc-import>
 
-<section class="wrap" id="card-data" style="padding-bottom:30px">
-  <div class="block">
-    <div class="blocktext">
-      <span class="eyebrow">Card Data Library</span>
-      <h3>Define a card once. Get a whole deck.</h3>
-      <ol class="walk">
-        <li>Open <b>Card Data</b> and start a template — say, <b>Creature</b>.</li>
-        <li>Add fields, each with a type: <b>name</b> (text), <b>cost</b> (number), <b>rules</b> (area text), <b>faction</b> (category), <b>art</b> (image), <b>icon</b>.</li>
-        <li>Switch to the cards table and add a few rows — or paste a CSV you've been balancing in a spreadsheet.</li>
-        <li>Hit <b>⌘S</b>. The template's shared, so any game can reuse it.</li>
-      </ol>
-      <div class="aha"><span class="lbl">the aha</span><p>Paste 120 rows and you've got 120 cards — each already knowing its shape. Tweak the template later and every card updates with it.</p></div>
-    </div>
-    <div class="ph">[ fields → cards table ]</div>
-  </div>
-</section>
+  <main>
+    <section style="max-width:1080px;margin:0 auto;padding:clamp(40px,6vw,76px) clamp(16px,4vw,28px) clamp(8px,2vw,16px)">
+      <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">getting started</div>
+      <h1 class="disp" style="font-size:clamp(40px,6.5vw,68px);line-height:1.0;letter-spacing:-0.01em;margin:14px 0 0">Find your <span style="color:#FF9E80;font-style:italic">aha.</span></h1>
+      <p style="font-size:clamp(16px,1.6vw,19px);color:#C9B59D;max-width:58ch;margin:18px 0 0">There's no single right way in. Pick the door that matches how the game already lives in your head — each one ends at the exact moment Playproof clicks.</p>
+    </section>
 
-<section class="wrap" id="layout" style="padding-top:0;padding-bottom:30px">
-  <div class="block">
-    <div class="blocktext">
-      <span class="eyebrow">Layout Designer</span>
-      <h3>Place it once. The data fills the rest.</h3>
-      <ol class="walk">
-        <li>Open the <b>Layout Designer</b> on a blank canvas.</li>
-        <li>Add elements — a title, an art frame, a cost badge, a rules box. Stack and tidy them in the <b>Layers</b> panel.</li>
-        <li>In <b>X-Ray</b>, point each element at a field — this text shows <code>{name}</code>, this slot shows <code>{art}</code>.</li>
-        <li>Flip to <b>Style</b> for real fonts and colors, then <b>Preview</b> for the clean, print-ready card.</li>
-      </ol>
-      <div class="aha"><span class="lbl">the aha</span><p>Bind one text box to the Name field — and every card in the deck has its own name. You didn't place 120 text boxes. You placed one, and the data did the rest.</p></div>
-    </div>
-    <div class="ph">[ X-Ray → Style → Preview ]</div>
-  </div>
-</section>
+    <!-- DOOR SELECTOR -->
+    <section style="max-width:1080px;margin:0 auto;padding:clamp(20px,3vw,30px) clamp(16px,4vw,28px) 0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
 
-<section class="wrap" id="games" style="padding-top:0">
-  <div class="block">
-    <div class="blocktext">
-      <span class="eyebrow">Games</span>
-      <h3>One project. Always a version that worked.</h3>
-      <ol class="walk">
-        <li>Create a <b>game</b> and write the overview and rules while they're fresh.</li>
-        <li>Give it a Card Data Template (its fields) and a layout (its look).</li>
-        <li>List components, build the deck, and log what happens in <b>Playtests</b>.</li>
-        <li><b>Snapshot</b> the game before a session.</li>
-      </ol>
-      <div class="aha"><span class="lbl">the aha</span><p>Snapshot, then wreck the balance on purpose. If the new idea flops, roll back to the version that worked — your good build is never more than a click away.</p></div>
-    </div>
-    <div class="ph">[ game → snapshot timeline ]</div>
-  </div>
-</section>
+        <button type="button" onClick="{{ pickLayout }}" style="text-align:left;cursor:pointer;font:inherit;color:inherit;background:{{ lyBg }};border:1px solid {{ lyBorder }};border-radius:16px;padding:20px;transition:transform .12s,border-color .12s,background .12s" style-hover="transform:translateY(-3px)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="color:#FF9E80;font-size:13.5px">you can already see the card</span><span style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:{{ lyDot }};box-shadow:0 0 7px {{ lyDot }}"></span></div>
+          <h3 class="disp" style="font-size:22px;margin:7px 0 7px">Look first</h3>
+          <p style="color:#B79E86;font-size:14px;margin:0">You know what it should look like. Start in the Layout Designer; wire the data in once the look feels right.</p>
+          <span style="display:inline-block;margin-top:13px;color:{{ lyCtaC }};font-weight:700;font-size:13.5px">{{ lyCta }}</span>
+        </button>
 
-<section class="final">
-  <div class="wrap">
-    <div class="eyebrow" style="text-align:center">grab it</div>
-    <h2>Best guide is the real thing.</h2>
-    <p class="sub">Free while it's in beta. First printable deck in under 30 minutes.</p>
-    <div class="ctarow"><a class="btn" href="download.html">Download for Mac</a><a class="btn ghost" href="tour.html">Tour the app</a></div>
-  </div>
-</section>
+        <button type="button" onClick="{{ pickCardData }}" style="text-align:left;cursor:pointer;font:inherit;color:inherit;background:{{ cdBg }};border:1px solid {{ cdBorder }};border-radius:16px;padding:20px;transition:transform .12s,border-color .12s,background .12s" style-hover="transform:translateY(-3px)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="color:#FF9E80;font-size:13.5px">you've got a system</span><span style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:{{ cdDot }};box-shadow:0 0 7px {{ cdDot }}"></span></div>
+          <h3 class="disp" style="font-size:22px;margin:7px 0 7px">Mechanics first</h3>
+          <p style="color:#B79E86;font-size:14px;margin:0">The math is already in your head. Define the fields in Card Data first, then dress them up.</p>
+          <span style="display:inline-block;margin-top:13px;color:{{ cdCtaC }};font-weight:700;font-size:13.5px">{{ cdCta }}</span>
+        </button>
 
-<footer><div class="wrap">
-  <span class="brand">Playproof</span>
-  <div>Made by a 90s kid who still plays at the table. · 2026<a href="tour.html">Tour</a><a href="features.html">Features</a><a href="support.html">Support</a></div>
-</div></footer>
-<script defer src="app.js"></script>
+        <button type="button" onClick="{{ pickGames }}" style="text-align:left;cursor:pointer;font:inherit;color:inherit;background:{{ gmBg }};border:1px solid {{ gmBorder }};border-radius:16px;padding:20px;transition:transform .12s,border-color .12s,background .12s" style-hover="transform:translateY(-3px)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="color:#FF9E80;font-size:13.5px">a game, not cards yet</span><span style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:{{ gmDot }};box-shadow:0 0 7px {{ gmDot }}"></span></div>
+          <h3 class="disp" style="font-size:22px;margin:7px 0 7px">Concept first</h3>
+          <p style="color:#B79E86;font-size:14px;margin:0">You're thinking in rules and feel. Start a game, list components, figure out the cards as you go.</p>
+          <span style="display:inline-block;margin-top:13px;color:{{ gmCtaC }};font-weight:700;font-size:13.5px">{{ gmCta }}</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ACTIVE WALKTHROUGH -->
+    <section style="max-width:1080px;margin:0 auto;padding:clamp(16px,2.5vw,24px) clamp(16px,4vw,28px) clamp(36px,5vw,56px)">
+
+      <sc-if value="{{ isLayout }}" hint-placeholder-val="{{ true }}">
+        <div style="animation:pp-fade .25s ease;background:color-mix(in srgb,#1A1530 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(232,162,78,0.30);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:clamp(24px,3.5vw,38px)">
+          <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Layout Designer · for "Look first"</div>
+          <h3 class="disp" style="font-size:clamp(25px,3.2vw,33px);margin:8px 0 18px">Place it once. The data fills the rest.</h3>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">1</span><p style="color:#B79E86;font-size:15.5px;margin:0">Open the <b style="color:#F1ECE2">Layout Designer</b> on a blank canvas.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">2</span><p style="color:#B79E86;font-size:15.5px;margin:0">Add elements — a title, an art frame, a cost badge, a rules box. Stack and tidy them in the <b style="color:#F1ECE2">Layers</b> panel.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">3</span><p style="color:#B79E86;font-size:15.5px;margin:0">In <b style="color:#F1ECE2">X-Ray</b>, point each element at a field — this text shows <code>{name}</code>, this slot shows <code>{art}</code>.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">4</span><p style="color:#B79E86;font-size:15.5px;margin:0">Flip to <b style="color:#F1ECE2">Style</b> for real fonts and colors, then <b style="color:#F1ECE2">Preview</b> for the clean, print-ready card.</p></div>
+          </div>
+          <div style="margin-top:20px;border-left:3px solid #E8A24E;background:rgba(232,162,78,0.08);border-radius:0 12px 12px 0;padding:16px 18px">
+            <span class="disp" style="color:#E8A24E;font-size:15px;font-style:italic;display:block;margin-bottom:4px">the aha</span>
+            <p style="color:#F1ECE2;font-size:15.5px;margin:0">Bind one text box to the Name field — and every card in the deck has its own name. You didn't place 120 text boxes. You placed one, and the data did the rest.</p>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isCardData }}" hint-placeholder-val="{{ false }}">
+        <div style="animation:pp-fade .25s ease;background:color-mix(in srgb,#1A1530 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(232,162,78,0.30);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:clamp(24px,3.5vw,38px)">
+          <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Card Data Library · for "Mechanics first"</div>
+          <h3 class="disp" style="font-size:clamp(25px,3.2vw,33px);margin:8px 0 18px">Define a card once. Get a whole deck.</h3>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">1</span><p style="color:#B79E86;font-size:15.5px;margin:0">Open <b style="color:#F1ECE2">Card Data</b> and start a template — say, <b style="color:#F1ECE2">Creature</b>.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">2</span><p style="color:#B79E86;font-size:15.5px;margin:0">Add fields, each with a type: <b style="color:#F1ECE2">name</b> (text), <b style="color:#F1ECE2">cost</b> (number), <b style="color:#F1ECE2">rules</b> (area text), <b style="color:#F1ECE2">faction</b> (category), <b style="color:#F1ECE2">art</b> (image), <b style="color:#F1ECE2">icon</b>.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">3</span><p style="color:#B79E86;font-size:15.5px;margin:0">Switch to the cards table and add a few rows — or paste a CSV you've been balancing in a spreadsheet.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">4</span><p style="color:#B79E86;font-size:15.5px;margin:0">Hit <code>⌘S</code>. The template's shared, so any game can reuse it.</p></div>
+          </div>
+          <div style="margin-top:20px;border-left:3px solid #E8A24E;background:rgba(232,162,78,0.08);border-radius:0 12px 12px 0;padding:16px 18px">
+            <span class="disp" style="color:#E8A24E;font-size:15px;font-style:italic;display:block;margin-bottom:4px">the aha</span>
+            <p style="color:#F1ECE2;font-size:15.5px;margin:0">Paste 120 rows and you've got 120 cards — each already knowing its shape. Tweak the template later and every card updates with it.</p>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isGames }}" hint-placeholder-val="{{ false }}">
+        <div style="animation:pp-fade .25s ease;background:color-mix(in srgb,#1A1530 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(232,162,78,0.30);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:clamp(24px,3.5vw,38px)">
+          <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Games · for "Concept first"</div>
+          <h3 class="disp" style="font-size:clamp(25px,3.2vw,33px);margin:8px 0 18px">One project. Always a version that worked.</h3>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">1</span><p style="color:#B79E86;font-size:15.5px;margin:0">Create a <b style="color:#F1ECE2">game</b> and write the overview and rules while they're fresh.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">2</span><p style="color:#B79E86;font-size:15.5px;margin:0">Give it a Card Data Template (its fields) and a layout (its look).</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">3</span><p style="color:#B79E86;font-size:15.5px;margin:0">List components, build the deck, and log what happens in <b style="color:#F1ECE2">Playtests</b>.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">4</span><p style="color:#B79E86;font-size:15.5px;margin:0"><b style="color:#F1ECE2">Snapshot</b> the game before a session.</p></div>
+          </div>
+          <div style="margin-top:20px;border-left:3px solid #E8A24E;background:rgba(232,162,78,0.08);border-radius:0 12px 12px 0;padding:16px 18px">
+            <span class="disp" style="color:#E8A24E;font-size:15px;font-style:italic;display:block;margin-bottom:4px">the aha</span>
+            <p style="color:#F1ECE2;font-size:15.5px;margin:0">Snapshot, then wreck the balance on purpose. If the new idea flops, roll back to the version that worked — your good build is never more than a click away.</p>
+          </div>
+        </div>
+      </sc-if>
+    </section>
+
+    <section style="border-top:1px solid #322A48;background:linear-gradient(180deg,rgba(232,162,78,0.07),transparent)">
+      <div style="max-width:1140px;margin:0 auto;padding:clamp(44px,6vw,76px) clamp(16px,4vw,28px);text-align:center">
+        <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">grab it</div>
+        <h2 class="disp" style="font-size:clamp(30px,4.4vw,48px);letter-spacing:-0.01em;margin:12px 0 0">Best guide is the real thing.</h2>
+        <p style="color:#B79E86;font-size:17px;margin:12px auto 0;max-width:52ch">Free while it's in beta. First printable deck in under 30 minutes.</p>
+        <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px">
+          <a href="download.html" style="background:linear-gradient(180deg,#E8A24E,#cf8838);color:#1b1430;font-weight:800;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px;box-shadow:0 8px 26px rgba(232,162,78,0.28);transition:transform .12s" style-hover="transform:translateY(-2px)">Download for Mac</a>
+          <a href="how-it-works.html" style="background:rgba(255,255,255,0.03);color:#F1ECE2;border:1px solid #322A48;font-weight:700;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px" style-hover="border-color:#E8A24E">See how it works →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="SiteFooter" hint-size="100%,140px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { active: 'layout' };
+
+  componentDidMount() {
+    const h = (location.hash || '').replace('#', '');
+    if (h === 'card-data' || h === 'layout' || h === 'games') this.setState({ active: h });
+  }
+
+  pick(id) {
+    this.setState({ active: id });
+    try { history.replaceState(null, '', '#' + id); } catch (e) {}
+  }
+
+  renderVals() {
+    const a = this.state.active;
+    const sty = (id) => ({
+      bg: a === id ? 'rgba(232,162,78,0.12)' : 'color-mix(in srgb, #1A1530 50%, transparent)',
+      border: a === id ? '#E8A24E' : 'rgba(255,255,255,0.10)',
+      dot: a === id ? '#E8A24E' : 'rgba(255,255,255,0.16)',
+      cta: a === id ? 'Showing below ↓' : 'See the walkthrough →',
+      ctaC: a === id ? '#E8A24E' : '#9b86c0',
+    });
+    const ly = sty('layout'), cd = sty('card-data'), gm = sty('games');
+    return {
+      isLayout: a === 'layout', isCardData: a === 'card-data', isGames: a === 'games',
+      lyBg: ly.bg, lyBorder: ly.border, lyDot: ly.dot, lyCta: ly.cta, lyCtaC: ly.ctaC,
+      cdBg: cd.bg, cdBorder: cd.border, cdDot: cd.dot, cdCta: cd.cta, cdCtaC: cd.ctaC,
+      gmBg: gm.bg, gmBorder: gm.border, gmDot: gm.dot, gmCta: gm.cta, gmCtaC: gm.ctaC,
+      pickLayout: () => this.pick('layout'),
+      pickCardData: () => this.pick('card-data'),
+      pickGames: () => this.pick('games'),
+    };
+  }
+}
+</script>
 </body>
 </html>

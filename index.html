@@ -1,68 +1,141 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Playproof — design, prototype & print tabletop card games</title>
-<meta name="description" content="Playproof keeps card data separate from card design — one dataset drives every layout. First printable prototype in under 30 minutes. macOS.">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="styles.css">
+<script src="./support.js"></script>
 </head>
 <body>
-<nav>
-  <a class="brand" href="index.html">Playproof</a>
-  <div class="links">
-    <a href="tour.html">Tour</a>
-    <a href="guides.html">Guides</a>
-    <a href="features.html">Features</a>
-    <a href="support.html">Support</a>
-    <a class="navcta" href="download.html">Download</a>
-  </div>
-</nav>
+<x-dc>
+<helmet>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="playproof-appicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#13112A;color:#F1ECE2;font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .disp{font-family:'Instrument Serif',Georgia,serif;font-weight:400 !important}
+  code{font-family:ui-monospace,Menlo,monospace;font-size:0.86em;background:rgba(255,255,255,0.06);border:1px solid #322A48;border-radius:5px;padding:1px 6px;color:#F4C77A}
+</style>
+</helmet>
 
-<section class="wrap" style="padding-top:78px;padding-bottom:56px">
-  <h1>Design the deck. Print it. <span class="hl">Break it at the table.</span></h1>
-  <p class="lede">Card <b>data</b> and card <b>design</b>, kept apart — so one dataset drives every layout. Define fields, design a layout, wire them up, print a real deck.</p>
-  <div class="promise">First printable prototype in under 30 minutes. Then go break it.</div>
-  <div class="ctarow">
-    <a class="btn" href="download.html">Download for Mac</a>
-    <a class="btn ghost" href="tour.html">Take the tour</a>
-  </div>
-</section>
+<x-import component-from-global-scope="ambient-field" from="./ambient-field.js" base="#13112A" drift="#1E2348,#E8A24E,#A9763C,#8A4A2A,#7E4A48" hint-size="100%,100%" style="position:fixed;inset:0;z-index:0"></x-import>
 
-<section class="wrap" style="padding-top:0">
-  <div class="feat">
-    <a class="fcard" href="tour.html" style="text-decoration:none;color:inherit">
-      <div class="ic">▦</div><h4>Tour the app →</h4>
-      <p>Five sections, what each one's for, and where to dive in first.</p>
-    </a>
-    <a class="fcard" href="guides.html" style="text-decoration:none;color:inherit">
-      <div class="ic">◷</div><h4>Get started →</h4>
-      <p>Short, inspiring walkthroughs for each section. Find your aha.</p>
-    </a>
-    <a class="fcard" href="features.html" style="text-decoration:none;color:inherit">
-      <div class="ic">⁝⁝</div><h4>Why it works →</h4>
-      <p>The data/design split, live binding, print-first export, snapshots.</p>
-    </a>
-  </div>
-</section>
+<div style="position:relative;z-index:1;min-height:100vh">
+  <dc-import name="SiteNav" current="" hint-size="100%,64px"></dc-import>
 
-<section class="final" id="download">
-  <div class="wrap">
-    <div class="eyebrow" style="text-align:center">grab it</div>
-    <h2>Build your first deck today.</h2>
-    <p class="sub">Free while it's in beta. macOS 11+, Apple Silicon or Intel — the page picks the right one.</p>
-    <div class="ctarow"><a class="btn" href="download.html">Download for Mac</a></div>
-  </div>
-</section>
+  <main>
+    <!-- HERO -->
+    <section style="max-width:1000px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(16px,4vw,28px) clamp(10px,2vw,20px)">
+      <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">why playproof</div>
+      <h1 class="disp" style="font-size:clamp(38px,6vw,68px);line-height:1.0;letter-spacing:-0.01em;margin:14px 0 0;max-width:18ch">A card game isn't designed. It's <span style="color:#FF9E80;font-style:italic">playtested</span> into existence.</h1>
+      <p style="font-size:clamp(16px,1.7vw,19px);color:#C9B59D;max-width:60ch;margin:20px 0 0">Nobody writes a great game on the first try. You make a version, put it in front of people, watch it break, and fix it — over and over — until it's fun. Most ideas die in the gap between "wouldn't it be cool if…" and a deck someone actually played. <b style="color:#F1ECE2">Playproof lives in that gap.</b> Here's the whole arc, and exactly where it fits.</p>
+    </section>
 
-<footer><div class="wrap">
-  <span class="brand">Playproof</span>
-  <div>Made by a 90s kid who still plays at the table. · 2026<a href="tour.html">Tour</a><a href="guides.html">Guides</a><a href="support.html">Support</a></div>
-</div></footer>
-<script defer src="app.js"></script>
+    <!-- JOURNEY -->
+    <section style="max-width:1000px;margin:0 auto;padding:clamp(24px,4vw,44px) clamp(16px,4vw,28px) clamp(20px,3vw,32px)">
+      <div style="display:flex;flex-direction:column">
+
+        <!-- 01 -->
+        <div style="display:flex;gap:clamp(14px,2vw,20px);align-items:stretch">
+          <div style="display:flex;flex-direction:column;align-items:center;width:clamp(40px,5vw,48px);flex-shrink:0">
+            <div style="width:clamp(40px,5vw,48px);height:clamp(40px,5vw,48px);border-radius:50%;border:1px solid #322A48;background:#1A1530;display:flex;align-items:center;justify-content:center;font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:15px;color:#9b86c0">01</div>
+            <div style="flex:1;width:2px;background:linear-gradient(#322A48,#322A48)"></div>
+          </div>
+          <div style="flex:1;padding-bottom:20px;min-width:0">
+            <div style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#7d6e57;border:1px solid #322A48;border-radius:999px;padding:3px 10px;margin-bottom:10px">in your head</div>
+            <h3 class="disp" style="font-size:clamp(23px,3vw,29px);margin:0 0 8px">The spark</h3>
+            <p style="color:#B79E86;font-size:15.5px;margin:0;max-width:62ch">A hook, a turn structure, a feeling you want at the table. Playproof doesn't write your game for you — but the faster the idea becomes real cards, the faster you learn whether it's actually fun, or just fun to imagine.</p>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div style="display:flex;gap:clamp(14px,2vw,20px);align-items:stretch">
+          <div style="display:flex;flex-direction:column;align-items:center;width:clamp(40px,5vw,48px);flex-shrink:0">
+            <div style="width:clamp(40px,5vw,48px);height:clamp(40px,5vw,48px);border-radius:50%;border:1px solid #E8A24E;background:rgba(232,162,78,0.16);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:15px;color:#E8A24E">02</div>
+            <div style="flex:1;width:2px;background:#322A48"></div>
+          </div>
+          <div style="flex:1;padding-bottom:20px;min-width:0">
+            <div style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1b1430;background:#E8A24E;border-radius:999px;padding:3px 10px;margin-bottom:10px">in Playproof</div>
+            <h3 class="disp" style="font-size:clamp(23px,3vw,29px);margin:0 0 8px">Make it real</h3>
+            <p style="color:#B79E86;font-size:15.5px;margin:0;max-width:62ch">Define what a card tracks, design one layout, and your dataset becomes a deck — twenty cards or two hundred, all following the same template. This is the fastest path from "an idea" to "something I can hold," and it's the whole reason the app exists.</p>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div style="display:flex;gap:clamp(14px,2vw,20px);align-items:stretch">
+          <div style="display:flex;flex-direction:column;align-items:center;width:clamp(40px,5vw,48px);flex-shrink:0">
+            <div style="width:clamp(40px,5vw,48px);height:clamp(40px,5vw,48px);border-radius:50%;border:1px solid #E8A24E;background:rgba(232,162,78,0.16);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:15px;color:#E8A24E">03</div>
+            <div style="flex:1;width:2px;background:#322A48"></div>
+          </div>
+          <div style="flex:1;padding-bottom:20px;min-width:0">
+            <div style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1b1430;background:#E8A24E;border-radius:999px;padding:3px 10px;margin-bottom:10px">in Playproof → the table</div>
+            <h3 class="disp" style="font-size:clamp(23px,3vw,29px);margin:0 0 8px">Put it in front of people</h3>
+            <p style="color:#B79E86;font-size:15.5px;margin:0;max-width:62ch">Export a print-ready PDF with real card dimensions and bleed. Cut, sleeve, deal. Watching real people play real cards is the only test that counts — and it usually humbles the design inside the first ten minutes. That's not failure; that's the point.</p>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div style="display:flex;gap:clamp(14px,2vw,20px);align-items:stretch">
+          <div style="display:flex;flex-direction:column;align-items:center;width:clamp(40px,5vw,48px);flex-shrink:0">
+            <div style="width:clamp(40px,5vw,48px);height:clamp(40px,5vw,48px);border-radius:50%;border:1px solid #E8A24E;background:rgba(232,162,78,0.16);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:15px;color:#E8A24E">04</div>
+            <div style="flex:1;width:2px;background:linear-gradient(#322A48,transparent)"></div>
+          </div>
+          <div style="flex:1;padding-bottom:20px;min-width:0">
+            <div style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1b1430;background:#E8A24E;border-radius:999px;padding:3px 10px;margin-bottom:10px">in Playproof · the loop</div>
+            <h3 class="disp" style="font-size:clamp(23px,3vw,29px);margin:0 0 8px">Break it, fix it, repeat</h3>
+            <p style="color:#B79E86;font-size:15.5px;margin:0;max-width:62ch">This is where games are actually made. Snapshot before a session, then rebalance hard — shift the whole cost curve from one number, retune a keyword, cut the card everyone hated. If it flops, roll back to the build that worked. Log what happened, and do it again next week. Playproof is built for the hundredth pass, not just the first.</p>
+          </div>
+        </div>
+
+        <!-- 05 -->
+        <div style="display:flex;gap:clamp(14px,2vw,20px);align-items:stretch">
+          <div style="display:flex;flex-direction:column;align-items:center;width:clamp(40px,5vw,48px);flex-shrink:0">
+            <div style="width:clamp(40px,5vw,48px);height:clamp(40px,5vw,48px);border-radius:50%;border:1px solid #FF9E80;background:rgba(255,158,128,0.14);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:15px;color:#FF9E80">05</div>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#FF9E80;border:1px solid rgba(255,158,128,0.4);border-radius:999px;padding:3px 10px;margin-bottom:10px">out into the world</div>
+            <h3 class="disp" style="font-size:clamp(23px,3vw,29px);margin:0 0 8px">Take it further</h3>
+            <p style="color:#B79E86;font-size:15.5px;margin:0 0 16px;max-width:62ch">When the deck finally holds up, your assets come with you. Playproof is the workshop, not the storefront — it just makes sure you leave with something real and ready:</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px">
+              <div style="background:color-mix(in srgb,#1A1530 52%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.10);border-radius:13px;padding:16px"><div style="font-weight:700;color:#F1ECE2;font-size:15px;margin-bottom:4px">A Print-and-Play</div><div style="color:#B79E86;font-size:13.5px">Polished PDFs anyone can print at home and play tonight.</div></div>
+              <div style="background:color-mix(in srgb,#1A1530 52%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.10);border-radius:13px;padding:16px"><div style="font-weight:700;color:#F1ECE2;font-size:15px;margin-bottom:4px">A clean handoff</div><div style="color:#B79E86;font-size:13.5px">One <code>.playproof</code> file hands a collaborator the entire game.</div></div>
+              <div style="background:color-mix(in srgb,#1A1530 52%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.10);border-radius:13px;padding:16px"><div style="font-weight:700;color:#F1ECE2;font-size:15px;margin-bottom:4px">A print run</div><div style="color:#B79E86;font-size:13.5px">Bleed-correct PDFs a print shop or manufacturer can take as-is.</div></div>
+              <div style="background:color-mix(in srgb,#1A1530 52%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.10);border-radius:13px;padding:16px"><div style="font-weight:700;color:#F1ECE2;font-size:15px;margin-bottom:4px">A pitch or campaign</div><div style="color:#B79E86;font-size:13.5px">Real cards and a tested deck to show a publisher or back a crowdfund.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHERE IT FITS -->
+    <section style="max-width:1000px;margin:0 auto;padding:clamp(16px,2.5vw,28px) clamp(16px,4vw,28px) clamp(40px,6vw,64px)">
+      <div style="background:linear-gradient(180deg,rgba(232,162,78,0.10),rgba(26,21,48,0.5));-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(232,162,78,0.28);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.12),0 12px 28px rgba(0,0,0,0.2);padding:clamp(24px,3.5vw,36px)">
+        <h3 class="disp" style="font-size:clamp(22px,2.8vw,28px);margin:0 0 10px">Honest about where it starts and stops</h3>
+        <p style="color:#C9B59D;font-size:15.5px;margin:0;max-width:70ch">Playproof isn't a rules engine, a virtual tabletop, or a marketplace — it won't simulate your game or sell it for you. It does one stretch of the road extremely well: <b style="color:#F1ECE2">the loop from a rough idea to a balanced, printable deck you've actually tested.</b> That's the part where most games are won or quietly abandoned. Get through it with something real in your hands, and the rest of the road is yours.</p>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section style="border-top:1px solid #322A48;background:linear-gradient(180deg,rgba(232,162,78,0.07),transparent)">
+      <div style="max-width:1140px;margin:0 auto;padding:clamp(44px,6vw,76px) clamp(16px,4vw,28px);text-align:center">
+        <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">grab it</div>
+        <h2 class="disp" style="font-size:clamp(30px,4.4vw,48px);letter-spacing:-0.01em;margin:12px 0 0">Start the loop today.</h2>
+        <p style="color:#B79E86;font-size:17px;margin:12px auto 0;max-width:52ch">Free while it's in beta. macOS 11+, Apple Silicon or Intel.</p>
+        <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px">
+          <a href="download.html" style="background:linear-gradient(180deg,#E8A24E,#cf8838);color:#1b1430;font-weight:800;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px;box-shadow:0 8px 26px rgba(232,162,78,0.28);transition:transform .12s" style-hover="transform:translateY(-2px)">Download for Mac</a>
+          <a href="guides.html" style="background:rgba(255,255,255,0.03);color:#F1ECE2;border:1px solid #322A48;font-weight:700;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px" style-hover="border-color:#E8A24E">Where do I start?</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="SiteFooter" hint-size="100%,140px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:1000}}"></script>
 </body>
 </html>
