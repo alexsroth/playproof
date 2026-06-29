@@ -14,12 +14,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<title>Get Started | Playproof</title>
+<meta name="description" content="First cut-and-sleeve prototype in an afternoon. No account. Nothing leaves your Mac. Free while it's in beta.">
+<meta property="og:title" content="Where do I start with Playproof?">
+<meta property="og:description" content="First cut-and-sleeve prototype in an afternoon. No account. Nothing leaves your Mac. Free while it's in beta.">
+<meta property="og:image" content="https://playproof.alsarodid.work/og-guides.png">
+<meta property="og:url" content="https://playproof.alsarodid.work/guides.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Playproof">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   *{box-sizing:border-box}
   html,body{margin:0;background:#0A0C16;color:#F1ECE2;font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
   .disp{font-family:'Instrument Serif',Georgia,serif;font-weight:400 !important}
   code{font-family:ui-monospace,Menlo,monospace;font-size:0.86em;background:rgba(255,255,255,0.06);border:1px solid #322A48;border-radius:5px;padding:1px 6px;color:#F4C77A}
   @keyframes pp-fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .pp-picker{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  @media(max-width:680px){
+    .pp-picker{display:flex;overflow-x:scroll;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:16px;gap:10px}
+    .pp-picker::-webkit-scrollbar{display:none}
+    .pp-picker>button{flex:0 0 84%;scroll-snap-align:start;min-width:0}
+  }
 </style>
 </helmet>
 
@@ -37,7 +52,7 @@
 
     <!-- DOOR SELECTOR -->
     <section style="max-width:1080px;margin:0 auto;padding:clamp(20px,3vw,30px) clamp(16px,4vw,28px) 0">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+      <div class="pp-picker">
 
         <button type="button" onClick="{{ pickLayout }}" style="text-align:left;cursor:pointer;font:inherit;color:inherit;background:{{ lyBg }};border:1px solid {{ lyBorder }};border-radius:16px;padding:20px;transition:transform .12s,border-color .12s,background .12s" style-hover="transform:translateY(-3px)">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="color:#FF9E80;font-size:13.5px">you can already see the card</span><span style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:{{ lyDot }};box-shadow:0 0 7px {{ lyDot }}"></span></div>
