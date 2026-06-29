@@ -121,12 +121,17 @@ class Component extends DCLogic {
   DOWNLOADS = {
     arm64: 'https://github.com/alexsroth/playproof/releases/latest/download/Playproof-AppleSilicon.dmg',
     x64: 'https://github.com/alexsroth/playproof/releases/latest/download/Playproof-Intel.dmg',
-    version: 'v0.6.0',
   };
 
-  state = { status: 'checking', copied: false };
+  state = { status: 'checking', copied: false, version: '' };
 
   componentDidMount() {
+    // Fetch latest release version from GitHub API (public, no auth needed).
+    fetch('https://api.github.com/repos/alexsroth/playproof/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+      .then(r => r.ok ? r.json() : null)
+      .then(data => { if (data && data.tag_name) this.setState({ version: data.tag_name }); })
+      .catch(() => {});
+
     // iOS includes "Mac OS X" in its UA string, so check for iPhone/iPad first.
     const ua = navigator.userAgent || '';
     const isIOS = /iPhone|iPad|iPod/i.test(ua);
@@ -201,7 +206,7 @@ class Component extends DCLogic {
         clearTimeout(this.copyTimer);
         this.copyTimer = setTimeout(() => this.setState({ copied: false }), 1800);
       },
-      versionLine: 'Playproof ' + this.DOWNLOADS.version + ' · macOS 11+ · Apple Silicon & Intel',
+      versionLine: 'Playproof ' + (this.state.version || '…') + ' · macOS 11+ · Apple Silicon & Intel',
     };
   }
 }
