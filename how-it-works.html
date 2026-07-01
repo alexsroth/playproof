@@ -25,7 +25,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
   *{box-sizing:border-box}
-  html,body{margin:0;background:#08100A;color:#F1ECE2;font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  :root{--pp-surface:#0F1D15;--pp-border:#21392B;--pp-text:#EAF4EE;--pp-muted:#9CC2A8;--pp-primary:#7CE0A0;--pp-primary-2:#2F8B4E;--pp-ink:#0A1610;--pp-primary-rgb:124,224,160;--pp-dim:#6E9A7C;--pp-primary-hi:#A6ECC0}
+  html,body{margin:0;background:#08100A;color:var(--pp-text,#F1ECE2);font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
   .disp{font-family:'Instrument Serif',Georgia,serif;font-weight:400 !important}
   input{font-family:inherit}
   @keyframes pp-float{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-10px) rotate(-1.5deg)}}
@@ -43,43 +44,43 @@
     <section style="max-width:1140px;margin:0 auto;padding:clamp(40px,7vw,84px) clamp(16px,4vw,28px) clamp(30px,4vw,48px)">
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:clamp(32px,5vw,64px);align-items:center">
         <div>
-          <div style="display:inline-flex;align-items:center;gap:8px;color:#F4C77A;font-size:12.5px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;border:1px solid #322A48;border-radius:999px;padding:6px 13px;background:rgba(232,162,78,0.07)">
+          <div style="display:inline-flex;align-items:center;gap:8px;color:var(--pp-primary-hi,#F4C77A);font-size:12.5px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;border:1px solid var(--pp-border,#322A48);border-radius:999px;padding:6px 13px;background:rgba(var(--pp-primary-rgb,232,162,78),0.07)">
             <span style="width:7px;height:7px;border-radius:50%;background:#7CE0A0;box-shadow:0 0 8px #7CE0A0"></span>macOS · free while it's in beta
           </div>
           <h1 class="disp" style="font-size:clamp(38px,6vw,62px);line-height:1.02;font-weight:800;letter-spacing:-0.025em;margin:20px 0 0;max-width:15ch">A workbench for the card game <span style="color:#FF9E80">in your head.</span></h1>
-          <p style="font-size:clamp(16px,1.6vw,19px);color:#C9B59D;max-width:52ch;margin:22px 0 0">Playproof keeps the <b style="color:#F1ECE2">numbers</b> and the <b style="color:#F1ECE2">looks</b> in separate drawers. Rebalance the whole game without nudging a pixel — restyle every card without retyping a word. Paste 120 rows, get 120 cards.</p>
+          <p style="font-size:clamp(16px,1.6vw,19px);color:var(--pp-muted,#C9B59D);max-width:52ch;margin:22px 0 0">Playproof keeps the <b style="color:var(--pp-text,#F1ECE2)">numbers</b> and the <b style="color:var(--pp-text,#F1ECE2)">looks</b> in separate drawers. Rebalance the whole game without nudging a pixel — restyle every card without retyping a word. Paste 120 rows, get 120 cards.</p>
           <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:30px">
-            <a href="download.html" style="background:linear-gradient(180deg,#E8A24E,#cf8838);color:#1b1430;font-weight:800;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 26px;box-shadow:0 8px 26px rgba(232,162,78,0.28);transition:transform .12s" style-hover="transform:translateY(-2px)">Download for Mac</a>
-            <a href="guides.html" style="background:rgba(255,255,255,0.03);color:#F1ECE2;border:1px solid #322A48;font-weight:700;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 26px;transition:border-color .12s" style-hover="border-color:#E8A24E">Where do I start? →</a>
+            <a href="download.html" style="background:linear-gradient(180deg,var(--pp-primary,#E8A24E),var(--pp-primary-2,#cf8838));color:var(--pp-ink,#1b1430);font-weight:800;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 26px;box-shadow:0 8px 26px rgba(var(--pp-primary-rgb,232,162,78),0.28);transition:transform .12s" style-hover="transform:translateY(-2px)">Download for Mac</a>
+            <a href="guides.html" style="background:rgba(255,255,255,0.03);color:var(--pp-text,#F1ECE2);border:1px solid var(--pp-border,#322A48);font-weight:700;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 26px;transition:border-color .12s" style-hover="border-color:var(--pp-primary,#E8A24E)">Where do I start? →</a>
           </div>
-          <p style="margin:18px 0 0;font-size:13.5px;color:#7d6e57">First cut-and-sleeve prototype in an afternoon. No account. Nothing leaves your Mac.</p>
+          <p style="margin:18px 0 0;font-size:13.5px;color:var(--pp-dim,#7d6e57)">First cut-and-sleeve prototype in an afternoon. No account. Nothing leaves your Mac.</p>
         </div>
 
         <!-- LIVE SAMPLE CARD -->
         <div>
           <div style="display:grid;grid-template-columns:1fr;gap:16px">
-            <div style="background:color-mix(in srgb,#1A1530 58%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 18px 40px rgba(0,0,0,0.30);padding:18px">
+            <div style="background:color-mix(in srgb,var(--pp-surface,#1A1530) 58%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 18px 40px rgba(0,0,0,0.30);padding:18px">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
-                <span style="font-size:11px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:#9b86c0">Card data</span>
-                <button type="button" onClick="{{ shuffle }}" style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.05);border:1px solid #322A48;color:#F4C77A;border-radius:8px;padding:5px 11px;font:inherit;font-size:12px;font-weight:700;cursor:pointer" style-hover="border-color:#E8A24E;color:#FF9E80">⟳ shuffle</button>
+                <span style="font-size:11px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(--pp-muted,#9b86c0)">Card data</span>
+                <button type="button" onClick="{{ shuffle }}" style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.05);border:1px solid var(--pp-border,#322A48);color:var(--pp-primary-hi,#F4C77A);border-radius:8px;padding:5px 11px;font:inherit;font-size:12px;font-weight:700;cursor:pointer" style-hover="border-color:var(--pp-primary,#E8A24E);color:#FF9E80">⟳ shuffle</button>
               </div>
               <div style="display:grid;grid-template-columns:1fr;gap:9px">
-                <label style="display:grid;grid-template-columns:64px 1fr;align-items:center;gap:10px;font-size:13px;color:#9b86c0">name
-                  <input value="{{ card.name }}" onInput="{{ onName }}" style="background:#120f22;border:1px solid #322A48;border-radius:8px;padding:8px 11px;color:#F1ECE2;font-size:14px;outline:none" style-focus="border-color:#E8A24E">
+                <label style="display:grid;grid-template-columns:64px 1fr;align-items:center;gap:10px;font-size:13px;color:var(--pp-muted,#9b86c0)">name
+                  <input value="{{ card.name }}" onInput="{{ onName }}" style="background:#120f22;border:1px solid var(--pp-border,#322A48);border-radius:8px;padding:8px 11px;color:var(--pp-text,#F1ECE2);font-size:14px;outline:none" style-focus="border-color:var(--pp-primary,#E8A24E)">
                 </label>
-                <label style="display:grid;grid-template-columns:64px 1fr;align-items:center;gap:10px;font-size:13px;color:#9b86c0">type
-                  <input value="{{ card.type }}" onInput="{{ onType }}" style="background:#120f22;border:1px solid #322A48;border-radius:8px;padding:8px 11px;color:#F1ECE2;font-size:14px;outline:none" style-focus="border-color:#E8A24E">
+                <label style="display:grid;grid-template-columns:64px 1fr;align-items:center;gap:10px;font-size:13px;color:var(--pp-muted,#9b86c0)">type
+                  <input value="{{ card.type }}" onInput="{{ onType }}" style="background:#120f22;border:1px solid var(--pp-border,#322A48);border-radius:8px;padding:8px 11px;color:var(--pp-text,#F1ECE2);font-size:14px;outline:none" style-focus="border-color:var(--pp-primary,#E8A24E)">
                 </label>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px">
-                  <label style="display:grid;grid-template-columns:48px 1fr;align-items:center;gap:8px;font-size:13px;color:#9b86c0">cost
-                    <input type="number" value="{{ card.cost }}" onInput="{{ onCost }}" style="background:#120f22;border:1px solid #322A48;border-radius:8px;padding:8px 11px;color:#F1ECE2;font-size:14px;outline:none;width:100%" style-focus="border-color:#E8A24E">
+                  <label style="display:grid;grid-template-columns:48px 1fr;align-items:center;gap:8px;font-size:13px;color:var(--pp-muted,#9b86c0)">cost
+                    <input type="number" value="{{ card.cost }}" onInput="{{ onCost }}" style="background:#120f22;border:1px solid var(--pp-border,#322A48);border-radius:8px;padding:8px 11px;color:var(--pp-text,#F1ECE2);font-size:14px;outline:none;width:100%" style-focus="border-color:var(--pp-primary,#E8A24E)">
                   </label>
-                  <label style="display:grid;grid-template-columns:48px 1fr;align-items:center;gap:8px;font-size:13px;color:#9b86c0">atk
-                    <input type="number" value="{{ card.atk }}" onInput="{{ onAtk }}" style="background:#120f22;border:1px solid #322A48;border-radius:8px;padding:8px 11px;color:#F1ECE2;font-size:14px;outline:none;width:100%" style-focus="border-color:#E8A24E">
+                  <label style="display:grid;grid-template-columns:48px 1fr;align-items:center;gap:8px;font-size:13px;color:var(--pp-muted,#9b86c0)">atk
+                    <input type="number" value="{{ card.atk }}" onInput="{{ onAtk }}" style="background:#120f22;border:1px solid var(--pp-border,#322A48);border-radius:8px;padding:8px 11px;color:var(--pp-text,#F1ECE2);font-size:14px;outline:none;width:100%" style-focus="border-color:var(--pp-primary,#E8A24E)">
                   </label>
                 </div>
               </div>
-              <div style="display:flex;align-items:center;gap:8px;margin-top:13px;font-size:12px;color:#7d6e57">
+              <div style="display:flex;align-items:center;gap:8px;margin-top:13px;font-size:12px;color:var(--pp-dim,#7d6e57)">
                 <span style="font-size:14px">↓</span> edit anything — the card redraws live
               </div>
             </div>
@@ -90,22 +91,22 @@
 
                 <!-- Layout A: classic -->
                 <div style="flex:1 1 0;min-width:128px;max-width:194px;position:relative;animation:pp-float 7s ease-in-out infinite">
-                  <div style="position:absolute;top:-8px;left:10px;z-index:2;font-size:9.5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#9b86c0;background:#171328;padding:2px 8px;border-radius:5px;border:1px solid #322A48">Layout A</div>
+                  <div style="position:absolute;top:-8px;left:10px;z-index:2;font-size:9.5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--pp-muted,#9b86c0);background:#171328;padding:2px 8px;border-radius:5px;border:1px solid var(--pp-border,#322A48)">Layout A</div>
                   <div style="aspect-ratio:5/7;border-radius:14px;padding:11px;display:flex;flex-direction:column;background:linear-gradient(160deg,#2a2142,#1a1530);border:1px solid rgba(255,255,255,0.14);box-shadow:0 20px 44px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.10)">
                     <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px">
-                      <div class="disp" style="font-size:15px;line-height:1.0;color:#F1ECE2">{{ card.name }}</div>
+                      <div class="disp" style="font-size:15px;line-height:1.0;color:var(--pp-text,#F1ECE2)">{{ card.name }}</div>
                       <button type="button" onClick="{{ bumpCost }}" title="psst — click me" style="flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);background:radial-gradient(circle at 35% 30%,#F4C77A,#C8703C);color:#1b1430;font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.4);font-family:ui-monospace,Menlo,monospace">{{ card.cost }}</button>
                     </div>
                     <div style="margin-top:8px;border-radius:8px;flex:1;min-height:50px;background:repeating-linear-gradient(135deg,rgba(255,255,255,0.05) 0 8px,transparent 8px 16px);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:#6b5f7a;font-size:10px;font-family:ui-monospace,Menlo,monospace">{art}</div>
                     <div style="margin-top:8px;font-size:9.5px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#FF9E80">{{ card.type }}</div>
-                    <div style="margin-top:4px;font-size:11px;color:#C9B59D;line-height:1.35;overflow:hidden">{{ card.rules }}</div>
+                    <div style="margin-top:4px;font-size:11px;color:var(--pp-muted,#C9B59D);line-height:1.35;overflow:hidden">{{ card.rules }}</div>
                     <div style="margin-top:auto;padding-top:8px;display:flex;justify-content:flex-end"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#F4C77A">⚔ {{ card.atk }}</span></div>
                   </div>
                 </div>
 
                 <!-- Layout B: art-forward -->
                 <div style="flex:1 1 0;min-width:128px;max-width:194px;position:relative;animation:pp-float 9s ease-in-out infinite">
-                  <div style="position:absolute;top:-8px;left:10px;z-index:2;font-size:9.5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#9b86c0;background:#171328;padding:2px 8px;border-radius:5px;border:1px solid #322A48">Layout B</div>
+                  <div style="position:absolute;top:-8px;left:10px;z-index:2;font-size:9.5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--pp-muted,#9b86c0);background:#171328;padding:2px 8px;border-radius:5px;border:1px solid var(--pp-border,#322A48)">Layout B</div>
                   <div style="aspect-ratio:5/7;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;background:linear-gradient(160deg,#241c40,#141026);border:1px solid rgba(255,255,255,0.14);box-shadow:0 20px 44px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.10)">
                     <div style="position:relative;flex:1.05;min-height:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,0.05) 0 8px,transparent 8px 16px)">
                       <span style="position:absolute;top:7px;right:7px;display:inline-flex;align-items:center;gap:3px;background:rgba(20,16,33,0.7);border:1px solid rgba(244,199,122,0.4);color:#F4C77A;font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:700;padding:2px 7px;border-radius:6px">◆ {{ card.cost }}</span>
@@ -116,14 +117,14 @@
                     </div>
                     <div style="padding:8px 10px 10px;display:flex;flex-direction:column;gap:5px;text-align:center">
                       <div style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#FF9E80">{{ card.type }}</div>
-                      <div style="font-size:10.5px;color:#C9B59D;line-height:1.3;overflow:hidden">{{ card.rules }}</div>
+                      <div style="font-size:10.5px;color:var(--pp-muted,#C9B59D);line-height:1.3;overflow:hidden">{{ card.rules }}</div>
                       <div style="margin-top:2px;display:flex;justify-content:center"><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#1b1430;background:#F4C77A;font-weight:700;padding:2px 9px;border-radius:999px">ATK {{ card.atk }}</span></div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div style="text-align:center;font-size:12px;color:#8a7ba0;margin-top:14px">Same data, two layouts — edit above and <b style="color:#C9B59D">both</b> redraw. <span style="color:#7d6e57">That's the whole idea.</span></div>
+              <div style="text-align:center;font-size:12px;color:var(--pp-muted,#8a7ba0);margin-top:14px">Same data, two layouts — edit above and <b style="color:var(--pp-muted,#C9B59D)">both</b> redraw. <span style="color:var(--pp-dim,#7d6e57)">That's the whole idea.</span></div>
 
               <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:12px">
                 <div style="transform:rotate(-2.5deg);background:#CFE3EC;color:#274654;font-size:11.5px;line-height:1.3;padding:9px 11px;border-radius:3px;max-width:174px;box-shadow:0 10px 22px rgba(0,0,0,0.42)"><b>layout note:</b> Layout A's title gets cramped on long names — redesign the header block? 🎨</div>
@@ -138,33 +139,33 @@
     <!-- SPLIT EXPLAINER -->
     <section style="max-width:1140px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(16px,4vw,28px)">
       <div style="max-width:780px;margin:0 0 clamp(22px,3vw,34px)">
-        <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">the core idea</div>
+        <div style="color:var(--pp-primary,#E8A24E);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">the core idea</div>
         <h2 class="disp" style="font-size:clamp(28px,4vw,42px);letter-spacing:-0.02em;margin:12px 0 0">Two drawers. <span style="color:#FF9E80">One truth.</span></h2>
-        <p style="color:#C9B59D;font-size:clamp(15px,1.5vw,17px);margin:14px 0 0;max-width:62ch">Card data and card design never touch — so one dataset drives every layout. Rebalance the numbers without nudging a pixel; restyle every card without retyping a word.</p>
+        <p style="color:var(--pp-muted,#C9B59D);font-size:clamp(15px,1.5vw,17px);margin:14px 0 0;max-width:62ch">Card data and card design never touch — so one dataset drives every layout. Rebalance the numbers without nudging a pixel; restyle every card without retyping a word.</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;align-items:start">
-        <div style="background:color-mix(in srgb,#1A1530 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:28px">
-          <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Drawer one</div>
+        <div style="background:color-mix(in srgb,var(--pp-surface,#1A1530) 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:28px">
+          <div style="color:var(--pp-primary,#E8A24E);font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Drawer one</div>
           <h3 class="disp" style="font-size:23px;margin:8px 0 10px;font-weight:700">What a card <i>is</i></h3>
-          <p style="color:#B79E86;font-size:15px;margin:0 0 16px">Name, cost, rules, faction, art — each field with a real type. Define it once; reuse the template across every game.</p>
+          <p style="color:var(--pp-muted,#B79E86);font-size:15px;margin:0 0 16px">Name, cost, rules, faction, art — each field with a real type. Define it once; reuse the template across every game.</p>
           <div style="display:flex;flex-direction:column;gap:7px">
-            <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:7px"><span style="color:#9b86c0">name</span><span style="color:#E8A24E;font-family:ui-monospace,Menlo,monospace">text</span></div>
-            <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:7px"><span style="color:#9b86c0">cost</span><span style="color:#FF9E80;font-family:ui-monospace,Menlo,monospace">number</span></div>
-            <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:7px"><span style="color:#9b86c0">type</span><span style="color:#7CE0A0;font-family:ui-monospace,Menlo,monospace">category</span></div>
-            <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:7px"><span style="color:#9b86c0">art</span><span style="color:#6FC4DC;font-family:ui-monospace,Menlo,monospace">image</span></div>
-            <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:7px"><span style="color:#9b86c0">rules</span><span style="color:#F4C77A;font-family:ui-monospace,Menlo,monospace">area text</span></div>
-            <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:#9b86c0">atk</span><span style="color:#FF9E80;font-family:ui-monospace,Menlo,monospace">number</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:7px"><span style="color:var(--pp-muted,#9b86c0)">name</span><span style="color:#E8A24E;font-family:ui-monospace,Menlo,monospace">text</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:7px"><span style="color:var(--pp-muted,#9b86c0)">cost</span><span style="color:#FF9E80;font-family:ui-monospace,Menlo,monospace">number</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:7px"><span style="color:var(--pp-muted,#9b86c0)">type</span><span style="color:#7CE0A0;font-family:ui-monospace,Menlo,monospace">category</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:7px"><span style="color:var(--pp-muted,#9b86c0)">art</span><span style="color:#6FC4DC;font-family:ui-monospace,Menlo,monospace">image</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:7px"><span style="color:var(--pp-muted,#9b86c0)">rules</span><span style="color:#F4C77A;font-family:ui-monospace,Menlo,monospace">area text</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--pp-muted,#9b86c0)">atk</span><span style="color:#FF9E80;font-family:ui-monospace,Menlo,monospace">number</span></div>
           </div>
         </div>
 
-        <div style="background:color-mix(in srgb,#1A1530 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:28px">
+        <div style="background:color-mix(in srgb,var(--pp-surface,#1A1530) 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:28px">
           <div style="color:#FF9E80;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Drawer two</div>
           <h3 class="disp" style="font-size:23px;margin:8px 0 10px;font-weight:700">What a card <i>looks like</i></h3>
-          <p style="color:#B79E86;font-size:15px;margin:0 0 16px">A drag-and-drop canvas. Place a title, an art frame, a cost badge — then point each at a field. This is <b style="color:#F1ECE2">X-Ray</b> mode: every slot shows the field it's bound to.</p>
+          <p style="color:var(--pp-muted,#B79E86);font-size:15px;margin:0 0 16px">A drag-and-drop canvas. Place a title, an art frame, a cost badge — then point each at a field. This is <b style="color:var(--pp-text,#F1ECE2)">X-Ray</b> mode: every slot shows the field it's bound to.</p>
           <div style="display:flex;gap:5px;margin-bottom:10px">
-            <span style="font-size:11px;font-weight:700;color:#E8A24E;background:rgba(232,162,78,0.16);border:1px solid #E8A24E;border-radius:8px;padding:5px 12px">X-Ray</span>
-            <span style="font-size:11px;font-weight:700;color:#9b86c0;background:rgba(255,255,255,0.03);border:1px solid #322A48;border-radius:8px;padding:5px 12px">Style</span>
-            <span style="font-size:11px;font-weight:700;color:#9b86c0;background:rgba(255,255,255,0.03);border:1px solid #322A48;border-radius:8px;padding:5px 12px">Preview</span>
+            <span style="font-size:11px;font-weight:700;color:var(--pp-primary,#E8A24E);background:rgba(var(--pp-primary-rgb,232,162,78),0.16);border:1px solid var(--pp-primary,#E8A24E);border-radius:8px;padding:5px 12px">X-Ray</span>
+            <span style="font-size:11px;font-weight:700;color:var(--pp-muted,#9b86c0);background:rgba(255,255,255,0.03);border:1px solid var(--pp-border,#322A48);border-radius:8px;padding:5px 12px">Style</span>
+            <span style="font-size:11px;font-weight:700;color:var(--pp-muted,#9b86c0);background:rgba(255,255,255,0.03);border:1px solid var(--pp-border,#322A48);border-radius:8px;padding:5px 12px">Preview</span>
           </div>
           <div style="position:relative;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px;border:1px solid rgba(255,255,255,0.12);background:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px) 0 0/13px 13px,linear-gradient(160deg,#1d1638,#15112a);box-shadow:inset 0 1px 0 rgba(255,255,255,0.08)">
             <div style="display:flex;gap:8px">
@@ -176,40 +177,40 @@
             <div style="height:44px;border:1px dashed rgba(232,162,78,0.55);border-radius:8px;background:rgba(232,162,78,0.06);display:flex;align-items:flex-start;padding:7px 10px;color:#F4C77A;font-family:ui-monospace,Menlo,monospace;font-size:10px">{rules}</div>
             <div style="display:flex;justify-content:flex-end"><div style="width:56px;height:24px;border:1px dashed rgba(255,158,128,0.6);border-radius:8px;background:rgba(255,158,128,0.10);display:flex;align-items:center;justify-content:center;color:#FF9E80;font-family:ui-monospace,Menlo,monospace;font-size:10px">{atk}</div></div>
           </div>
-          <div style="font-size:11.5px;color:#7d6e57;margin-top:10px;text-align:center">Each slot's tinted by its field type — matched to the fields on the left.</div>
+          <div style="font-size:11.5px;color:var(--pp-dim,#7d6e57);margin-top:10px;text-align:center">Each slot's tinted by its field type — matched to the fields on the left.</div>
         </div>
       </div>
     </section>
 
     <!-- THE PAYOFF -->
     <section style="max-width:1140px;margin:0 auto;padding:clamp(24px,4vw,48px) clamp(16px,4vw,28px) clamp(44px,6vw,72px)">
-      <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">the payoff</div>
+      <div style="color:var(--pp-primary,#E8A24E);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">the payoff</div>
       <h2 class="disp" style="font-size:clamp(28px,4.2vw,46px);letter-spacing:-0.01em;margin:12px 0 0;max-width:18ch">Design it once. Then go <span style="color:#FF9E80;font-style:italic">break things.</span></h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:16px;margin-top:30px">
-        <div style="background:color-mix(in srgb,#1A1530 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:26px">
+        <div style="background:color-mix(in srgb,var(--pp-surface,#1A1530) 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:26px">
           <h3 class="disp" style="font-size:23px;margin:0 0 9px;line-height:1.05">Rebalance at midnight. Reprint by 12:05.</h3>
-          <p style="color:#B79E86;font-size:15px;margin:0">Nerf a card, shift the whole cost curve, retune a keyword — the deck redraws as you type. Export a fresh print sheet and you're testing the fix tonight, not next month.</p>
+          <p style="color:var(--pp-muted,#B79E86);font-size:15px;margin:0">Nerf a card, shift the whole cost curve, retune a keyword — the deck redraws as you type. Export a fresh print sheet and you're testing the fix tonight, not next month.</p>
         </div>
-        <div style="background:color-mix(in srgb,#1A1530 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:26px">
+        <div style="background:color-mix(in srgb,var(--pp-surface,#1A1530) 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:26px">
           <h3 class="disp" style="font-size:23px;margin:0 0 9px;line-height:1.05">120 cards from one row of work.</h3>
-          <p style="color:#B79E86;font-size:15px;margin:0">You lay out a single card. Your spreadsheet becomes the deck — paste the rows and every card already knows its shape. Adding a card is adding a row, not a chore.</p>
+          <p style="color:var(--pp-muted,#B79E86);font-size:15px;margin:0">You lay out a single card. Your spreadsheet becomes the deck — paste the rows and every card already knows its shape. Adding a card is adding a row, not a chore.</p>
         </div>
-        <div style="background:color-mix(in srgb,#1A1530 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:26px">
+        <div style="background:color-mix(in srgb,var(--pp-surface,#1A1530) 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:26px">
           <h3 class="disp" style="font-size:23px;margin:0 0 9px;line-height:1.05">The build that worked is one click back.</h3>
-          <p style="color:#B79E86;font-size:15px;margin:0">Snapshot before a playtest, then wreck the balance on purpose. If the new idea face-plants, roll back. You never lose the version your group actually liked.</p>
+          <p style="color:var(--pp-muted,#B79E86);font-size:15px;margin:0">Snapshot before a playtest, then wreck the balance on purpose. If the new idea face-plants, roll back. You never lose the version your group actually liked.</p>
         </div>
       </div>
     </section>
 
     <!-- FINAL CTA -->
-    <section style="border-top:1px solid #322A48;background:linear-gradient(180deg,rgba(232,162,78,0.07),transparent)">
+    <section style="border-top:1px solid var(--pp-border,#322A48);background:linear-gradient(180deg,rgba(var(--pp-primary-rgb,232,162,78),0.07),transparent)">
       <div style="max-width:1140px;margin:0 auto;padding:clamp(48px,7vw,84px) clamp(16px,4vw,28px);text-align:center">
-        <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">grab it</div>
+        <div style="color:var(--pp-primary,#E8A24E);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">grab it</div>
         <h2 class="disp" style="font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-0.02em;margin:12px 0 0">Build your first deck today.</h2>
-        <p style="color:#B79E86;font-size:17px;margin:12px auto 0;max-width:54ch">Free while it's in beta. macOS 11+, Apple Silicon or Intel — the download page sorts out which.</p>
+        <p style="color:var(--pp-muted,#B79E86);font-size:17px;margin:12px auto 0;max-width:54ch">Free while it's in beta. macOS 11+, Apple Silicon or Intel — the download page sorts out which.</p>
         <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:28px">
-          <a href="download.html" style="background:linear-gradient(180deg,#E8A24E,#cf8838);color:#1b1430;font-weight:800;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px;box-shadow:0 8px 26px rgba(232,162,78,0.28);transition:transform .12s" style-hover="transform:translateY(-2px)">Download for Mac</a>
-          <a href="guides.html" style="background:rgba(255,255,255,0.03);color:#F1ECE2;border:1px solid #322A48;font-weight:700;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px" style-hover="border-color:#E8A24E">Where do I start?</a>
+          <a href="download.html" style="background:linear-gradient(180deg,var(--pp-primary,#E8A24E),var(--pp-primary-2,#cf8838));color:var(--pp-ink,#1b1430);font-weight:800;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px;box-shadow:0 8px 26px rgba(var(--pp-primary-rgb,232,162,78),0.28);transition:transform .12s" style-hover="transform:translateY(-2px)">Download for Mac</a>
+          <a href="guides.html" style="background:rgba(255,255,255,0.03);color:var(--pp-text,#F1ECE2);border:1px solid var(--pp-border,#322A48);font-weight:700;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px" style-hover="border-color:var(--pp-primary,#E8A24E)">Where do I start?</a>
         </div>
       </div>
     </section>

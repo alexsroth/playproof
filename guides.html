@@ -25,9 +25,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
   *{box-sizing:border-box}
-  html,body{margin:0;background:#0A0C16;color:#F1ECE2;font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  :root{--pp-surface:#0A2C38;--pp-border:#1C3E4A;--pp-text:#E6F6FA;--pp-muted:#8FB6C0;--pp-primary:#2FD8C0;--pp-primary-2:#0E9AA8;--pp-ink:#06222C;--pp-primary-rgb:47,216,192;--pp-dim:#5E7E86;--pp-primary-hi:#5FE6D2}
+  html,body{margin:0;background:#03202B;color:var(--pp-text,#F1ECE2);font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
   .disp{font-family:'Instrument Serif',Georgia,serif;font-weight:400 !important}
-  code{font-family:ui-monospace,Menlo,monospace;font-size:0.86em;background:rgba(255,255,255,0.06);border:1px solid #322A48;border-radius:5px;padding:1px 6px;color:#F4C77A}
+  code{font-family:ui-monospace,Menlo,monospace;font-size:0.86em;background:rgba(255,255,255,0.06);border:1px solid var(--pp-border,#322A48);border-radius:5px;padding:1px 6px;color:var(--pp-primary-hi,#F4C77A)}
   @keyframes pp-fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
   .pp-picker{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
   @media(max-width:680px){
@@ -38,16 +39,16 @@
 </style>
 </helmet>
 
-<x-import component-from-global-scope="ambient-field" from="./ambient-field.js" base="#0A0C16" drift="#14182C,#D85A40,#B03828,#1E3C60,#C84A38" hint-size="100%,100%" style="position:fixed;inset:0;z-index:0"></x-import>
+<x-import component-from-global-scope="ambient-field" from="./ambient-field.js" base="#03202B" drift="#1FA890,#0A6E80,#0A5E6E,#D85A4A,#B5604E" hint-size="100%,100%" style="position:fixed;inset:0;z-index:0"></x-import>
 
 <div style="position:relative;z-index:1;min-height:100vh">
   <dc-import name="SiteNav" current="guides" hint-size="100%,64px"></dc-import>
 
   <main>
     <section style="max-width:1080px;margin:0 auto;padding:clamp(40px,6vw,76px) clamp(16px,4vw,28px) clamp(8px,2vw,16px)">
-      <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">getting started</div>
+      <div style="color:var(--pp-primary,#E8A24E);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">getting started</div>
       <h1 class="disp" style="font-size:clamp(40px,6.5vw,68px);line-height:1.0;letter-spacing:-0.01em;margin:14px 0 0">Find your <span style="color:#FF9E80;font-style:italic">aha.</span></h1>
-      <p style="font-size:clamp(16px,1.6vw,19px);color:#C9B59D;max-width:58ch;margin:18px 0 0">There's no single right way in. Pick the door that matches how the game already lives in your head — each one ends at the exact moment Playproof clicks.</p>
+      <p style="font-size:clamp(16px,1.6vw,19px);color:var(--pp-muted,#C9B59D);max-width:58ch;margin:18px 0 0">There's no single right way in. Pick the door that matches how the game already lives in your head — each one ends at the exact moment Playproof clicks.</p>
     </section>
 
     <!-- DOOR SELECTOR -->
@@ -57,21 +58,21 @@
         <button type="button" onClick="{{ pickLayout }}" style="text-align:left;cursor:pointer;font:inherit;color:inherit;background:{{ lyBg }};border:1px solid {{ lyBorder }};border-radius:16px;padding:20px;transition:transform .12s,border-color .12s,background .12s" style-hover="transform:translateY(-3px)">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="color:#FF9E80;font-size:13.5px">you can already see the card</span><span style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:{{ lyDot }};box-shadow:0 0 7px {{ lyDot }}"></span></div>
           <h3 class="disp" style="font-size:22px;margin:7px 0 7px">Look first</h3>
-          <p style="color:#B79E86;font-size:14px;margin:0">You know what it should look like. Start in the Layout Designer; wire the data in once the look feels right.</p>
+          <p style="color:var(--pp-muted,#B79E86);font-size:14px;margin:0">You know what it should look like. Start in the Layout Designer; wire the data in once the look feels right.</p>
           <span style="display:inline-block;margin-top:13px;color:{{ lyCtaC }};font-weight:700;font-size:13.5px">{{ lyCta }}</span>
         </button>
 
         <button type="button" onClick="{{ pickCardData }}" style="text-align:left;cursor:pointer;font:inherit;color:inherit;background:{{ cdBg }};border:1px solid {{ cdBorder }};border-radius:16px;padding:20px;transition:transform .12s,border-color .12s,background .12s" style-hover="transform:translateY(-3px)">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="color:#FF9E80;font-size:13.5px">you've got a system</span><span style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:{{ cdDot }};box-shadow:0 0 7px {{ cdDot }}"></span></div>
           <h3 class="disp" style="font-size:22px;margin:7px 0 7px">Mechanics first</h3>
-          <p style="color:#B79E86;font-size:14px;margin:0">The math is already in your head. Define the fields in Card Data first, then dress them up.</p>
+          <p style="color:var(--pp-muted,#B79E86);font-size:14px;margin:0">The math is already in your head. Define the fields in Card Data first, then dress them up.</p>
           <span style="display:inline-block;margin-top:13px;color:{{ cdCtaC }};font-weight:700;font-size:13.5px">{{ cdCta }}</span>
         </button>
 
         <button type="button" onClick="{{ pickGames }}" style="text-align:left;cursor:pointer;font:inherit;color:inherit;background:{{ gmBg }};border:1px solid {{ gmBorder }};border-radius:16px;padding:20px;transition:transform .12s,border-color .12s,background .12s" style-hover="transform:translateY(-3px)">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="color:#FF9E80;font-size:13.5px">a game, not cards yet</span><span style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:{{ gmDot }};box-shadow:0 0 7px {{ gmDot }}"></span></div>
           <h3 class="disp" style="font-size:22px;margin:7px 0 7px">Concept first</h3>
-          <p style="color:#B79E86;font-size:14px;margin:0">You're thinking in rules and feel. Start a game, list components, figure out the cards as you go.</p>
+          <p style="color:var(--pp-muted,#B79E86);font-size:14px;margin:0">You're thinking in rules and feel. Start a game, list components, figure out the cards as you go.</p>
           <span style="display:inline-block;margin-top:13px;color:{{ gmCtaC }};font-weight:700;font-size:13.5px">{{ gmCta }}</span>
         </button>
       </div>
@@ -81,65 +82,65 @@
     <section style="max-width:1080px;margin:0 auto;padding:clamp(16px,2.5vw,24px) clamp(16px,4vw,28px) clamp(36px,5vw,56px)">
 
       <sc-if value="{{ isLayout }}" hint-placeholder-val="{{ true }}">
-        <div style="animation:pp-fade .25s ease;background:color-mix(in srgb,#1A1530 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(232,162,78,0.30);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:clamp(24px,3.5vw,38px)">
-          <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Layout Designer · for "Look first"</div>
+        <div style="animation:pp-fade .25s ease;background:color-mix(in srgb,var(--pp-surface,#1A1530) 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(var(--pp-primary-rgb,232,162,78),0.30);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:clamp(24px,3.5vw,38px)">
+          <div style="color:var(--pp-primary,#E8A24E);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Layout Designer · for "Look first"</div>
           <h3 class="disp" style="font-size:clamp(25px,3.2vw,33px);margin:8px 0 18px">Place it once. The data fills the rest.</h3>
           <div style="display:flex;flex-direction:column;gap:14px">
-            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">1</span><p style="color:#B79E86;font-size:15.5px;margin:0">Open the <b style="color:#F1ECE2">Layout Designer</b> on a blank canvas.</p></div>
-            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">2</span><p style="color:#B79E86;font-size:15.5px;margin:0">Add elements — a title, an art frame, a cost badge, a rules box. Stack and tidy them in the <b style="color:#F1ECE2">Layers</b> panel.</p></div>
-            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">3</span><p style="color:#B79E86;font-size:15.5px;margin:0">In <b style="color:#F1ECE2">X-Ray</b>, point each element at a field — this text shows <code>{name}</code>, this slot shows <code>{art}</code>.</p></div>
-            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">4</span><p style="color:#B79E86;font-size:15.5px;margin:0">Flip to <b style="color:#F1ECE2">Style</b> for real fonts and colors, then <b style="color:#F1ECE2">Preview</b> for the clean, print-ready card.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(var(--pp-primary-rgb,232,162,78),0.16);color:var(--pp-primary,#E8A24E);font-weight:800;align-items:center;justify-content:center;font-size:15px">1</span><p style="color:var(--pp-muted,#B79E86);font-size:15.5px;margin:0">Open the <b style="color:var(--pp-text,#F1ECE2)">Layout Designer</b> on a blank canvas.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(var(--pp-primary-rgb,232,162,78),0.16);color:var(--pp-primary,#E8A24E);font-weight:800;align-items:center;justify-content:center;font-size:15px">2</span><p style="color:var(--pp-muted,#B79E86);font-size:15.5px;margin:0">Add elements — a title, an art frame, a cost badge, a rules box. Stack and tidy them in the <b style="color:var(--pp-text,#F1ECE2)">Layers</b> panel.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(var(--pp-primary-rgb,232,162,78),0.16);color:var(--pp-primary,#E8A24E);font-weight:800;align-items:center;justify-content:center;font-size:15px">3</span><p style="color:var(--pp-muted,#B79E86);font-size:15.5px;margin:0">In <b style="color:var(--pp-text,#F1ECE2)">X-Ray</b>, point each element at a field — this text shows <code>{name}</code>, this slot shows <code>{art}</code>.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(var(--pp-primary-rgb,232,162,78),0.16);color:var(--pp-primary,#E8A24E);font-weight:800;align-items:center;justify-content:center;font-size:15px">4</span><p style="color:var(--pp-muted,#B79E86);font-size:15.5px;margin:0">Flip to <b style="color:var(--pp-text,#F1ECE2)">Style</b> for real fonts and colors, then <b style="color:var(--pp-text,#F1ECE2)">Preview</b> for the clean, print-ready card.</p></div>
           </div>
-          <div style="margin-top:20px;border-left:3px solid #E8A24E;background:rgba(232,162,78,0.08);border-radius:0 12px 12px 0;padding:16px 18px">
-            <span class="disp" style="color:#E8A24E;font-size:15px;font-style:italic;display:block;margin-bottom:4px">the aha</span>
-            <p style="color:#F1ECE2;font-size:15.5px;margin:0">Bind one text box to the Name field — and every card in the deck has its own name. You didn't place 120 text boxes. You placed one, and the data did the rest.</p>
+          <div style="margin-top:20px;border-left:3px solid var(--pp-primary,#E8A24E);background:rgba(var(--pp-primary-rgb,232,162,78),0.08);border-radius:0 12px 12px 0;padding:16px 18px">
+            <span class="disp" style="color:var(--pp-primary,#E8A24E);font-size:15px;font-style:italic;display:block;margin-bottom:4px">the aha</span>
+            <p style="color:var(--pp-text,#F1ECE2);font-size:15.5px;margin:0">Bind one text box to the Name field — and every card in the deck has its own name. You didn't place 120 text boxes. You placed one, and the data did the rest.</p>
           </div>
         </div>
       </sc-if>
 
       <sc-if value="{{ isCardData }}" hint-placeholder-val="{{ false }}">
-        <div style="animation:pp-fade .25s ease;background:color-mix(in srgb,#1A1530 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(232,162,78,0.30);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:clamp(24px,3.5vw,38px)">
-          <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Card Data Library · for "Mechanics first"</div>
+        <div style="animation:pp-fade .25s ease;background:color-mix(in srgb,var(--pp-surface,#1A1530) 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(var(--pp-primary-rgb,232,162,78),0.30);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:clamp(24px,3.5vw,38px)">
+          <div style="color:var(--pp-primary,#E8A24E);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Card Data Library · for "Mechanics first"</div>
           <h3 class="disp" style="font-size:clamp(25px,3.2vw,33px);margin:8px 0 18px">Define a card once. Get a whole deck.</h3>
           <div style="display:flex;flex-direction:column;gap:14px">
-            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">1</span><p style="color:#B79E86;font-size:15.5px;margin:0">Open <b style="color:#F1ECE2">Card Data</b> and start a template — say, <b style="color:#F1ECE2">Creature</b>.</p></div>
-            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">2</span><p style="color:#B79E86;font-size:15.5px;margin:0">Add fields, each with a type: <b style="color:#F1ECE2">name</b> (text), <b style="color:#F1ECE2">cost</b> (number), <b style="color:#F1ECE2">rules</b> (area text), <b style="color:#F1ECE2">faction</b> (category), <b style="color:#F1ECE2">art</b> (image), <b style="color:#F1ECE2">icon</b>.</p></div>
-            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">3</span><p style="color:#B79E86;font-size:15.5px;margin:0">Switch to the cards table and add a few rows — or paste a CSV you've been balancing in a spreadsheet.</p></div>
-            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">4</span><p style="color:#B79E86;font-size:15.5px;margin:0">Hit <code>⌘S</code>. The template's shared, so any game can reuse it.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(var(--pp-primary-rgb,232,162,78),0.16);color:var(--pp-primary,#E8A24E);font-weight:800;align-items:center;justify-content:center;font-size:15px">1</span><p style="color:var(--pp-muted,#B79E86);font-size:15.5px;margin:0">Open <b style="color:var(--pp-text,#F1ECE2)">Card Data</b> and start a template — say, <b style="color:var(--pp-text,#F1ECE2)">Creature</b>.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(var(--pp-primary-rgb,232,162,78),0.16);color:var(--pp-primary,#E8A24E);font-weight:800;align-items:center;justify-content:center;font-size:15px">2</span><p style="color:var(--pp-muted,#B79E86);font-size:15.5px;margin:0">Add fields, each with a type: <b style="color:var(--pp-text,#F1ECE2)">name</b> (text), <b style="color:var(--pp-text,#F1ECE2)">cost</b> (number), <b style="color:var(--pp-text,#F1ECE2)">rules</b> (area text), <b style="color:var(--pp-text,#F1ECE2)">faction</b> (category), <b style="color:var(--pp-text,#F1ECE2)">art</b> (image), <b style="color:var(--pp-text,#F1ECE2)">icon</b>.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(var(--pp-primary-rgb,232,162,78),0.16);color:var(--pp-primary,#E8A24E);font-weight:800;align-items:center;justify-content:center;font-size:15px">3</span><p style="color:var(--pp-muted,#B79E86);font-size:15.5px;margin:0">Switch to the cards table and add a few rows — or paste a CSV you've been balancing in a spreadsheet.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(var(--pp-primary-rgb,232,162,78),0.16);color:var(--pp-primary,#E8A24E);font-weight:800;align-items:center;justify-content:center;font-size:15px">4</span><p style="color:var(--pp-muted,#B79E86);font-size:15.5px;margin:0">Hit <code>⌘S</code>. The template's shared, so any game can reuse it.</p></div>
           </div>
-          <div style="margin-top:20px;border-left:3px solid #E8A24E;background:rgba(232,162,78,0.08);border-radius:0 12px 12px 0;padding:16px 18px">
-            <span class="disp" style="color:#E8A24E;font-size:15px;font-style:italic;display:block;margin-bottom:4px">the aha</span>
-            <p style="color:#F1ECE2;font-size:15.5px;margin:0">Paste 120 rows and you've got 120 cards — each already knowing its shape. Tweak the template later and every card updates with it.</p>
+          <div style="margin-top:20px;border-left:3px solid var(--pp-primary,#E8A24E);background:rgba(var(--pp-primary-rgb,232,162,78),0.08);border-radius:0 12px 12px 0;padding:16px 18px">
+            <span class="disp" style="color:var(--pp-primary,#E8A24E);font-size:15px;font-style:italic;display:block;margin-bottom:4px">the aha</span>
+            <p style="color:var(--pp-text,#F1ECE2);font-size:15.5px;margin:0">Paste 120 rows and you've got 120 cards — each already knowing its shape. Tweak the template later and every card updates with it.</p>
           </div>
         </div>
       </sc-if>
 
       <sc-if value="{{ isGames }}" hint-placeholder-val="{{ false }}">
-        <div style="animation:pp-fade .25s ease;background:color-mix(in srgb,#1A1530 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(232,162,78,0.30);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:clamp(24px,3.5vw,38px)">
-          <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Games · for "Concept first"</div>
+        <div style="animation:pp-fade .25s ease;background:color-mix(in srgb,var(--pp-surface,#1A1530) 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(var(--pp-primary-rgb,232,162,78),0.30);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:clamp(24px,3.5vw,38px)">
+          <div style="color:var(--pp-primary,#E8A24E);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Games · for "Concept first"</div>
           <h3 class="disp" style="font-size:clamp(25px,3.2vw,33px);margin:8px 0 18px">One project. Always a version that worked.</h3>
           <div style="display:flex;flex-direction:column;gap:14px">
-            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">1</span><p style="color:#B79E86;font-size:15.5px;margin:0">Create a <b style="color:#F1ECE2">game</b> and write the overview and rules while they're fresh.</p></div>
-            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">2</span><p style="color:#B79E86;font-size:15.5px;margin:0">Give it a Card Data Template (its fields) and a layout (its look).</p></div>
-            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">3</span><p style="color:#B79E86;font-size:15.5px;margin:0">List components, build the deck, and log what happens in <b style="color:#F1ECE2">Playtests</b>.</p></div>
-            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(232,162,78,0.16);color:#E8A24E;font-weight:800;align-items:center;justify-content:center;font-size:15px">4</span><p style="color:#B79E86;font-size:15.5px;margin:0"><b style="color:#F1ECE2">Snapshot</b> the game before a session.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(var(--pp-primary-rgb,232,162,78),0.16);color:var(--pp-primary,#E8A24E);font-weight:800;align-items:center;justify-content:center;font-size:15px">1</span><p style="color:var(--pp-muted,#B79E86);font-size:15.5px;margin:0">Create a <b style="color:var(--pp-text,#F1ECE2)">game</b> and write the overview and rules while they're fresh.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(var(--pp-primary-rgb,232,162,78),0.16);color:var(--pp-primary,#E8A24E);font-weight:800;align-items:center;justify-content:center;font-size:15px">2</span><p style="color:var(--pp-muted,#B79E86);font-size:15.5px;margin:0">Give it a Card Data Template (its fields) and a layout (its look).</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(var(--pp-primary-rgb,232,162,78),0.16);color:var(--pp-primary,#E8A24E);font-weight:800;align-items:center;justify-content:center;font-size:15px">3</span><p style="color:var(--pp-muted,#B79E86);font-size:15.5px;margin:0">List components, build the deck, and log what happens in <b style="color:var(--pp-text,#F1ECE2)">Playtests</b>.</p></div>
+            <div style="display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start"><span style="display:flex;width:30px;height:30px;border-radius:9px;background:rgba(var(--pp-primary-rgb,232,162,78),0.16);color:var(--pp-primary,#E8A24E);font-weight:800;align-items:center;justify-content:center;font-size:15px">4</span><p style="color:var(--pp-muted,#B79E86);font-size:15.5px;margin:0"><b style="color:var(--pp-text,#F1ECE2)">Snapshot</b> the game before a session.</p></div>
           </div>
-          <div style="margin-top:20px;border-left:3px solid #E8A24E;background:rgba(232,162,78,0.08);border-radius:0 12px 12px 0;padding:16px 18px">
-            <span class="disp" style="color:#E8A24E;font-size:15px;font-style:italic;display:block;margin-bottom:4px">the aha</span>
-            <p style="color:#F1ECE2;font-size:15.5px;margin:0">Snapshot, then wreck the balance on purpose. If the new idea flops, roll back to the version that worked — your good build is never more than a click away.</p>
+          <div style="margin-top:20px;border-left:3px solid var(--pp-primary,#E8A24E);background:rgba(var(--pp-primary-rgb,232,162,78),0.08);border-radius:0 12px 12px 0;padding:16px 18px">
+            <span class="disp" style="color:var(--pp-primary,#E8A24E);font-size:15px;font-style:italic;display:block;margin-bottom:4px">the aha</span>
+            <p style="color:var(--pp-text,#F1ECE2);font-size:15.5px;margin:0">Snapshot, then wreck the balance on purpose. If the new idea flops, roll back to the version that worked — your good build is never more than a click away.</p>
           </div>
         </div>
       </sc-if>
     </section>
 
-    <section style="border-top:1px solid #322A48;background:linear-gradient(180deg,rgba(232,162,78,0.07),transparent)">
+    <section style="border-top:1px solid var(--pp-border,#322A48);background:linear-gradient(180deg,rgba(var(--pp-primary-rgb,232,162,78),0.07),transparent)">
       <div style="max-width:1140px;margin:0 auto;padding:clamp(44px,6vw,76px) clamp(16px,4vw,28px);text-align:center">
-        <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">grab it</div>
+        <div style="color:var(--pp-primary,#E8A24E);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">grab it</div>
         <h2 class="disp" style="font-size:clamp(30px,4.4vw,48px);letter-spacing:-0.01em;margin:12px 0 0">Best guide is the real thing.</h2>
-        <p style="color:#B79E86;font-size:17px;margin:12px auto 0;max-width:52ch">Free while it's in beta. First printable deck in under 30 minutes.</p>
+        <p style="color:var(--pp-muted,#B79E86);font-size:17px;margin:12px auto 0;max-width:52ch">Free while it's in beta. First printable deck in under 30 minutes.</p>
         <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px">
-          <a href="download.html" style="background:linear-gradient(180deg,#E8A24E,#cf8838);color:#1b1430;font-weight:800;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px;box-shadow:0 8px 26px rgba(232,162,78,0.28);transition:transform .12s" style-hover="transform:translateY(-2px)">Download for Mac</a>
-          <a href="support.html" style="background:rgba(255,255,255,0.03);color:#F1ECE2;border:1px solid #322A48;font-weight:700;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px" style-hover="border-color:#E8A24E">Questions? →</a>
+          <a href="download.html" style="background:linear-gradient(180deg,var(--pp-primary,#E8A24E),var(--pp-primary-2,#cf8838));color:var(--pp-ink,#1b1430);font-weight:800;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px;box-shadow:0 8px 26px rgba(var(--pp-primary-rgb,232,162,78),0.28);transition:transform .12s" style-hover="transform:translateY(-2px)">Download for Mac</a>
+          <a href="support.html" style="background:rgba(255,255,255,0.03);color:var(--pp-text,#F1ECE2);border:1px solid var(--pp-border,#322A48);font-weight:700;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px" style-hover="border-color:var(--pp-primary,#E8A24E)">Questions? →</a>
         </div>
       </div>
     </section>
@@ -165,11 +166,11 @@ class Component extends DCLogic {
   renderVals() {
     const a = this.state.active;
     const sty = (id) => ({
-      bg: a === id ? 'rgba(232,162,78,0.12)' : 'color-mix(in srgb, #1A1530 50%, transparent)',
-      border: a === id ? '#E8A24E' : 'rgba(255,255,255,0.10)',
-      dot: a === id ? '#E8A24E' : 'rgba(255,255,255,0.16)',
+      bg: a === id ? 'rgba(var(--pp-primary-rgb,232,162,78),0.12)' : 'color-mix(in srgb, var(--pp-surface,#1A1530) 50%, transparent)',
+      border: a === id ? 'var(--pp-primary,#E8A24E)' : 'rgba(255,255,255,0.10)',
+      dot: a === id ? 'var(--pp-primary,#E8A24E)' : 'rgba(255,255,255,0.16)',
       cta: a === id ? 'Showing below ↓' : 'See the walkthrough →',
-      ctaC: a === id ? '#E8A24E' : '#9b86c0',
+      ctaC: a === id ? 'var(--pp-primary,#E8A24E)' : 'var(--pp-muted,#9b86c0)',
     });
     const ly = sty('layout'), cd = sty('card-data'), gm = sty('games');
     return {

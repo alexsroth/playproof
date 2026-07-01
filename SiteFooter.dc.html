@@ -14,25 +14,25 @@
 html.pp-dys, html.pp-dys * { font-family:'OpenDyslexic','Comic Sans MS',sans-serif !important; letter-spacing:0 !important }
 </style>
 </helmet>
-<footer style="position:relative;border-top:1px solid #322A48;margin-top:8px;background:linear-gradient(180deg,rgba(232,162,78,0.05),transparent)">
+<footer style="position:relative;border-top:1px solid var(--pp-border,#322A48);margin-top:8px;background:linear-gradient(180deg,rgba(var(--pp-primary-rgb,232,162,78),0.05),transparent)">
   <div style="max-width:1140px;margin:0 auto;padding:34px clamp(16px,4vw,28px);display:flex;flex-wrap:wrap;gap:22px 32px;align-items:center;justify-content:space-between">
     <div style="display:flex;align-items:center;gap:11px">
       <img src="playproof-appicon.png" alt="" width="32" height="32" style="border-radius:8px;display:block;box-shadow:0 2px 10px rgba(0,0,0,0.4)">
       <div>
-        <div style="font-weight:800;font-size:16px;color:#F1ECE2;letter-spacing:-0.01em">Playproof</div>
-        <div style="font-size:12.5px;color:#7d6e57">Made by a 90s kid who still plays at the table · 2026</div>
+        <div style="font-weight:800;font-size:16px;color:var(--pp-text,#F1ECE2);letter-spacing:-0.01em">Playproof</div>
+        <div style="font-size:12.5px;color:var(--pp-dim,#7d6e57)">Made by a 90s kid who still plays at the table · 2026</div>
       </div>
     </div>
 
     <div style="display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;font-size:14px">
-      <a href="index.html" style="color:#B79E86;text-decoration:none" style-hover="color:#F1ECE2">Why Playproof</a>
-      <a href="how-it-works.html" style="color:#B79E86;text-decoration:none" style-hover="color:#F1ECE2">How it works</a>
-      <a href="guides.html" style="color:#B79E86;text-decoration:none" style-hover="color:#F1ECE2">Get Started</a>
-      <a href="support.html" style="color:#B79E86;text-decoration:none" style-hover="color:#F1ECE2">Support</a>
-      <a href="download.html" style="color:#B79E86;text-decoration:none" style-hover="color:#F1ECE2">Download</a>
-      <button type="button" onClick="{{ toggle }}" aria-pressed="{{ dys }}" style="display:inline-flex;align-items:center;gap:7px;background:transparent;border:1px solid #322A48;color:#B79E86;border-radius:999px;padding:7px 14px;font:inherit;font-size:12.5px;cursor:pointer;transition:border-color .12s,color .12s" style-hover="border-color:#E8A24E;color:#F1ECE2">
+      <a href="index.html" style="color:var(--pp-muted,#B79E86);text-decoration:none" style-hover="color:var(--pp-text,#F1ECE2)">Why Playproof</a>
+      <a href="how-it-works.html" style="color:var(--pp-muted,#B79E86);text-decoration:none" style-hover="color:var(--pp-text,#F1ECE2)">How it works</a>
+      <a href="guides.html" style="color:var(--pp-muted,#B79E86);text-decoration:none" style-hover="color:var(--pp-text,#F1ECE2)">Get Started</a>
+      <a href="support.html" style="color:var(--pp-muted,#B79E86);text-decoration:none" style-hover="color:var(--pp-text,#F1ECE2)">Support</a>
+      <a href="download.html" style="color:var(--pp-muted,#B79E86);text-decoration:none" style-hover="color:var(--pp-text,#F1ECE2)">Download</a>
+      <button type="button" onClick="{{ toggle }}" aria-pressed="{{ dys }}" style="display:inline-flex;align-items:center;gap:7px;background:transparent;border:1px solid var(--pp-border,#322A48);color:var(--pp-muted,#B79E86);border-radius:999px;padding:7px 14px;font:inherit;font-size:12.5px;cursor:pointer;transition:border-color .12s,color .12s" style-hover="border-color:var(--pp-primary,#E8A24E);color:var(--pp-text,#F1ECE2)">
         <span style="font-weight:800">Aa</span>
-        <span>Dyslexia-friendly: <b style="color:#E8A24E">{{ dysLabel }}</b></span>
+        <span>Dyslexia-friendly: <b style="color:var(--pp-primary,#E8A24E)">{{ dysLabel }}</b></span>
       </button>
     </div>
   </div>
