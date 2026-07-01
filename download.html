@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
   *{box-sizing:border-box}
-  html,body{margin:0;background:#0C0707;color:#F1ECE2;font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  html,body{margin:0;background:#0C0707;color:#F7E8E0;font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
   .disp{font-family:'Instrument Serif',Georgia,serif;font-weight:400 !important}
 </style>
 </helmet>
@@ -37,14 +37,14 @@
 
   <main style="max-width:880px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(16px,4vw,28px) clamp(40px,6vw,72px)">
     <div style="text-align:center">
-      <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">grab it</div>
+      <div style="color:#FF7A45;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">grab it</div>
       <h1 class="disp" style="font-size:clamp(32px,5vw,50px);font-weight:800;letter-spacing:-0.025em;margin:14px 0 0">Download Playproof</h1>
-      <p style="color:#C9B59D;font-size:clamp(16px,1.6vw,18px);margin:14px auto 0;max-width:50ch">Free while it's in beta. Two Mac builds, both right here — we'll point you at the one that fits.</p>
+      <p style="color:#C49A8C;font-size:clamp(16px,1.6vw,18px);margin:14px auto 0;max-width:50ch">Free while it's in beta. Two Mac builds, both right here — we'll point you at the one that fits.</p>
     </div>
 
     <!-- detection status -->
     <div style="display:flex;justify-content:center;margin-top:26px">
-      <div style="display:inline-flex;align-items:center;gap:10px;max-width:62ch;background:color-mix(in srgb,#1A1530 60%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid {{ statusBorder }};border-radius:13px;padding:12px 17px;font-size:14.5px;color:#D9C9B2;text-align:left">
+      <div style="display:inline-flex;align-items:center;gap:10px;max-width:62ch;background:color-mix(in srgb,#1D1413 60%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid {{ statusBorder }};border-radius:13px;padding:12px 17px;font-size:14.5px;color:#C49A8C;text-align:left">
         <span style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:{{ statusDot }};box-shadow:0 0 8px {{ statusDot }}"></span>
         <span>{{ statusText }}</span>
       </div>
@@ -54,62 +54,62 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:22px">
 
       <!-- Apple Silicon -->
-      <div style="position:relative;display:flex;flex-direction:column;background:color-mix(in srgb,#1A1530 56%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid {{ armBorder }};border-radius:18px;box-shadow:{{ armShadow }};padding:24px">
+      <div style="position:relative;display:flex;flex-direction:column;background:color-mix(in srgb,#1D1413 56%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid {{ armBorder }};border-radius:18px;box-shadow:{{ armShadow }};padding:24px">
         <sc-if value="{{ armBadge }}" hint-placeholder-val="{{ false }}">
-          <span style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);white-space:nowrap;background:linear-gradient(180deg,#E8A24E,#cf8838);color:#1b1430;font-weight:800;font-size:11.5px;letter-spacing:0.02em;padding:4px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(232,162,78,0.4)">{{ armBadge }}</span>
+          <span style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);white-space:nowrap;background:linear-gradient(180deg,#FF7A45,#D2542A);color:#2C1A13;font-weight:800;font-size:11.5px;letter-spacing:0.02em;padding:4px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(255,122,69,0.4)">{{ armBadge }}</span>
         </sc-if>
         <div style="display:flex;align-items:center;gap:13px">
-          <div style="width:48px;height:48px;border-radius:12px;background:radial-gradient(circle at 35% 28%,#3a3358,#211a3a);border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,Menlo,monospace;font-weight:800;font-size:16px;color:#F4C77A;box-shadow:inset 0 1px 0 rgba(255,255,255,0.12)">M</div>
+          <div style="width:48px;height:48px;border-radius:12px;background:radial-gradient(circle at 35% 28%,#3a3358,#211a3a);border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,Menlo,monospace;font-weight:800;font-size:16px;color:#FFB088;box-shadow:inset 0 1px 0 rgba(255,255,255,0.12)">M</div>
           <div>
             <div class="disp" style="font-size:19px;font-weight:800;line-height:1.05">Apple Silicon</div>
-            <div style="font-size:12.5px;color:#9b86c0;font-family:ui-monospace,Menlo,monospace">M1 · M2 · M3 · M4</div>
+            <div style="font-size:12.5px;color:#C49A8C;font-family:ui-monospace,Menlo,monospace">M1 · M2 · M3 · M4</div>
           </div>
         </div>
-        <p style="color:#B79E86;font-size:13.5px;margin:14px 0 0;flex:1">For Macs with an Apple-designed chip — anything bought new since late 2020.</p>
-        <a href="{{ armUrl }}" style="margin-top:16px;text-align:center;background:linear-gradient(180deg,#E8A24E,#cf8838);color:#1b1430;font-weight:800;font-size:15px;text-decoration:none;border-radius:11px;padding:13px;box-shadow:0 8px 22px rgba(232,162,78,0.26);transition:transform .12s" style-hover="transform:translateY(-2px)">Download · Apple Silicon</a>
+        <p style="color:#C49A8C;font-size:13.5px;margin:14px 0 0;flex:1">For Macs with an Apple-designed chip — anything bought new since late 2020.</p>
+        <a href="{{ armUrl }}" style="margin-top:16px;text-align:center;background:linear-gradient(180deg,#FF7A45,#D2542A);color:#2C1A13;font-weight:800;font-size:15px;text-decoration:none;border-radius:11px;padding:13px;box-shadow:0 8px 22px rgba(255,122,69,0.26);transition:transform .12s" style-hover="transform:translateY(-2px)">Download · Apple Silicon</a>
       </div>
 
       <!-- Intel -->
-      <div style="position:relative;display:flex;flex-direction:column;background:color-mix(in srgb,#1A1530 56%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid {{ x64Border }};border-radius:18px;box-shadow:{{ x64Shadow }};padding:24px">
+      <div style="position:relative;display:flex;flex-direction:column;background:color-mix(in srgb,#1D1413 56%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid {{ x64Border }};border-radius:18px;box-shadow:{{ x64Shadow }};padding:24px">
         <sc-if value="{{ x64Badge }}" hint-placeholder-val="{{ false }}">
-          <span style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);white-space:nowrap;background:linear-gradient(180deg,#E8A24E,#cf8838);color:#1b1430;font-weight:800;font-size:11.5px;letter-spacing:0.02em;padding:4px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(232,162,78,0.4)">{{ x64Badge }}</span>
+          <span style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);white-space:nowrap;background:linear-gradient(180deg,#FF7A45,#D2542A);color:#2C1A13;font-weight:800;font-size:11.5px;letter-spacing:0.02em;padding:4px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(255,122,69,0.4)">{{ x64Badge }}</span>
         </sc-if>
         <div style="display:flex;align-items:center;gap:13px">
           <div style="width:48px;height:48px;border-radius:12px;background:radial-gradient(circle at 35% 28%,#2a3358,#1a2138);border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,Menlo,monospace;font-weight:800;font-size:12px;color:#9DB7DC;box-shadow:inset 0 1px 0 rgba(255,255,255,0.12)">x64</div>
           <div>
             <div class="disp" style="font-size:19px;font-weight:800;line-height:1.05">Intel</div>
-            <div style="font-size:12.5px;color:#9b86c0;font-family:ui-monospace,Menlo,monospace">Core i5 · i7 · i9</div>
+            <div style="font-size:12.5px;color:#C49A8C;font-family:ui-monospace,Menlo,monospace">Core i5 · i7 · i9</div>
           </div>
         </div>
-        <p style="color:#B79E86;font-size:13.5px;margin:14px 0 0;flex:1">For older Intel-based Macs — most models from before late 2020.</p>
-        <a href="{{ x64Url }}" style="margin-top:16px;text-align:center;background:rgba(255,255,255,0.05);color:#F1ECE2;border:1px solid #3a3358;font-weight:800;font-size:15px;text-decoration:none;border-radius:11px;padding:13px;transition:border-color .12s,background .12s" style-hover="border-color:#E8A24E;background:rgba(255,255,255,0.08)">Download · Intel</a>
+        <p style="color:#C49A8C;font-size:13.5px;margin:14px 0 0;flex:1">For older Intel-based Macs — most models from before late 2020.</p>
+        <a href="{{ x64Url }}" style="margin-top:16px;text-align:center;background:rgba(255,255,255,0.05);color:#F7E8E0;border:1px solid #3a3358;font-weight:800;font-size:15px;text-decoration:none;border-radius:11px;padding:13px;transition:border-color .12s,background .12s" style-hover="border-color:#FF7A45;background:rgba(255,255,255,0.08)">Download · Intel</a>
       </div>
     </div>
 
     <!-- how to check -->
-    <div style="background:color-mix(in srgb,#1A1530 50%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:18px 20px;margin-top:16px">
-      <div style="display:flex;align-items:center;gap:8px;font-weight:700;font-size:14.5px;color:#F1ECE2"><span style="color:#E8A24E">?</span> Not sure which one you've got?</div>
-      <p style="color:#B79E86;font-size:14px;margin:8px 0 0">Click the <b style="color:#F1ECE2">Apple menu</b> (top-left)  →  <b style="color:#F1ECE2">About This Mac</b>. A line that reads <b style="color:#F4C77A">“Apple M1/M2/M3…”</b> means Apple Silicon. A line that says <b style="color:#9DB7DC">“Intel”</b> means Intel. Takes five seconds and beats any guess a browser can make.</p>
+    <div style="background:color-mix(in srgb,#1D1413 50%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:18px 20px;margin-top:16px">
+      <div style="display:flex;align-items:center;gap:8px;font-weight:700;font-size:14.5px;color:#F7E8E0"><span style="color:#FF7A45">?</span> Not sure which one you've got?</div>
+      <p style="color:#C49A8C;font-size:14px;margin:8px 0 0">Click the <b style="color:#F7E8E0">Apple menu</b> (top-left)  →  <b style="color:#F7E8E0">About This Mac</b>. A line that reads <b style="color:#FFB088">“Apple M1/M2/M3…”</b> means Apple Silicon. A line that says <b style="color:#9DB7DC">“Intel”</b> means Intel. Takes five seconds and beats any guess a browser can make.</p>
     </div>
 
     <!-- install -->
-    <div style="background:color-mix(in srgb,#1A1530 56%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:clamp(22px,3vw,30px);margin-top:16px">
-      <div style="color:#E8A24E;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">installing</div>
-      <ol style="margin:14px 0 0;padding-left:22px;color:#C9B59D;font-size:15px;line-height:1.85">
-        <li>Open the downloaded <b style="color:#F1ECE2">.dmg</b> and drag <b style="color:#F1ECE2">Playproof</b> onto <b style="color:#F1ECE2">Applications</b>.</li>
-        <li>macOS may claim Playproof is <b style="color:#F1ECE2">“damaged.”</b> It isn't — beta builds just aren't notarized yet, so Gatekeeper gets twitchy. Clear it with one line in <b style="color:#F1ECE2">Terminal</b>:</li>
+    <div style="background:color-mix(in srgb,#1D1413 56%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:clamp(22px,3vw,30px);margin-top:16px">
+      <div style="color:#FF7A45;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">installing</div>
+      <ol style="margin:14px 0 0;padding-left:22px;color:#C49A8C;font-size:15px;line-height:1.85">
+        <li>Open the downloaded <b style="color:#F7E8E0">.dmg</b> and drag <b style="color:#F7E8E0">Playproof</b> onto <b style="color:#F7E8E0">Applications</b>.</li>
+        <li>macOS may claim Playproof is <b style="color:#F7E8E0">“damaged.”</b> It isn't — beta builds just aren't notarized yet, so Gatekeeper gets twitchy. Clear it with one line in <b style="color:#F7E8E0">Terminal</b>:</li>
       </ol>
       <div style="display:flex;align-items:stretch;gap:8px;margin:12px 0 0">
-        <code style="flex:1;min-width:0;overflow:auto;background:#0f0c1c;border:1px solid #322A48;border-radius:9px;padding:12px 14px;font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#F4C77A;white-space:nowrap">xattr -dr com.apple.quarantine /Applications/Playproof.app</code>
-        <button type="button" onClick="{{ copyCmd }}" style="flex-shrink:0;background:rgba(255,255,255,0.05);border:1px solid #322A48;color:#F1ECE2;border-radius:9px;padding:0 14px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:border-color .12s" style-hover="border-color:#E8A24E">{{ copyLabel }}</button>
+        <code style="flex:1;min-width:0;overflow:auto;background:#140C0C;border:1px solid #3C2622;border-radius:9px;padding:12px 14px;font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#FFB088;white-space:nowrap">xattr -dr com.apple.quarantine /Applications/Playproof.app</code>
+        <button type="button" onClick="{{ copyCmd }}" style="flex-shrink:0;background:rgba(255,255,255,0.05);border:1px solid #3C2622;color:#F7E8E0;border-radius:9px;padding:0 14px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:border-color .12s" style-hover="border-color:#FF7A45">{{ copyLabel }}</button>
       </div>
-      <ol start="3" style="margin:12px 0 0;padding-left:22px;color:#C9B59D;font-size:15px;line-height:1.85">
+      <ol start="3" style="margin:12px 0 0;padding-left:22px;color:#C49A8C;font-size:15px;line-height:1.85">
         <li>Open Playproof normally. You only do this once.</li>
       </ol>
       <p style="color:#FF9E80;font-size:13.5px;margin:12px 0 0">Annoying, I know. A properly notarized build will kill this step for good — it's on the list.</p>
     </div>
 
-    <p style="text-align:center;color:#7d6e57;font-size:12.5px;margin:20px 0 0">{{ versionLine }} · <a href="support.html" style="color:#7d6e57;text-decoration:underline;text-underline-offset:3px">Questions?</a></p>
+    <p style="text-align:center;color:#8A6A5C;font-size:12.5px;margin:20px 0 0">{{ versionLine }} · <a href="support.html" style="color:#8A6A5C;text-decoration:underline;text-underline-offset:3px">Questions?</a></p>
   </main>
 
   <dc-import name="SiteFooter" hint-size="100%,140px"></dc-import>
@@ -173,7 +173,7 @@ class Component extends DCLogic {
     const armRec = s === 'arm';
     const x64Rec = s === 'x64';
     const ring = (on) => on
-      ? '0 0 0 2px #E8A24E inset, inset 0 1px 0 rgba(255,255,255,0.12), 0 16px 36px rgba(232,162,78,0.20)'
+      ? '0 0 0 2px #FF7A45 inset, inset 0 1px 0 rgba(255,255,255,0.12), 0 16px 36px rgba(255,122,69,0.20)'
       : 'inset 0 1px 0 rgba(255,255,255,0.10), 0 12px 28px rgba(0,0,0,0.18)';
 
     const statusText = {
@@ -184,7 +184,7 @@ class Component extends DCLogic {
       notmac: 'Heads up: Playproof is a macOS app for now. The builds are here for when you\u2019re back on your Mac.',
     }[s];
 
-    const dot = { checking: '#F4C77A', arm: '#7CE0A0', x64: '#7CE0A0', unknown: '#E8A24E', notmac: '#FF9E80' }[s];
+    const dot = { checking: '#FFB088', arm: '#7CE0A0', x64: '#7CE0A0', unknown: '#FF7A45', notmac: '#FF9E80' }[s];
 
     return {
       statusText,
@@ -192,8 +192,8 @@ class Component extends DCLogic {
       statusBorder: s === 'notmac' ? 'rgba(255,158,128,0.35)' : 'rgba(255,255,255,0.12)',
       armUrl: this.DOWNLOADS.arm64,
       x64Url: this.DOWNLOADS.x64,
-      armBorder: armRec ? '#E8A24E' : 'rgba(255,255,255,0.12)',
-      x64Border: x64Rec ? '#E8A24E' : 'rgba(255,255,255,0.12)',
+      armBorder: armRec ? '#FF7A45' : 'rgba(255,255,255,0.12)',
+      x64Border: x64Rec ? '#FF7A45' : 'rgba(255,255,255,0.12)',
       armShadow: ring(armRec),
       x64Shadow: ring(x64Rec),
       armBadge: armRec ? 'Looks like your Mac' : (s === 'unknown' ? 'Most common pick' : ''),
