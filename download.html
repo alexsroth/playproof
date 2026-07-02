@@ -98,16 +98,8 @@
       <div style="color:#FF7A45;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">installing</div>
       <ol style="margin:14px 0 0;padding-left:22px;color:#C49A8C;font-size:15px;line-height:1.85">
         <li>Open the downloaded <b style="color:#F7E8E0">.dmg</b> and drag <b style="color:#F7E8E0">Playproof</b> onto <b style="color:#F7E8E0">Applications</b>.</li>
-        <li>macOS may claim Playproof is <b style="color:#F7E8E0">“damaged.”</b> It isn't — beta builds just aren't notarized yet, so Gatekeeper gets twitchy. Clear it with one line in <b style="color:#F7E8E0">Terminal</b>:</li>
+        <li>Open Playproof. That's it — it's signed and notarized by Apple, so it opens like any other app.</li>
       </ol>
-      <div style="display:flex;align-items:stretch;gap:8px;margin:12px 0 0">
-        <code style="flex:1;min-width:0;overflow:auto;background:#140C0C;border:1px solid #3C2622;border-radius:9px;padding:12px 14px;font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#FFB088;white-space:nowrap">xattr -dr com.apple.quarantine /Applications/Playproof.app</code>
-        <button type="button" onClick="{{ copyCmd }}" style="flex-shrink:0;background:rgba(255,255,255,0.05);border:1px solid #3C2622;color:#F7E8E0;border-radius:9px;padding:0 14px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:border-color .12s" style-hover="border-color:#FF7A45">{{ copyLabel }}</button>
-      </div>
-      <ol start="3" style="margin:12px 0 0;padding-left:22px;color:#C49A8C;font-size:15px;line-height:1.85">
-        <li>Open Playproof normally. You only do this once.</li>
-      </ol>
-      <p style="color:#FF9E80;font-size:13.5px;margin:12px 0 0">Annoying, I know. A properly notarized build will kill this step for good — it's on the list.</p>
     </div>
 
     <p style="text-align:center;color:#8A6A5C;font-size:12.5px;margin:20px 0 0">{{ versionLine }} · <a href="support.html" style="color:#8A6A5C;text-decoration:underline;text-underline-offset:3px">Questions?</a></p>
@@ -124,7 +116,7 @@ class Component extends DCLogic {
     x64: 'https://github.com/alexsroth/playproof/releases/latest/download/Playproof-Intel.dmg',
   };
 
-  state = { status: 'checking', copied: false, version: '' };
+  state = { status: 'checking', version: '' };
 
   componentDidMount() {
     // Fetch latest release version from GitHub API (public, no auth needed).
@@ -199,14 +191,6 @@ class Component extends DCLogic {
       x64Shadow: ring(x64Rec),
       armBadge: armRec ? 'Looks like your Mac' : (s === 'unknown' ? 'Most common pick' : ''),
       x64Badge: x64Rec ? 'Looks like your Mac' : '',
-      copyLabel: this.state.copied ? 'Copied ✓' : 'Copy',
-      copyCmd: () => {
-        const cmd = 'xattr -dr com.apple.quarantine /Applications/Playproof.app';
-        try { navigator.clipboard.writeText(cmd); } catch (e) {}
-        this.setState({ copied: true });
-        clearTimeout(this.copyTimer);
-        this.copyTimer = setTimeout(() => this.setState({ copied: false }), 1800);
-      },
       versionLine: 'Playproof ' + (this.state.version || '…') + ' · macOS 11+ · Apple Silicon & Intel',
     };
   }
