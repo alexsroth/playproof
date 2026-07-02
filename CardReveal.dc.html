@@ -12,7 +12,7 @@
   .cr-wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
   .cr-card{position:relative;width:100%;max-width:300px;aspect-ratio:5/7;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.14);box-shadow:0 18px 40px rgba(0,0,0,0.4);--x:52%;touch-action:none;user-select:none}
   .cr-card *{box-sizing:border-box}
-  .cr-layer{position:absolute;inset:0;padding:14px;display:flex;flex-direction:column;gap:8px}
+  .cr-layer{position:absolute;inset:0;padding:14px;display:flex;flex-direction:column;gap:8px;border-radius:13px}
   .cr-prev{--cbg:linear-gradient(160deg,#132318,#0b1710);--cframe:none;--cname:#EAF4EE;--cnamefont:'Instrument Serif',Georgia,serif;--cnamew:400;--cnamesz:20px;--cnamels:0;--cnametf:none;--cbadge:radial-gradient(circle at 35% 30%,#A6ECC0,#4Fae7c);--cbadgeink:#0A1610;--cbadger:9px;--cacc:#7CE0A0;--crules:#9CC2A8;--cbodyfont:system-ui,sans-serif;--cart:repeating-linear-gradient(135deg,rgba(255,255,255,0.05) 0 8px,transparent 8px 16px);--cartb:rgba(255,255,255,0.08);--cartr:8px;background:var(--cbg);box-shadow:var(--cframe)}
   .cr-xray{background:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px) 0 0/13px 13px,linear-gradient(160deg,#12241a,#0c1a12);clip-path:inset(0 calc(100% - var(--x)) 0 0)}
   .cr-row{display:flex;gap:8px;height:32px;flex:none}
@@ -33,9 +33,10 @@
   .cr-fatk span{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--cacc)}
   .cr-handle{position:absolute;top:0;bottom:0;left:var(--x);width:2px;background:rgba(255,255,255,0.85);transform:translateX(-1px);pointer-events:none;box-shadow:0 0 8px rgba(0,0,0,0.5);z-index:2}
   .cr-grab{position:absolute;top:50%;left:var(--x);width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.92);transform:translate(-50%,-50%);pointer-events:none;display:flex;align-items:center;justify-content:center;color:#111;font-size:14px;font-weight:800;box-shadow:0 2px 10px rgba(0,0,0,0.5);z-index:2}
-  .cr-lbl{position:absolute;top:9px;font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:700;letter-spacing:0.04em;padding:3px 8px;border-radius:6px;pointer-events:none;z-index:2}
-  .cr-lblL{left:9px;color:var(--pp-ink,#0A1610);background:var(--pp-primary,#7CE0A0)}
-  .cr-lblR{right:9px;color:var(--pp-primary,#7CE0A0);background:rgba(0,0,0,0.35);border:1px solid rgba(var(--pp-primary-rgb,124,224,160),0.45)}
+  .cr-labels{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:300px}
+  .cr-lbl{font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 10px;border-radius:7px}
+  .cr-lblL{color:var(--pp-ink,#0A1610);background:var(--pp-primary,#7CE0A0)}
+  .cr-lblR{color:var(--pp-primary,#7CE0A0);background:transparent;border:1px solid rgba(var(--pp-primary-rgb,124,224,160),0.5)}
   .cr-slider{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:3}
   .cr-ctrls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center}
   .cr-btn{display:inline-flex;align-items:center;gap:7px;background:rgba(var(--pp-primary-rgb,124,224,160),0.12);border:1px solid rgba(var(--pp-primary-rgb,124,224,160),0.5);color:var(--pp-primary,#7CE0A0);border-radius:10px;padding:9px 15px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:background .12s,transform .1s}
@@ -48,6 +49,10 @@
 </helmet>
 
 <div class="cr-wrap">
+  <div class="cr-labels">
+    <span class="cr-lbl cr-lblL">X-Ray</span>
+    <span class="cr-lbl cr-lblR">Preview</span>
+  </div>
   <div class="cr-card" style="--x:{{ pos }}%">
     <div class="cr-layer cr-prev" style="{{ prevStyle }}">
       <div class="cr-row"><div class="cr-fname">Goblin Skirmisher</div><div class="cr-fcost">2</div></div>
@@ -65,8 +70,6 @@
     </div>
     <div class="cr-handle"></div>
     <div class="cr-grab">⇆</div>
-    <span class="cr-lbl cr-lblL">X-Ray</span>
-    <span class="cr-lbl cr-lblR">Preview</span>
     <input type="range" min="0" max="100" value="{{ pos }}" step="1" class="cr-slider" onInput="{{ onReveal }}" aria-label="Drag to reveal the finished card">
   </div>
   <div class="cr-ctrls">
