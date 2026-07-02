@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  .cr-wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
+  .cr-card{position:relative;width:100%;max-width:300px;aspect-ratio:5/7;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.14);box-shadow:0 18px 40px rgba(0,0,0,0.4);--x:52%;touch-action:none;user-select:none}
+  .cr-card *{box-sizing:border-box}
+  .cr-layer{position:absolute;inset:0;padding:14px;display:flex;flex-direction:column;gap:8px}
+  .cr-prev{--cbg:linear-gradient(160deg,#132318,#0b1710);--cframe:none;--cname:#EAF4EE;--cnamefont:'Instrument Serif',Georgia,serif;--cnamew:400;--cnamesz:20px;--cnamels:0;--cnametf:none;--cbadge:radial-gradient(circle at 35% 30%,#A6ECC0,#4Fae7c);--cbadgeink:#0A1610;--cbadger:9px;--cacc:#7CE0A0;--crules:#9CC2A8;--cbodyfont:system-ui,sans-serif;--cart:repeating-linear-gradient(135deg,rgba(255,255,255,0.05) 0 8px,transparent 8px 16px);--cartb:rgba(255,255,255,0.08);--cartr:8px;background:var(--cbg);box-shadow:var(--cframe)}
+  .cr-xray{background:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px) 0 0/13px 13px,linear-gradient(160deg,#12241a,#0c1a12);clip-path:inset(0 calc(100% - var(--x)) 0 0)}
+  .cr-row{display:flex;gap:8px;height:32px;flex:none}
+  .cr-slot{border:1px dashed;border-radius:8px;display:flex;align-items:center;font-family:ui-monospace,Menlo,monospace;font-size:11px;padding-left:9px}
+  .cr-name{flex:1;height:32px;border-color:rgba(232,162,78,0.6);background:rgba(232,162,78,0.10);color:#E8A24E}
+  .cr-cost{width:44px;height:32px;justify-content:center;padding:0;border-color:rgba(255,158,128,0.6);background:rgba(255,158,128,0.10);color:#FF9E80}
+  .cr-art{flex:1;justify-content:center;padding:0;border-color:rgba(111,196,220,0.55);background:rgba(111,196,220,0.09);color:#6FC4DC;font-size:12px}
+  .cr-type{height:22px;flex:none;border-color:rgba(124,224,160,0.55);background:rgba(124,224,160,0.10);color:#7CE0A0;font-size:11px}
+  .cr-rules{height:46px;flex:none;align-items:flex-start;padding:8px 0 0 9px;border-color:rgba(232,162,78,0.5);background:rgba(232,162,78,0.06);color:#F4C77A;font-size:11px}
+  .cr-atkrow{display:flex;justify-content:flex-end;height:24px;flex:none}
+  .cr-atk{width:56px;height:24px;justify-content:center;padding:0;border-color:rgba(255,158,128,0.6);background:rgba(255,158,128,0.10);color:#FF9E80;font-size:11px}
+  .cr-fname{flex:1;height:32px;display:flex;align-items:center;font-family:var(--cnamefont);font-weight:var(--cnamew);font-size:var(--cnamesz);letter-spacing:var(--cnamels);text-transform:var(--cnametf);color:var(--cname);overflow:hidden;white-space:nowrap}
+  .cr-fcost{width:44px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:var(--cbadger);background:var(--cbadge);color:var(--cbadgeink);font-weight:800;font-family:ui-monospace,Menlo,monospace;font-size:15px}
+  .cr-fart{flex:1;border-radius:var(--cartr);background:var(--cart);border:1px solid var(--cartb)}
+  .cr-ftype{height:22px;flex:none;display:flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--cacc)}
+  .cr-frules{height:46px;flex:none;font-size:11.5px;line-height:1.35;color:var(--crules);overflow:hidden;font-family:var(--cbodyfont)}
+  .cr-fatk{height:24px;flex:none;display:flex;justify-content:flex-end;align-items:center}
+  .cr-fatk span{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--cacc)}
+  .cr-handle{position:absolute;top:0;bottom:0;left:var(--x);width:2px;background:rgba(255,255,255,0.85);transform:translateX(-1px);pointer-events:none;box-shadow:0 0 8px rgba(0,0,0,0.5);z-index:2}
+  .cr-grab{position:absolute;top:50%;left:var(--x);width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.92);transform:translate(-50%,-50%);pointer-events:none;display:flex;align-items:center;justify-content:center;color:#111;font-size:14px;font-weight:800;box-shadow:0 2px 10px rgba(0,0,0,0.5);z-index:2}
+  .cr-lbl{position:absolute;top:9px;font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:700;letter-spacing:0.04em;padding:3px 8px;border-radius:6px;pointer-events:none;z-index:2}
+  .cr-lblL{left:9px;color:var(--pp-ink,#0A1610);background:var(--pp-primary,#7CE0A0)}
+  .cr-lblR{right:9px;color:var(--pp-primary,#7CE0A0);background:rgba(0,0,0,0.35);border:1px solid rgba(var(--pp-primary-rgb,124,224,160),0.45)}
+  .cr-slider{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:3}
+  .cr-ctrls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center}
+  .cr-btn{display:inline-flex;align-items:center;gap:7px;background:rgba(var(--pp-primary-rgb,124,224,160),0.12);border:1px solid rgba(var(--pp-primary-rgb,124,224,160),0.5);color:var(--pp-primary,#7CE0A0);border-radius:10px;padding:9px 15px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:background .12s,transform .1s}
+  .cr-btn:hover{background:rgba(var(--pp-primary-rgb,124,224,160),0.22)}
+  .cr-btn:active{transform:translateY(1px)}
+  .cr-sname{font-size:12.5px;color:var(--pp-muted,#9CC2A8)}
+  .cr-sname b{color:var(--pp-text,#EAF4EE);font-weight:700}
+  .cr-cap{font-size:11.5px;color:var(--pp-dim,#7d6e57);text-align:center;margin:0}
+</style>
+</helmet>
+
+<div class="cr-wrap">
+  <div class="cr-card" style="--x:{{ pos }}%">
+    <div class="cr-layer cr-prev" style="{{ prevStyle }}">
+      <div class="cr-row"><div class="cr-fname">Goblin Skirmisher</div><div class="cr-fcost">2</div></div>
+      <div class="cr-fart"></div>
+      <div class="cr-ftype">Creature · Goblin</div>
+      <div class="cr-frules">Haste. When it attacks, scout the top card of your deck.</div>
+      <div class="cr-fatk"><span>⚔ 3</span></div>
+    </div>
+    <div class="cr-layer cr-xray">
+      <div class="cr-row"><div class="cr-slot cr-name">{name}</div><div class="cr-slot cr-cost">{cost}</div></div>
+      <div class="cr-slot cr-art">{art}</div>
+      <div class="cr-slot cr-type">{type}</div>
+      <div class="cr-slot cr-rules">{rules}</div>
+      <div class="cr-atkrow"><div class="cr-slot cr-atk">{atk}</div></div>
+    </div>
+    <div class="cr-handle"></div>
+    <div class="cr-grab">⇆</div>
+    <span class="cr-lbl cr-lblL">X-Ray</span>
+    <span class="cr-lbl cr-lblR">Preview</span>
+    <input type="range" min="0" max="100" value="{{ pos }}" step="1" class="cr-slider" onInput="{{ onReveal }}" aria-label="Drag to reveal the finished card">
+  </div>
+  <div class="cr-ctrls">
+    <button type="button" class="cr-btn" onClick="{{ randomize }}">↻ Randomize style</button>
+    <span class="cr-sname">Style: <b>{{ styleName }}</b></span>
+  </div>
+  <div class="cr-cap">Same data, every time — the layout and style change, the fields don't.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:360,&quot;height&quot;:560}}">
+class Component extends DCLogic {
+  state = { pos: 52, si: 0 };
+
+  STYLES = [
+    { name: 'Verdant', vars: {
+      '--cbg': 'linear-gradient(160deg,#132318,#0b1710)', '--cframe': 'none',
+      '--cname': '#EAF4EE', '--cnamefont': "'Instrument Serif',Georgia,serif", '--cnamew': '400', '--cnamesz': '20px', '--cnamels': '0', '--cnametf': 'none',
+      '--cbadge': 'radial-gradient(circle at 35% 30%,#A6ECC0,#4Fae7c)', '--cbadgeink': '#0A1610', '--cbadger': '9px',
+      '--cacc': '#7CE0A0', '--crules': '#9CC2A8', '--cbodyfont': 'system-ui,sans-serif',
+      '--cart': 'repeating-linear-gradient(135deg,rgba(255,255,255,0.05) 0 8px,transparent 8px 16px)', '--cartb': 'rgba(255,255,255,0.08)', '--cartr': '8px' } },
+    { name: 'Ember', vars: {
+      '--cbg': 'linear-gradient(160deg,#1e140c,#120b07)', '--cframe': 'inset 0 0 0 1px rgba(232,162,78,0.35)',
+      '--cname': '#F7E8E0', '--cnamefont': "'Atkinson Hyperlegible',system-ui,sans-serif", '--cnamew': '700', '--cnamesz': '17px', '--cnamels': '-0.01em', '--cnametf': 'none',
+      '--cbadge': 'linear-gradient(180deg,#F0A64E,#D2542A)', '--cbadgeink': '#2A1508', '--cbadger': '6px',
+      '--cacc': '#FF9E80', '--crules': '#D8B6A8', '--cbodyfont': "'Atkinson Hyperlegible',system-ui,sans-serif",
+      '--cart': 'repeating-linear-gradient(135deg,rgba(255,160,110,0.08) 0 8px,transparent 8px 16px)', '--cartb': 'rgba(255,160,110,0.18)', '--cartr': '6px' } },
+    { name: 'Parchment', vars: {
+      '--cbg': 'linear-gradient(160deg,#F3EAD4,#E6DABB)', '--cframe': 'inset 0 0 0 2px #C9B48A,inset 0 0 0 4px #E6DABB',
+      '--cname': '#2E2317', '--cnamefont': "'Instrument Serif',Georgia,serif", '--cnamew': '400', '--cnamesz': '22px', '--cnamels': '0', '--cnametf': 'none',
+      '--cbadge': '#2E2317', '--cbadgeink': '#F3EAD4', '--cbadger': '50%',
+      '--cacc': '#8A5A2A', '--crules': '#5A4A38', '--cbodyfont': 'Georgia,serif',
+      '--cart': 'repeating-linear-gradient(135deg,rgba(90,74,56,0.10) 0 8px,transparent 8px 16px)', '--cartb': 'rgba(90,74,56,0.30)', '--cartr': '4px' } },
+    { name: 'Cobalt', vars: {
+      '--cbg': 'linear-gradient(160deg,#0f1c33,#0a1424)', '--cframe': 'none',
+      '--cname': '#EAF2FB', '--cnamefont': "'Atkinson Hyperlegible',system-ui,sans-serif", '--cnamew': '700', '--cnamesz': '15px', '--cnamels': '0.02em', '--cnametf': 'uppercase',
+      '--cbadge': 'radial-gradient(circle at 35% 30%,#A6E0F0,#3F8FB0)', '--cbadgeink': '#0A1424', '--cbadger': '12px',
+      '--cacc': '#6FC4DC', '--crules': '#9DB2CC', '--cbodyfont': 'system-ui,sans-serif',
+      '--cart': 'repeating-linear-gradient(135deg,rgba(111,196,220,0.08) 0 8px,transparent 8px 16px)', '--cartb': 'rgba(111,196,220,0.18)', '--cartr': '12px' } },
+    { name: 'Noir', vars: {
+      '--cbg': '#0c0c0e', '--cframe': 'inset 0 0 0 1px #E8E8E8',
+      '--cname': '#F5F5F5', '--cnamefont': 'ui-monospace,Menlo,monospace', '--cnamew': '700', '--cnamesz': '13px', '--cnamels': '0.14em', '--cnametf': 'uppercase',
+      '--cbadge': '#F5F5F5', '--cbadgeink': '#0c0c0e', '--cbadger': '4px',
+      '--cacc': '#BDBDBD', '--crules': '#9A9A9A', '--cbodyfont': 'ui-monospace,Menlo,monospace',
+      '--cart': 'repeating-linear-gradient(135deg,rgba(255,255,255,0.06) 0 8px,transparent 8px 16px)', '--cartb': 'rgba(255,255,255,0.25)', '--cartr': '2px' } },
+    { name: 'Bubblegum', vars: {
+      '--cbg': 'linear-gradient(160deg,#3a1030,#25081f)', '--cframe': 'inset 0 0 0 3px #FF7EB6',
+      '--cname': '#FFE3F1', '--cnamefont': "'Atkinson Hyperlegible',system-ui,sans-serif", '--cnamew': '700', '--cnamesz': '18px', '--cnamels': '0', '--cnametf': 'none',
+      '--cbadge': 'radial-gradient(circle at 35% 30%,#FFC3E0,#FF5EA8)', '--cbadgeink': '#3a1030', '--cbadger': '50%',
+      '--cacc': '#FF9AD1', '--crules': '#E8A6C8', '--cbodyfont': "'Atkinson Hyperlegible',system-ui,sans-serif",
+      '--cart': 'repeating-linear-gradient(135deg,rgba(255,126,182,0.10) 0 8px,transparent 8px 16px)', '--cartb': 'rgba(255,126,182,0.30)', '--cartr': '16px' } },
+  ];
+
+  styleStr(i) {
+    const v = this.STYLES[i].vars;
+    return Object.keys(v).map(k => k + ':' + v[k]).join(';');
+  }
+
+  renderVals() {
+    const i = this.state.si;
+    return {
+      pos: this.state.pos,
+      prevStyle: this.styleStr(i),
+      styleName: this.STYLES[i].name,
+      onReveal: e => this.setState({ pos: Number(e.target.value) }),
+      randomize: () => this.setState({ si: (this.state.si + 1) % this.STYLES.length }),
+    };
+  }
+}
+</script>
+</body>
+</html>

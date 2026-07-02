@@ -161,23 +161,8 @@
         <div style="background:color-mix(in srgb,var(--pp-surface,#1A1530) 55%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:28px">
           <div style="color:#FF9E80;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Drawer two</div>
           <h3 class="disp" style="font-size:23px;margin:8px 0 10px;font-weight:700">What a card <i>looks like</i></h3>
-          <p style="color:var(--pp-muted,#B79E86);font-size:15px;margin:0 0 16px">A drag-and-drop canvas. Place a title, an art frame, a cost badge — then point each at a field. This is <b style="color:var(--pp-text,#F1ECE2)">X-Ray</b> mode: every slot shows the field it's bound to.</p>
-          <div style="display:flex;gap:5px;margin-bottom:10px">
-            <span style="font-size:11px;font-weight:700;color:var(--pp-primary,#E8A24E);background:rgba(var(--pp-primary-rgb,232,162,78),0.16);border:1px solid var(--pp-primary,#E8A24E);border-radius:8px;padding:5px 12px">X-Ray</span>
-            <span style="font-size:11px;font-weight:700;color:var(--pp-muted,#9b86c0);background:rgba(255,255,255,0.03);border:1px solid var(--pp-border,#322A48);border-radius:8px;padding:5px 12px">Style</span>
-            <span style="font-size:11px;font-weight:700;color:var(--pp-muted,#9b86c0);background:rgba(255,255,255,0.03);border:1px solid var(--pp-border,#322A48);border-radius:8px;padding:5px 12px">Preview</span>
-          </div>
-          <div style="position:relative;aspect-ratio:5/7;width:100%;max-width:320px;margin:0 auto;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px;border:1px solid rgba(255,255,255,0.12);background:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px) 0 0/13px 13px,linear-gradient(160deg,#1d1638,#15112a);box-shadow:inset 0 1px 0 rgba(255,255,255,0.08)">
-            <div style="display:flex;gap:8px">
-              <div style="flex:1;height:32px;border:1px dashed rgba(232,162,78,0.6);border-radius:8px;background:rgba(232,162,78,0.09);display:flex;align-items:center;padding-left:10px;color:#E8A24E;font-family:ui-monospace,Menlo,monospace;font-size:11px">{name}</div>
-              <div style="width:42px;height:32px;border:1px dashed rgba(255,158,128,0.6);border-radius:8px;background:rgba(255,158,128,0.10);display:flex;align-items:center;justify-content:center;color:#FF9E80;font-family:ui-monospace,Menlo,monospace;font-size:10px">{cost}</div>
-            </div>
-            <div style="flex:1;min-height:60px;border:1px dashed rgba(111,196,220,0.55);border-radius:8px;background:rgba(111,196,220,0.09);display:flex;align-items:center;justify-content:center;color:#6FC4DC;font-family:ui-monospace,Menlo,monospace;font-size:12px">{art}</div>
-            <div style="height:22px;border:1px dashed rgba(124,224,160,0.55);border-radius:8px;background:rgba(124,224,160,0.09);display:flex;align-items:center;padding-left:10px;color:#7CE0A0;font-family:ui-monospace,Menlo,monospace;font-size:10px">{type}</div>
-            <div style="height:44px;border:1px dashed rgba(232,162,78,0.55);border-radius:8px;background:rgba(232,162,78,0.06);display:flex;align-items:flex-start;padding:7px 10px;color:#F4C77A;font-family:ui-monospace,Menlo,monospace;font-size:10px">{rules}</div>
-            <div style="display:flex;justify-content:flex-end"><div style="width:56px;height:24px;border:1px dashed rgba(255,158,128,0.6);border-radius:8px;background:rgba(255,158,128,0.10);display:flex;align-items:center;justify-content:center;color:#FF9E80;font-family:ui-monospace,Menlo,monospace;font-size:10px">{atk}</div></div>
-          </div>
-          <div style="font-size:11.5px;color:var(--pp-dim,#7d6e57);margin-top:10px;text-align:center">Each slot's tinted by its field type — matched to the fields on the left.</div>
+          <p style="color:var(--pp-muted,#B79E86);font-size:15px;margin:0 0 16px">A drag-and-drop canvas. Place a title, an art frame, a cost badge — then point each at a field. This is <b style="color:var(--pp-text,#F1ECE2)">X-Ray</b> mode: every slot shows the field it's bound to. Drag to watch it become the finished card — then reroll the style.</p>
+          <dc-import name="CardReveal" hint-size="100%,540px"></dc-import>
         </div>
       </div>
     </section>
