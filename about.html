@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="playproof-appicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<title>The story | Playproof</title>
+<meta name="description" content="Playproof is made by one person — Alex. The story of how a pile of hand-cut cards became the tool I wish I'd had.">
+<meta property="og:title" content="Why I made Playproof">
+<meta property="og:description" content="One person, a stack of index cards, and a game that wouldn't let go. The story behind Playproof — and where it's headed.">
+<meta property="og:image" content="https://playproof.alsarodid.work/og-support.png">
+<meta property="og:url" content="https://playproof.alsarodid.work/about.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Playproof">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  *{box-sizing:border-box}
+  :root{--pp-surface:#0F1B30;--pp-border:#20304A;--pp-text:#EAF2FB;--pp-muted:#9DB2CC;--pp-primary:#6FC4DC;--pp-primary-2:#2F8FB0;--pp-ink:#0A1424;--pp-primary-rgb:111,196,220;--pp-dim:#6E7E96;--pp-primary-hi:#A7CBE8}
+  html,body{margin:0;background:#091226;color:var(--pp-text,#F1ECE2);font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .disp{font-family:'Instrument Serif',Georgia,serif;font-weight:400 !important}
+</style>
+</helmet>
+
+<x-import component-from-global-scope="ambient-field" from="./ambient-field.js" base="#091226" drift="#16244A,#1E6E80,#6FA8C8,#243056,#155566" hint-size="100%,100%" style="position:fixed;inset:0;z-index:0"></x-import>
+
+<div style="position:relative;z-index:1;min-height:100vh">
+  <dc-import name="SiteNav" current="about" hint-size="100%,64px"></dc-import>
+
+  <main>
+    <!-- HERO -->
+    <section style="max-width:1080px;margin:0 auto;padding:clamp(40px,6vw,76px) clamp(16px,4vw,28px) clamp(8px,2vw,16px)">
+      <div style="color:var(--pp-primary,#E8A24E);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">the story</div>
+      <h1 class="disp" style="font-size:clamp(34px,5.5vw,56px);line-height:1.02;font-weight:800;letter-spacing:-0.025em;margin:16px 0 0;max-width:16ch">Made by one person who couldn't stop making games.</h1>
+      <p style="font-size:clamp(16px,1.6vw,19px);color:var(--pp-muted,#C9B59D);max-width:60ch;margin:18px 0 0">I'm Alex — the guy who brings the games to every gathering. Playproof started as my own private frustration, and slowly became the tool I wish I'd had the whole time. Here's how it happened.</p>
+    </section>
+
+    <!-- IT STARTED AT A TABLE -->
+    <section style="max-width:1080px;margin:0 auto;padding:clamp(22px,3vw,34px) clamp(16px,4vw,28px) clamp(12px,2vw,18px)">
+      <h2 class="disp" style="font-size:clamp(24px,3.2vw,34px);font-weight:800;letter-spacing:-0.02em;margin:0 0 14px">It started at a table</h2>
+      <p style="color:var(--pp-muted,#B79E86);font-size:16px;margin:0;max-width:70ch">I grew up in a family where holidays meant heading up to the attic with all the cousins and the cool aunts and uncles, and playing board games for hours — learning a new one, then another, then another. That pull toward games never let go. Yu-Gi-Oh tournaments with my friends. Magic: The Gathering later on — I grinded Arena from Bronze all the way to Mythic. By adulthood, my partner and I were always "the ones with the games." Eventually I got restless with the same boxes, the store ran dry, and I thought: <b style="color:var(--pp-text,#F1ECE2)">what if I just made my own?</b></p>
+    </section>
+
+    <!-- THE HARD WAY -->
+    <section style="max-width:1080px;margin:0 auto;padding:clamp(20px,3vw,30px) clamp(16px,4vw,28px) clamp(12px,2vw,18px)">
+      <h2 class="disp" style="font-size:clamp(24px,3.2vw,34px);font-weight:800;letter-spacing:-0.02em;margin:0 0 14px">The hard way. Then the harder way.</h2>
+      <p style="color:var(--pp-muted,#B79E86);font-size:16px;margin:0 0 16px;max-width:70ch">My first prototype was index cards and a pen. Then I switched to pencil, just so I didn't have to remake a card from scratch every time I tweaked a rule. Eventually I figured: I do technical support for a living, I know how to code — I can make this programmatic. So I taught myself a new language and built a little tool that could generate cards, and I used it to iterate on the game itself, playtesting draft after draft at home until my printer was drained dry and every sheet came out wet.</p>
+      <p style="color:var(--pp-muted,#B79E86);font-size:16px;margin:0;max-width:70ch">Once the game actually held together, I moved into professional design software, built a polished final deck, and had it printed — once, properly, on real matte coated playing cards. It looked incredible. But it had taken months, and behind it was a mess: a code editor for the scripts, a spreadsheet for the card data, a notes app for rules and playtest notes, folder after folder of exports just to keep it all straight.</p>
+      <div style="margin-top:22px;border-left:3px solid var(--pp-primary,#E8A24E);background:rgba(var(--pp-primary-rgb,232,162,78),0.08);border-radius:0 12px 12px 0;padding:18px 20px;max-width:70ch">
+        <p class="disp" style="color:var(--pp-text,#F1ECE2);font-size:clamp(19px,2.4vw,24px);line-height:1.3;margin:0;font-style:italic">"It was fun to figure out. It just wasn't fun to <span style="color:var(--pp-primary,#E8A24E)">use</span>."</p>
+      </div>
+    </section>
+
+    <!-- WHY I STOPPED -->
+    <section style="max-width:1080px;margin:0 auto;padding:clamp(20px,3vw,30px) clamp(16px,4vw,28px) clamp(12px,2vw,18px)">
+      <h2 class="disp" style="font-size:clamp(24px,3.2vw,34px);font-weight:800;letter-spacing:-0.02em;margin:0 0 14px">Why I stopped — and came back</h2>
+      <p style="color:var(--pp-muted,#B79E86);font-size:16px;margin:0;max-width:70ch">So I didn't make another game for years. The process had been exhausting enough that "I have a game idea" stopped feeling like fun and started feeling like homework. Then the itch came back — I wanted to build something again — and it slowly turned into a different itch entirely: making sure that inventing a game never had to be the worst part of inventing a game again. That's the whole reason Playproof exists. Not a business plan. A grudge against my own workflow.</p>
+    </section>
+
+    <!-- WHAT I WANTED IT TO BE -->
+    <section style="max-width:1080px;margin:0 auto;padding:clamp(20px,3vw,30px) clamp(16px,4vw,28px) clamp(12px,2vw,18px)">
+      <h2 class="disp" style="font-size:clamp(24px,3.2vw,34px);font-weight:800;letter-spacing:-0.02em;margin:0 0 22px">What I wanted it to be</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+        <div style="background:color-mix(in srgb,var(--pp-surface,#1A1530) 55%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:22px">
+          <h4 style="font-size:16px;margin:0 0 6px;color:var(--pp-text,#F1ECE2)">Beautiful, on purpose</h4>
+          <p style="color:var(--pp-muted,#B79E86);font-size:14px;margin:0">Design is a feature. I wanted something you actually want to sit inside — nature-inspired, dark or light, quietly alive. I still catch myself watching it breathe like a screensaver.</p>
+        </div>
+        <div style="background:color-mix(in srgb,var(--pp-surface,#1A1530) 55%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:22px">
+          <h4 style="font-size:16px;margin:0 0 6px;color:var(--pp-text,#F1ECE2)">Accessible by default</h4>
+          <p style="color:var(--pp-muted,#B79E86);font-size:14px;margin:0">Years on support taught me this: the best software in the world is junk if nobody can figure out how to use it. Intuitive isn't a nice-to-have here — it's the point.</p>
+        </div>
+        <div style="background:color-mix(in srgb,var(--pp-surface,#1A1530) 55%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:22px">
+          <h4 style="font-size:16px;margin:0 0 6px;color:var(--pp-text,#F1ECE2)">Yours, and offline</h4>
+          <p style="color:var(--pp-muted,#B79E86);font-size:14px;margin:0">Your games are yours — not a server's. Playproof works with no internet, on purpose. Good ideas don't wait for wifi, and plane wifi is terrible anyway.</p>
+        </div>
+      </div>
+      <p style="color:var(--pp-dim,#7d6e57);font-size:14px;margin:18px 0 0;max-width:70ch">A lot of the small stuff comes straight from using it myself. I once ended up with a dozen decks all named the same thing while testing import and export — which is exactly why every deck now carries a version number and a unique ID. I'm the app's first and most annoyed user.</p>
+    </section>
+
+    <!-- WHERE IT'S GOING -->
+    <section style="max-width:1080px;margin:0 auto;padding:clamp(20px,3vw,30px) clamp(16px,4vw,28px) clamp(12px,2vw,18px)">
+      <div style="background:color-mix(in srgb,var(--pp-surface,#1A1530) 60%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.12),0 12px 28px rgba(0,0,0,0.2);padding:clamp(24px,3.5vw,36px)">
+        <div style="color:var(--pp-primary,#E8A24E);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">where it's going</div>
+        <h2 class="disp" style="font-size:clamp(22px,2.8vw,30px);font-weight:800;margin:12px 0 12px">Cards are just the start.</h2>
+        <p style="color:var(--pp-muted,#B79E86);font-size:16px;margin:0;max-width:72ch">Building my own game in Playproof, I reached for a die — and then a board — and realized the whole tabletop deserves the same treatment. So next up are dedicated designers for boards, tokens, and dice, so a full game can come together in one place. Beyond that: clean export paths into professional design tools for anyone who wants an artist's touch, and digital playtesting so an idea can be tested before a single card is printed. And the biggest step of all is already underway — Playproof is being rebuilt as a true <b style="color:var(--pp-text,#F1ECE2)">native app for Mac and iPad</b>.</p>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section style="border-top:1px solid var(--pp-border,#322A48);background:linear-gradient(180deg,rgba(var(--pp-primary-rgb,232,162,78),0.07),transparent)">
+      <div style="max-width:1140px;margin:0 auto;padding:clamp(44px,6vw,76px) clamp(16px,4vw,28px);text-align:center">
+        <h2 class="disp" style="font-size:clamp(24px,3.4vw,38px);font-weight:800;letter-spacing:-0.02em;margin:0 auto;max-width:24ch;line-height:1.15">The difference between a good game and one that doesn't exist is just following through on the idea.</h2>
+        <p style="color:var(--pp-muted,#B79E86);font-size:17px;margin:16px auto 0;max-width:50ch">That's what I'm building a tool for. The native Mac &amp; iPad app is on the way.</p>
+        <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px">
+          <span style="display:inline-flex;align-items:center;gap:9px;background:rgba(var(--pp-primary-rgb,232,162,78),0.12);color:var(--pp-primary,#E8A24E);border:1px solid rgba(var(--pp-primary-rgb,232,162,78),0.42);font-weight:800;font-size:16px;border-radius:12px;padding:15px 26px"><span style="width:8px;height:8px;border-radius:50%;background:var(--pp-primary,#E8A24E);box-shadow:0 0 8px var(--pp-primary,#E8A24E)"></span>Native app · coming soon</span>
+          <a href="how-it-works.html" style="background:rgba(255,255,255,0.03);color:var(--pp-text,#F1ECE2);border:1px solid var(--pp-border,#322A48);font-weight:700;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px" style-hover="border-color:var(--pp-primary,#E8A24E)">How it works →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="SiteFooter" hint-size="100%,140px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:900}}"></script>
+</body>
+</html>
