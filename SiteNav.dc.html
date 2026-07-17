@@ -27,13 +27,13 @@
         <sc-for list="{{ links }}" as="link" hint-placeholder-count="4">
           <a href="{{ link.href }}" style="color:{{ link.color }};font-weight:{{ link.weight }};text-decoration:none;padding:8px 12px;border-radius:9px;transition:color .12s,background .12s" style-hover="background:rgba(255,255,255,0.06);color:var(--pp-text,#F1ECE2)">{{ link.label }}</a>
         </sc-for>
-        <a href="download.html" style="margin-left:6px;background:linear-gradient(180deg,var(--pp-primary,#E8A24E),var(--pp-primary-2,#cf8838));color:var(--pp-ink,#1b1430);font-weight:800;padding:9px 17px;border-radius:10px;text-decoration:none;box-shadow:0 6px 18px rgba(var(--pp-primary-rgb,232,162,78),0.28);transition:transform .12s" style-hover="transform:translateY(-1px)">Download</a>
+        <a href="about.html" style="margin-left:6px;display:inline-flex;align-items:center;gap:8px;background:rgba(var(--pp-primary-rgb,232,162,78),0.12);color:var(--pp-primary,#E8A24E);border:1px solid rgba(var(--pp-primary-rgb,232,162,78),0.38);font-weight:700;padding:8px 15px;border-radius:999px;text-decoration:none;font-size:13.5px;transition:background .12s" style-hover="background:rgba(var(--pp-primary-rgb,232,162,78),0.20)"><span style="width:7px;height:7px;border-radius:50%;background:var(--pp-primary,#E8A24E);box-shadow:0 0 7px var(--pp-primary,#E8A24E)"></span>New app · soon</a>
       </div>
     </sc-if>
 
     <sc-if value="{{ showMobile }}" hint-placeholder-val="{{ false }}">
       <div style="display:flex;align-items:center;gap:10px">
-        <a href="download.html" style="background:linear-gradient(180deg,var(--pp-primary,#E8A24E),var(--pp-primary-2,#cf8838));color:var(--pp-ink,#1b1430);font-weight:800;padding:9px 15px;border-radius:10px;text-decoration:none;font-size:14px">Download</a>
+        <a href="about.html" style="display:inline-flex;align-items:center;gap:7px;background:rgba(var(--pp-primary-rgb,232,162,78),0.12);color:var(--pp-primary,#E8A24E);border:1px solid rgba(var(--pp-primary-rgb,232,162,78),0.38);font-weight:700;padding:8px 13px;border-radius:999px;text-decoration:none;font-size:13px"><span style="width:6px;height:6px;border-radius:50%;background:var(--pp-primary,#E8A24E)"></span>New app · soon</a>
         <button type="button" onClick="{{ toggle }}" aria-label="Menu" aria-expanded="{{ open }}" style="display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;align-items:center;border:1px solid rgba(255,255,255,0.16);border-radius:11px;background:rgba(255,255,255,0.04);cursor:pointer;padding:0">
           <span style="display:block;width:18px;height:2px;border-radius:2px;background:var(--pp-text,#F1ECE2);transition:transform .18s,opacity .18s;transform:{{ bar1 }}"></span>
           <span style="display:block;width:18px;height:2px;border-radius:2px;background:var(--pp-text,#F1ECE2);transition:opacity .18s;opacity:{{ bar2op }}"></span>
@@ -77,7 +77,7 @@ class Component extends DCLogic {
     const defs = [
       { href: 'how-it-works.html', label: 'How it works', id: 'how' },
       { href: 'guides.html', label: 'Get Started', id: 'guides' },
-      { href: 'support.html', label: 'Support', id: 'support' },
+      { href: 'about.html', label: 'About', id: 'about' },
     ];
     const links = defs.map(d => {
       const active = d.id === current;
