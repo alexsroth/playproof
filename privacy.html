@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="playproof-appicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<title>Privacy | Playproof</title>
+<meta name="description" content="Playproof keeps your work on your device. This is the plain-language privacy policy — what stays local, the one feature that isn't, and what I never do.">
+<meta property="og:title" content="Privacy — Playproof">
+<meta property="og:description" content="Local-first by design. No accounts, no ads, no tracking. Here's exactly what happens to your data.">
+<meta property="og:url" content="https://about.playproof.win/privacy.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Playproof">
+<link rel="canonical" href="https://about.playproof.win/privacy.html">
+<style>
+  *{box-sizing:border-box}
+  :root{--pp-surface:#0F1B30;--pp-border:#20304A;--pp-text:#EAF2FB;--pp-muted:#9DB2CC;--pp-primary:#6FC4DC;--pp-primary-2:#2F8FB0;--pp-ink:#0A1424;--pp-primary-rgb:111,196,220;--pp-dim:#6E7E96;--pp-primary-hi:#A7CBE8}
+  html,body{margin:0;background:#091226;color:var(--pp-text,#F1ECE2);font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .disp{font-family:'Instrument Serif',Georgia,serif;font-weight:400 !important}
+  .policy h2{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-0.02em;margin:0 0 12px}
+  .policy p{color:var(--pp-muted,#B79E86);font-size:16px;margin:0 0 14px;max-width:70ch}
+  .policy li{color:var(--pp-muted,#B79E86);font-size:16px;margin:0 0 8px;max-width:68ch}
+  .policy b{color:var(--pp-text,#F1ECE2)}
+  .policy a{color:var(--pp-primary,#6FC4DC)}
+  .policy section{max-width:1080px;margin:0 auto;padding:clamp(18px,2.6vw,26px) clamp(16px,4vw,28px)}
+</style>
+</helmet>
+
+<x-import component-from-global-scope="ambient-field" from="./ambient-field.js" base="#091226" drift="#16244A,#1E6E80,#6FA8C8,#243056,#155566" hint-size="100%,100%" style="position:fixed;inset:0;z-index:0"></x-import>
+
+<div style="position:relative;z-index:1;min-height:100vh">
+  <dc-import name="SiteNav" current="" hint-size="100%,64px"></dc-import>
+
+  <main class="policy">
+    <!-- HERO -->
+    <section style="padding:clamp(40px,6vw,72px) clamp(16px,4vw,28px) clamp(4px,1.5vw,12px)">
+      <div style="color:var(--pp-primary,#E8A24E);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">privacy</div>
+      <h1 class="disp" style="font-size:clamp(34px,5.5vw,56px);line-height:1.02;font-weight:800;letter-spacing:-0.025em;margin:16px 0 0;max-width:18ch">Your work stays yours.</h1>
+      <p style="font-size:clamp(16px,1.6vw,19px);color:var(--pp-muted,#C9B59D);max-width:60ch;margin:18px 0 0">Playproof is built to keep what you make on your own device. This page explains, in plain language, the few cases where any data leaves it — and what happens to that data.</p>
+      <p style="color:var(--pp-dim,#7d6e57);font-size:14px;margin:14px 0 0">Last updated: July 23, 2026</p>
+    </section>
+
+    <!-- SHORT VERSION -->
+    <section>
+      <div style="background:color-mix(in srgb,var(--pp-surface,#1A1530) 60%,transparent);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(22px,3vw,30px)">
+        <h2 class="disp">The short version</h2>
+        <ul style="margin:0;padding-left:20px">
+          <li>Your games, decks, card data, and art live on your device. There's no account, no login, and no sign-up.</li>
+          <li>No ads. No analytics or tracking. No third-party advertising or tracking software bundled in.</li>
+          <li>Data leaves your device only when <b>you</b> take an action that sends it — exporting a file, or opening a remote playtest room.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ON YOUR DEVICE -->
+    <section>
+      <h2 class="disp">What stays on your device</h2>
+      <p>Everything you make in Playproof — games, rules, card tables, layouts, imported art, snapshots, and playtest logs — is stored locally on the device you made it on. I don't receive a copy, and I can't see it.</p>
+      <p>When you export a <b>.playproof</b> file or a printable PDF, that file is written wherever you choose to save it. Where it goes from there is up to you; Playproof isn't involved once the file is saved.</p>
+    </section>
+
+    <!-- ROOMS -->
+    <section>
+      <div style="border-left:3px solid var(--pp-primary,#E8A24E);background:rgba(var(--pp-primary-rgb,232,162,78),0.07);border-radius:0 14px 14px 0;padding:20px 22px">
+        <h2 class="disp" style="margin-bottom:10px">Remote playtest rooms</h2>
+        <p>Playproof has an optional feature for gathering playtest feedback remotely. You, the designer, choose to open a "room." When you do, testers can visit a web page and answer the survey questions you set up. This is the one feature where information passes through a server I operate.</p>
+        <p style="margin-bottom:8px"><b>What a room collects:</b></p>
+        <ul style="margin:0 0 14px;padding-left:20px">
+          <li>The survey answers a tester submits — the game-feedback questions you wrote.</li>
+          <li>An optional display name a tester may type in. It's never required, it's not verified, and no email address, account, phone number, or login is ever requested or collected.</li>
+        </ul>
+        <p><b>Where it goes, and for how long:</b> room submissions are held on a Cloudflare Worker I operate, only so you can collect them back into the app. They're automatically and permanently deleted <b>7 days</b> after the room ends. I don't use this data for anything other than delivering it to you, the designer who opened the room. I don't sell it, share it, or analyze it.</p>
+        <p style="margin-bottom:0">If you never open a room, no data ever reaches this server.</p>
+      </div>
+    </section>
+
+    <!-- WHAT I DON'T DO -->
+    <section>
+      <h2 class="disp">What I don't do</h2>
+      <ul style="margin:0;padding-left:20px">
+        <li>I don't track you across apps or websites.</li>
+        <li>I don't build advertising profiles.</li>
+        <li>I don't sell or rent any data to anyone.</li>
+        <li>I don't use third-party analytics, advertising, or tracking services.</li>
+      </ul>
+    </section>
+
+    <!-- CHILDREN -->
+    <section>
+      <h2 class="disp">Children</h2>
+      <p>Playproof is a design tool for a general audience of game creators. It doesn't knowingly collect personal information from children.</p>
+    </section>
+
+    <!-- CHANGES -->
+    <section>
+      <h2 class="disp">Changes to this policy</h2>
+      <p>If this policy changes, I'll update the date at the top and post the new version here before the change takes effect.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section style="padding-bottom:clamp(40px,6vw,72px)">
+      <h2 class="disp">Contact</h2>
+      <p style="margin-bottom:0">Questions about privacy, or a request to delete room data before its automatic 7-day expiry, can go to <a href="mailto:alex@alsarodid.work">alex@alsarodid.work</a>.</p>
+    </section>
+  </main>
+
+  <dc-import name="SiteFooter" hint-size="100%,140px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:900}}"></script>
+</body>
+</html>
