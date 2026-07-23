@@ -15,9 +15,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <title>Playproof — Native Mac & iPad app coming soon</title>
-<meta name="description" content="Playproof is going native — a brand-new Mac & iPad app, rebuilt from the ground up, coming soon. The final desktop build is still available in the meantime.">
+<meta name="description" content="Playproof is going native — a brand-new Mac & iPad app, rebuilt from the ground up. Coming soon.">
 <meta property="og:title" content="Playproof goes native — coming soon">
-<meta property="og:description" content="A brand-new Mac & iPad app, rebuilt from the ground up. Coming soon. The final desktop build is still available in the meantime.">
+<meta property="og:description" content="A brand-new Mac & iPad app, rebuilt from the ground up. Coming soon.">
 <meta property="og:image" content="https://playproof.alsarodid.work/og-download.png">
 <meta property="og:url" content="https://playproof.alsarodid.work/download.html">
 <meta property="og:type" content="website">
@@ -54,169 +54,11 @@
       <div style="display:inline-flex;align-items:center;gap:9px;margin-top:22px;color:#B08976;font-size:13px"><span style="font-size:14px">✦</span> Native for macOS &amp; iPadOS</div>
     </section>
 
-    <!-- MEANTIME: de-emphasized final desktop build -->
-    <section style="max-width:760px;margin:0 auto;padding:0 clamp(16px,4vw,28px) clamp(48px,7vw,80px)">
-      <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:clamp(30px,4vw,44px)">
-        <div style="text-align:center;margin-bottom:22px">
-          <div style="color:#9A7565;font-size:11.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase">in the meantime</div>
-          <h2 class="disp" style="font-size:clamp(20px,2.6vw,26px);font-weight:800;margin:10px 0 6px;color:#E9CFC2">The final desktop build is still here</h2>
-          <p style="color:#8A6A5C;font-size:14px;margin:0 auto;max-width:52ch">Mid-project and need the current app today? Grab the last desktop release — your work carries straight over when the native app lands.</p>
-        </div>
-
-    <!-- detection status -->
-    <div style="display:flex;justify-content:center;margin-top:26px">
-      <div style="display:inline-flex;align-items:center;gap:10px;max-width:62ch;background:color-mix(in srgb,#1D1413 60%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid {{ statusBorder }};border-radius:13px;padding:12px 17px;font-size:14.5px;color:#C49A8C;text-align:left">
-        <span style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:{{ statusDot }};box-shadow:0 0 8px {{ statusDot }}"></span>
-        <span>{{ statusText }}</span>
-      </div>
-    </div>
-
-    <!-- two equal builds -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:22px">
-
-      <!-- Apple Silicon -->
-      <div style="position:relative;display:flex;flex-direction:column;background:color-mix(in srgb,#1D1413 56%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid {{ armBorder }};border-radius:18px;box-shadow:{{ armShadow }};padding:24px">
-        <sc-if value="{{ armBadge }}" hint-placeholder-val="{{ false }}">
-          <span style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);white-space:nowrap;background:linear-gradient(180deg,#FF7A45,#D2542A);color:#2C1A13;font-weight:800;font-size:11.5px;letter-spacing:0.02em;padding:4px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(255,122,69,0.4)">{{ armBadge }}</span>
-        </sc-if>
-        <div style="display:flex;align-items:center;gap:13px">
-          <div style="width:48px;height:48px;border-radius:12px;background:radial-gradient(circle at 35% 28%,#3a3358,#211a3a);border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,Menlo,monospace;font-weight:800;font-size:16px;color:#FFB088;box-shadow:inset 0 1px 0 rgba(255,255,255,0.12)">M</div>
-          <div>
-            <div class="disp" style="font-size:19px;font-weight:800;line-height:1.05">Apple Silicon</div>
-            <div style="font-size:12.5px;color:#C49A8C;font-family:ui-monospace,Menlo,monospace">M1 · M2 · M3 · M4</div>
-          </div>
-        </div>
-        <p style="color:#C49A8C;font-size:13.5px;margin:14px 0 0;flex:1">For Macs with an Apple-designed chip — anything bought new since late 2020.</p>
-        <a href="{{ armUrl }}" style="margin-top:16px;text-align:center;background:linear-gradient(180deg,#FF7A45,#D2542A);color:#2C1A13;font-weight:800;font-size:15px;text-decoration:none;border-radius:11px;padding:13px;box-shadow:0 8px 22px rgba(255,122,69,0.26);transition:transform .12s" style-hover="transform:translateY(-2px)">Download · Apple Silicon</a>
-      </div>
-
-      <!-- Intel -->
-      <div style="position:relative;display:flex;flex-direction:column;background:color-mix(in srgb,#1D1413 56%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid {{ x64Border }};border-radius:18px;box-shadow:{{ x64Shadow }};padding:24px">
-        <sc-if value="{{ x64Badge }}" hint-placeholder-val="{{ false }}">
-          <span style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);white-space:nowrap;background:linear-gradient(180deg,#FF7A45,#D2542A);color:#2C1A13;font-weight:800;font-size:11.5px;letter-spacing:0.02em;padding:4px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(255,122,69,0.4)">{{ x64Badge }}</span>
-        </sc-if>
-        <div style="display:flex;align-items:center;gap:13px">
-          <div style="width:48px;height:48px;border-radius:12px;background:radial-gradient(circle at 35% 28%,#2a3358,#1a2138);border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,Menlo,monospace;font-weight:800;font-size:12px;color:#9DB7DC;box-shadow:inset 0 1px 0 rgba(255,255,255,0.12)">x64</div>
-          <div>
-            <div class="disp" style="font-size:19px;font-weight:800;line-height:1.05">Intel</div>
-            <div style="font-size:12.5px;color:#C49A8C;font-family:ui-monospace,Menlo,monospace">Core i5 · i7 · i9</div>
-          </div>
-        </div>
-        <p style="color:#C49A8C;font-size:13.5px;margin:14px 0 0;flex:1">For older Intel-based Macs — most models from before late 2020.</p>
-        <a href="{{ x64Url }}" style="margin-top:16px;text-align:center;background:rgba(255,255,255,0.05);color:#F7E8E0;border:1px solid #3a3358;font-weight:800;font-size:15px;text-decoration:none;border-radius:11px;padding:13px;transition:border-color .12s,background .12s" style-hover="border-color:#FF7A45;background:rgba(255,255,255,0.08)">Download · Intel</a>
-      </div>
-    </div>
-
-    <!-- how to check -->
-    <div style="background:color-mix(in srgb,#1D1413 50%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:18px 20px;margin-top:16px">
-      <div style="display:flex;align-items:center;gap:8px;font-weight:700;font-size:14.5px;color:#F7E8E0"><span style="color:#FF7A45">?</span> Not sure which one you've got?</div>
-      <p style="color:#C49A8C;font-size:14px;margin:8px 0 0">Click the <b style="color:#F7E8E0">Apple menu</b> (top-left)  →  <b style="color:#F7E8E0">About This Mac</b>. A line that reads <b style="color:#FFB088">“Apple M1/M2/M3…”</b> means Apple Silicon. A line that says <b style="color:#9DB7DC">“Intel”</b> means Intel. Takes five seconds and beats any guess a browser can make.</p>
-    </div>
-
-    <!-- install -->
-    <div style="background:color-mix(in srgb,#1D1413 56%,transparent);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 12px 28px rgba(0,0,0,0.18);padding:clamp(22px,3vw,30px);margin-top:16px">
-      <div style="color:#FF7A45;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">installing</div>
-      <ol style="margin:14px 0 0;padding-left:22px;color:#C49A8C;font-size:15px;line-height:1.85">
-        <li>Open the downloaded <b style="color:#F7E8E0">.dmg</b> and drag <b style="color:#F7E8E0">Playproof</b> onto <b style="color:#F7E8E0">Applications</b>.</li>
-        <li>Open Playproof. That's it — it's signed and notarized by Apple, so it opens like any other app.</li>
-      </ol>
-    </div>
-
-        <p style="text-align:center;color:#8A6A5C;font-size:12.5px;margin:20px 0 0">{{ versionLine }} · <a href="about.html" style="color:#8A6A5C;text-decoration:underline;text-underline-offset:3px">Read the story →</a></p>
-      </div>
-    </section>
   </main>
 
   <dc-import name="SiteFooter" hint-size="100%,140px"></dc-import>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:920,&quot;height&quot;:1000}}">
-class Component extends DCLogic {
-  // DMG assets live in the PUBLIC playproof repo's Releases; releases/latest stays stable across versions.
-  DOWNLOADS = {
-    arm64: 'https://github.com/alexsroth/playproof/releases/latest/download/Playproof-AppleSilicon.dmg',
-    x64: 'https://github.com/alexsroth/playproof/releases/latest/download/Playproof-Intel.dmg',
-  };
-
-  state = { status: 'checking', version: '' };
-
-  componentDidMount() {
-    // Fetch latest release version from GitHub API (public, no auth needed).
-    fetch('https://api.github.com/repos/alexsroth/playproof/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
-      .then(r => r.ok ? r.json() : null)
-      .then(data => { if (data && data.tag_name) this.setState({ version: data.tag_name }); })
-      .catch(() => {});
-
-    // iOS includes "Mac OS X" in its UA string, so check for iPhone/iPad first.
-    const ua = navigator.userAgent || '';
-    const isIOS = /iPhone|iPad|iPod/i.test(ua);
-    const isMac = !isIOS && (/Mac/i.test(navigator.platform || '') || /Mac OS X/i.test(ua));
-    if (!isMac) { this.timer = setTimeout(() => this.setState({ status: 'notmac' }), 500); return; }
-    // Give the status chip a beat so the resolution reads as a real check.
-    this.detectArch().then(arch => {
-      this.timer = setTimeout(() => this.setState({ status: arch || 'unknown' }), 450);
-    });
-  }
-  componentWillUnmount() { clearTimeout(this.timer); }
-
-  async detectArch() {
-    // 1) Chromium high-entropy hint (Chrome/Edge). Safari/Firefox won't have it.
-    try {
-      if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
-        const d = await navigator.userAgentData.getHighEntropyValues(['architecture']);
-        if (d.architecture === 'arm') return 'arm';
-        if (d.architecture === 'x86') return 'x64';
-      }
-    } catch (e) {}
-    // 2) WebGL renderer heuristic.
-    try {
-      const c = document.createElement('canvas');
-      const gl = c.getContext('webgl') || c.getContext('experimental-webgl');
-      const ext = gl.getExtension('WEBGL_debug_renderer_info');
-      const r = ((ext && gl.getParameter(ext.UNMASKED_RENDERER_WEBGL)) || '').toString();
-      // Check Intel/AMD/Radeon FIRST — Intel Macs using Chrome's Metal backend produce strings like
-      // "ANGLE (Apple, ANGLE Metal Renderer: Intel Iris Plus Graphics, ...)" which contain "Apple"
-      // before "Intel". Checking the specific GPU vendor first avoids the false-positive arm match.
-      if (/intel|amd|radeon/i.test(r)) return 'x64';
-      if (/apple/i.test(r)) return 'arm';
-    } catch (e) {}
-    return null; // genuinely couldn't tell
-  }
-
-  renderVals() {
-    const s = this.state.status;
-    const armRec = s === 'arm';
-    const x64Rec = s === 'x64';
-    const ring = (on) => on
-      ? '0 0 0 2px #FF7A45 inset, inset 0 1px 0 rgba(255,255,255,0.12), 0 16px 36px rgba(255,122,69,0.20)'
-      : 'inset 0 1px 0 rgba(255,255,255,0.10), 0 12px 28px rgba(0,0,0,0.18)';
-
-    const statusText = {
-      checking: 'Checking which Mac you\u2019re on\u2026',
-      arm: 'Looks like an Apple Silicon Mac \u2014 we\u2019ve highlighted that build. Both are here if we\u2019re wrong.',
-      x64: 'Looks like an Intel Mac \u2014 we\u2019ve highlighted that build. Both are here if we\u2019re wrong.',
-      unknown: 'We couldn\u2019t tell for sure from the browser (it\u2019s genuinely unreliable, especially in Safari). Apple Silicon is the safe bet for any Mac from late 2020 on \u2014 or check below.',
-      notmac: 'Heads up: Playproof is a macOS app for now. The builds are here for when you\u2019re back on your Mac.',
-    }[s];
-
-    const dot = { checking: '#FFB088', arm: '#7CE0A0', x64: '#7CE0A0', unknown: '#FF7A45', notmac: '#FF9E80' }[s];
-
-    return {
-      statusText,
-      statusDot: dot,
-      statusBorder: s === 'notmac' ? 'rgba(255,158,128,0.35)' : 'rgba(255,255,255,0.12)',
-      armUrl: this.DOWNLOADS.arm64,
-      x64Url: this.DOWNLOADS.x64,
-      armBorder: armRec ? '#FF7A45' : 'rgba(255,255,255,0.12)',
-      x64Border: x64Rec ? '#FF7A45' : 'rgba(255,255,255,0.12)',
-      armShadow: ring(armRec),
-      x64Shadow: ring(x64Rec),
-      armBadge: armRec ? 'Looks like your Mac' : (s === 'unknown' ? 'Most common pick' : ''),
-      x64Badge: x64Rec ? 'Looks like your Mac' : '',
-      versionLine: 'Playproof ' + (this.state.version || '…') + ' · final desktop build · macOS 11+ · Apple Silicon & Intel',
-    };
-  }
-}
-</script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:920,&quot;height&quot;:1000}}"></script>
 </body>
 </html>
